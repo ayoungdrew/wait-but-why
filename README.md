@@ -8,7 +8,7 @@ comment code or take notes.
 
 ## Prerequisites
 
--   [Ember Resources](https://github.com/ga-wdi-boston/ember-resources)
+-   [Ember Resources](https://git.generalassemb.ly/ga-wdi-boston/ember-resources)
 
 ## Objectives
 
@@ -19,13 +19,13 @@ By the end of this, developers should be able to:
 
 ## Preparation
 
-1.  [Fork and clone](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
+1.  [Fork and clone](https://git.generalassemb.ly/ga-wdi-boston/meta/wiki/ForkAndClone)
     this repository.
 1.  Install dependencies with `npm install` and `bower install`.
 1.  Start any API based on a recent version of the [Rails API
-    Template](https://github.com/ga-wdi-boston/rails-api-template) or the
+    Template](https://git.generalassemb.ly/ga-wdi-boston/rails-api-template) or the
     [Express API
-    Template](https://github.com/ga-wdi-boston/express-api-template).
+    Template](https://git.generalassemb.ly/ga-wdi-boston/express-api-template).
 1.  Start the front-end server with `ember server`.
 
 ## From end to end
