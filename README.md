@@ -10,6 +10,26 @@ comment code or take notes.
 
 -   [Ember Resources](https://git.generalassemb.ly/ga-wdi-boston/ember-resources)
 
+## Installation
+
+1.  [Download](../../archive/master.zip) this template.
+1.  Unzip and rename the template directory (`unzip ~/Downloads/ember-auth-template-master.zip`).
+1.  Move into the new project and `git init`.
+1.  Empty [`README.md`](README.md) and fill with your own content.
+1.  Replace all instances of `ga-wdi-boston.ember-auth` with your app name. This
+    includes:
+      - [`app/adapters/application.js`](app/adapters/application.js)
+      - [`app/index.html`](app/index.html)
+      - [`app/services/ajax.js`](app/services/ajax.js)
+      - [`config/environment.js`](config/environment.js)
+      - [`package.json`](package.json)
+      - [`tests/index.html`](tests/index.html)
+      - [`tests/unit/initializers/text-field-test.js`](tests/unit/initializers/text-field-test.js)
+1.  Install dependencies with `npm install`.
+1.  `git add` and `git commit` your changes.
+1.  Run the development server with `ember server`. Use the `--proxy` flag to
+    avoid writing development-specific CORS and CSP settings.
+
 ## Objectives
 
 By the end of this, developers should be able to:
