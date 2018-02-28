@@ -1,14 +1,14 @@
 import ENV from 'ga-wdi-boston.ember-auth/config/environment';
 import ActiveModelAdapter from 'active-model-adapter';
-
-import Ember from 'ember';
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
 
 export default ActiveModelAdapter.extend({
   host: ENV.apiHost,
 
-  auth: Ember.inject.service(),
+  auth: service(),
 
-  headers: Ember.computed('auth.credentials.token', {
+  headers: computed('auth.credentials.token', {
     get () {
       let headers = {};
       const token = this.get('auth.credentials.token');

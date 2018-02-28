@@ -1,8 +1,9 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
-export default Ember.Route.extend({
-  auth: Ember.inject.service(),
-  flashMessages: Ember.inject.service(),
+export default Route.extend({
+  auth: service(),
+  flashMessages: service(),
 
   actions: {
     signOut () {

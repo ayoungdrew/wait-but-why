@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import TextField from '@ember/component/text-field';
 
 export function initialize() {
-  Ember.TextField.reopen({
+  TextField.reopen({
     classNames: ['form-control'],
   });
 }

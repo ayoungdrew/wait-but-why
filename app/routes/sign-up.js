@@ -1,12 +1,13 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 import RSVP from 'rsvp';
 
-export default Ember.Route.extend({
-  auth: Ember.inject.service(),
-  flashMessages: Ember.inject.service(),
+export default Route.extend({
+  auth: service(),
+  flashMessages: service(),
 
   model () {
-    return RSVP.Promise.resolve({})
+    return RSVP.Promise.resolve({});
   },
 
   actions: {

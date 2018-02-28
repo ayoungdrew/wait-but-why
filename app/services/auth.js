@@ -1,10 +1,11 @@
+import { bool } from '@ember/object/computed';
 import { storageFor } from 'ember-local-storage';
-import Service from '@ember/service';
+import Service, { inject as service } from '@ember/service';
 
 export default Service.extend({
-  ajax: Ember.inject.service(),
+  ajax: service(),
   credentials: storageFor('auth'),
-  isAuthenticated: Ember.computed.bool('credentials.token'),
+  isAuthenticated: bool('credentials.token'),
 
   signUp (credentials) {
     return this.get('ajax').post('/sign-up', {
