@@ -1,7 +1,7 @@
-import Ember from 'ember';
 import { storageFor } from 'ember-local-storage';
+import Service from '@ember/service';
 
-export default Ember.Service.extend({
+export default Service.extend({
   ajax: Ember.inject.service(),
   credentials: storageFor('auth'),
   isAuthenticated: Ember.computed.bool('credentials.token'),
