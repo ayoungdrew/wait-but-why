@@ -5,7 +5,6 @@
     "shell:git-is-clean",
     "shell:git-checkout-master",
     "shell:git-push-master",
-<<<<<<< HEAD
     "shell:deploy-prepare1",
     "shell:deploy-prepare2",
     "shell:deploy-prepare3",
@@ -14,11 +13,6 @@
     "shell:deploy-dist2",
     "shell:deploy-publish1",
     "shell:deploy-publish2",
-=======
-    "shell:deploy-prepare",
-    "shell:deploy-dist",
-    "shell:deploy-publish",
->>>>>>> Update 022/master from ember-auth-template
     "shell:clean-gh-pages",
     "shell:return-to-master"
   ],
