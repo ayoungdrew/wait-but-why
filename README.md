@@ -1,14 +1,16 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# Authentication in Ember
+# ember-auth-template
 
-This training will involve a lot of following code and and exploring the
-Chrome Inspector and utilizing Ember Inspector.  It is recommended that you
-comment code or take notes.
+A front-end framework template for starting projects with a recent version of
+either the [Rails API Template](https://git.generalassemb.ly/ga-wdi-boston/rails-api-template)
+or the [Express API Template](https://git.generalassemb.ly/ga-wdi-boston/express-api-template).
+
+At the beginning of each cohort, update from [ember-template](https://git.generalassemb.ly/ga-wdi-boston/ember-template).
 
 ## Prerequisites
 
--   [Ember Resources](https://git.generalassemb.ly/ga-wdi-boston/ember-resources)
+-   [ember-auth-template-walkthrough](https://git.generalassemb.ly/ga-wdi-boston/ember-auth-template-walkthrough)
 
 ## Installation
 
@@ -30,49 +32,14 @@ comment code or take notes.
 1.  Run the development server with `ember server`. Use the `--proxy` flag to
     avoid writing development-specific CORS and CSP settings.
 
-## Objectives
+## Structure
 
-By the end of this, developers should be able to:
+Dependencies are stored in [`package.json`](package.json).
 
--   Implement token authentication in an Ember application.
--   Enforce authentication in protected routes.
+Developers should store styles in [`app/styles`](app/styles) and load them
+from [`app/styles/app.scss`](app/styles/app.scss).
 
-## Preparation
-
-1.  [Fork and clone](https://git.generalassemb.ly/ga-wdi-boston/meta/wiki/ForkAndClone)
-    this repository.
-1.  Install dependencies with `npm install` and `bower install`.
-1.  Start any API based on a recent version of the [Rails API
-    Template](https://git.generalassemb.ly/ga-wdi-boston/rails-api-template) or the
-    [Express API
-    Template](https://git.generalassemb.ly/ga-wdi-boston/express-api-template).
-1.  Start the front-end server with `ember server`.
-
-## From end to end
-
-Watch as I sign up for a new account on our demo app.
-
-*Other than the flash messages on the page, did anything change?  What about in
-the Chrome Developer Tools?*
-
-Take some time and sign in on your own, and check to see if anything in the
-Chrome Dev Tools has changed.
-
-Now that we have added a key tool to our personal developer toolkit lets look
-at how it's implemented.
-
-## Follow Along
-
-Let's walk through file by file to see what's happening.  I will ask
-developers to guide me through the files while correcting any misunderstandings.
-
-First let's start down the template and component trail, then we'll work our way
-up with actions.
-
-*Remember: Data down, actions up.*
-
-While going up the Ember hierarchy we may need to stop a some point to discuss
-services.
+To deploy an ember-auth-template based SPA, run `grunt deploy`.
 
 ## Additional Resources
 
