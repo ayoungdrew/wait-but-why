@@ -6,6 +6,8 @@ A front-end framework template for starting projects with a recent version of
 either the [Rails API Template](https://git.generalassemb.ly/ga-wdi-boston/rails-api-template)
 or the [Express API Template](https://git.generalassemb.ly/ga-wdi-boston/express-api-template).
 
+_Note: When using the Express API Template, User endpoints may need to be modified in order for all authentication actions to execute properly._
+
 At the beginning of each cohort, update from [ember-template](https://git.generalassemb.ly/ga-wdi-boston/ember-template).
 
 ## Prerequisites
