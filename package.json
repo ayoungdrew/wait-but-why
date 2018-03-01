@@ -1,7 +1,11 @@
 {
   "name": "ga-wdi-boston.ember-auth",
   "version": "0.0.0",
+<<<<<<< HEAD
   "description": "ember auth training",
+=======
+  "description": "ember auth template",
+>>>>>>> Update 022/master from ember-auth-template
   "private": true,
   "directories": {
     "doc": "doc",
@@ -23,6 +27,7 @@
   },
   "devDependencies": {
     "active-model-adapter": "^2.1.1",
+<<<<<<< HEAD
     "broccoli-asset-rev": "^2.5.0",
     "ember-ajax": "^2.5.3",
     "ember-cli": "^2.10.0",
@@ -47,6 +52,36 @@
     "ember-load-initializers": "^0.6.3",
     "ember-local-storage": "^1.3.3",
     "ember-resolver": "^2.1.0",
+=======
+    "bootstrap-sass": "^3.3.7",
+    "broccoli-asset-rev": "^2.5.0",
+    "ember-cli-flash": "^1.4.0",
+    "ember-ajax": "^3.0.0",
+    "ember-bootstrap": "^1.2.0",
+    "ember-cli": "~2.18.1",
+    "ember-cli-app-version": "^3.1.3",
+    "ember-cli-autoprefixer": "^0.8.1",
+    "ember-cli-babel": "^6.8.0",
+    "ember-cli-dependency-checker": "^2.1.0",
+    "ember-cli-htmlbars": "^2.0.3",
+    "ember-cli-htmlbars-inline-precompile": "^1.0.2",
+    "ember-cli-inject-live-reload": "^1.4.1",
+    "ember-cli-jshint": "^2.0.1",
+    "ember-cli-qunit": "^4.3.0",
+    "ember-cli-release": "^0.2.9",
+    "ember-cli-sass": "^7.1.4",
+    "ember-cli-shims": "1.2.0",
+    "ember-cli-sri": "^2.1.1",
+    "ember-cli-test-loader": "^2.2.0",
+    "ember-cli-uglify": "^2.0.0",
+    "ember-data": "~2.18.0",
+    "ember-disable-proxy-controllers": "^1.0.1",
+    "ember-local-storage": "^1.3.3",
+    "ember-export-application-global": "^2.0.0",
+    "ember-load-initializers": "^1.0.0",
+    "ember-resolver": "^4.5.0",
+    "ember-source": "^2.18.0",
+>>>>>>> Update 022/master from ember-auth-template
     "grunt": "^1.0.1",
     "grunt-concurrent": "^2.3.1",
     "grunt-contrib-jshint": "^1.1.0",
@@ -56,5 +91,11 @@
     "load-grunt-config": "^0.19.2",
     "loader.js": "^4.1.0",
     "time-grunt": "^1.4.0"
+<<<<<<< HEAD
+=======
+  },
+  "dependencies": {
+    "ember-qunit": "^3.3.0"
+>>>>>>> Update 022/master from ember-auth-template
   }
 }

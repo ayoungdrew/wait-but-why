@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Ember from 'ember';
 import RSVP from 'rsvp';
 
@@ -7,6 +8,18 @@ export default Ember.Route.extend({
 
   model () {
     return RSVP.Promise.resolve({})
+=======
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
+import RSVP from 'rsvp';
+
+export default Route.extend({
+  auth: service(),
+  flashMessages: service(),
+
+  model () {
+    return RSVP.Promise.resolve({});
+>>>>>>> Update 022/master from ember-auth-template
   },
 
   actions: {

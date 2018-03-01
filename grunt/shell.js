@@ -17,6 +17,7 @@ module.exports = {
   'git-checkout-master': {
     command: 'git checkout master'
   },
+<<<<<<< HEAD
   'deploy-prepare1': {
     command: 'git branch -D gh-pages || echo "so not removed"'
   },
@@ -47,4 +48,32 @@ module.exports = {
   'return-to-master': {
     command: 'git checkout master'
   }
+=======
+  'deploy-prepare': {
+    command: [
+      'git branch -D gh-pages || echo "so not removed"',
+      'git checkout --orphan gh-pages',
+      'git rm --cached \'*\'',
+      'ember build --environment=production'
+    ].join(' && ')
+  },
+  'deploy-dist': {
+    command: [
+    'git add --force dist/',
+    'git commit -m "deploy task"'
+  ].join(' && ')
+  },
+  'deploy-publish': {
+    command: [
+     'git push origin :gh-pages || echo "so not removed"',
+     'git subtree push --prefix dist origin gh-pages',
+   ].join(' && ')
+ },
+ 'clean-gh-pages': {
+   command: 'git clean -x -d --force --exclude=node_modules'
+ },
+ 'return-to-master': {
+   command: 'git checkout master'
+ },
+>>>>>>> Update 022/master from ember-auth-template
 }

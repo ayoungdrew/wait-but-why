@@ -6,7 +6,11 @@ moduleFor('service:auth', 'Unit | Service | auth', {
 });
 
 // Replace this with your real tests.
+<<<<<<< HEAD
 test('it exists', function (assert) {
+=======
+test('it exists', function(assert) {
+>>>>>>> Update 022/master from ember-auth-template
   let service = this.subject();
   assert.ok(service);
 });
