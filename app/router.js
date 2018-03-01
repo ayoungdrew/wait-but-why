@@ -10,12 +10,8 @@ import config from './config/environment';
 
 const Router = EmberRouter.extend({
   location: config.locationType,
-<<<<<<< HEAD
   rootURL: config.rootURL
 >>>>>>> Update 022/master from ember-auth-template
-=======
-  rootURL: config.rootURL,
->>>>>>> Run command line tasks
 });
 
 Router.map(function () {
