@@ -1,10 +1,11 @@
-import Ember from 'ember';
+import { bool } from '@ember/object/computed';
 import { storageFor } from 'ember-local-storage';
+import Service, { inject as service } from '@ember/service';
 
-export default Ember.Service.extend({
-  ajax: Ember.inject.service(),
+export default Service.extend({
+  ajax: service(),
   credentials: storageFor('auth'),
-  isAuthenticated: Ember.computed.bool('credentials.token'),
+  isAuthenticated: bool('credentials.token'),
 
   signUp (credentials) {
     return this.get('ajax').post('/sign-up', {
@@ -35,7 +36,7 @@ export default Ember.Service.extend({
   },
 
   changePassword (passwords) {
-    return this.get('ajax').patch(`/change-password/${this.get('credentials.id')}`, {
+    return this.get('ajax').patch(`/change-password`, {
       data: {
         passwords: {
           old: passwords.previous,
@@ -46,7 +47,7 @@ export default Ember.Service.extend({
   },
 
   signOut () {
-    return this.get('ajax').del(`/sign-out/${this.get('credentials.id')}`)
+    return this.get('ajax').del(`/sign-out`)
     .finally(() => this.get('credentials').reset());
   },
 });
