@@ -1,12 +1,12 @@
-import TextField from '@ember/component/text-field';
+import TextField from '@ember/component/text-field'
 
-export function initialize() {
+export function initialize () {
   TextField.reopen({
-    classNames: ['form-control'],
-  });
+    classNames: ['form-control']
+  })
 }
 
 export default {
   name: 'text-field',
-  initialize,
-};
+  initialize
+}

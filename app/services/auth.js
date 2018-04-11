@@ -1,6 +1,6 @@
-import { bool } from '@ember/object/computed';
-import { storageFor } from 'ember-local-storage';
-import Service, { inject as service } from '@ember/service';
+import { bool } from '@ember/object/computed'
+import { storageFor } from 'ember-local-storage'
+import Service, { inject as service } from '@ember/service'
 
 export default Service.extend({
   ajax: service(),
@@ -13,10 +13,10 @@ export default Service.extend({
         credentials: {
           email: credentials.email,
           password: credentials.password,
-          password_confirmation: credentials.passwordConfirmation,
-        },
-      },
-    });
+          password_confirmation: credentials.passwordConfirmation
+        }
+      }
+    })
   },
 
   signIn (credentials) {
@@ -24,15 +24,15 @@ export default Service.extend({
       data: {
         credentials: {
           email: credentials.email,
-          password: credentials.password,
-        },
-      },
+          password: credentials.password
+        }
+      }
     })
     .then((result) => {
-      this.get('credentials').set('id', result.user.id);
-      this.get('credentials').set('email', result.user.email);
-      this.get('credentials').set('token', result.user.token);
-    });
+      this.get('credentials').set('id', result.user.id)
+      this.get('credentials').set('email', result.user.email)
+      this.get('credentials').set('token', result.user.token)
+    })
   },
 
   changePassword (passwords) {
@@ -40,14 +40,14 @@ export default Service.extend({
       data: {
         passwords: {
           old: passwords.previous,
-          new: passwords.next,
-        },
-      },
-    });
+          new: passwords.next
+        }
+      }
+    })
   },
 
   signOut () {
     return this.get('ajax').del(`/sign-out`)
-    .finally(() => this.get('credentials').reset());
-  },
-});
+    .finally(() => this.get('credentials').reset())
+  }
+})

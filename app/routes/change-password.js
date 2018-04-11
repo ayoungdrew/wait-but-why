@@ -1,13 +1,13 @@
-import Route from '@ember/routing/route';
-import { inject as service } from '@ember/service';
-import RSVP from 'rsvp';
+import Route from '@ember/routing/route'
+import { inject as service } from '@ember/service'
+import RSVP from 'rsvp'
 
 export default Route.extend({
   auth: service(),
   flashMessages: service(),
 
   model () {
-    return RSVP.Promise.resolve({});
+    return RSVP.Promise.resolve({})
   },
 
   actions: {
@@ -18,19 +18,19 @@ export default Route.extend({
         .then(() => this.transitionTo('sign-in'))
         .then(() => {
           this.get('flashMessages')
-          .success('Successfully changed your password!');
+          .success('Successfully changed your password!')
         })
         .then(() => {
-          this.get('flashMessages').warning('You have been signed out.');
+          this.get('flashMessages').warning('You have been signed out.')
         })
         .catch(() => {
           this.get('flashMessages')
-          .danger('There was a problem. Please try again.');
-        });
+          .danger('There was a problem. Please try again.')
+        })
       } else {
         this.get('flashMessages')
-        .danger('Your new passwords must match.');
+        .danger('Your new passwords must match.')
       }
-    },
-  },
-});
+    }
+  }
+})

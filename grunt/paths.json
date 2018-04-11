@@ -1,4 +1,10 @@
 {
+  "src": {
+    "all": [
+      "app/**/*.js",
+      "tests/**/*.js"
+    ]
+  },
   "scripts": {
     "all": [
       "app/**/*.js",

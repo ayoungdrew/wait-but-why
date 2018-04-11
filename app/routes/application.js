@@ -1,5 +1,5 @@
-import Route from '@ember/routing/route';
-import { inject as service } from '@ember/service';
+import Route from '@ember/routing/route'
+import { inject as service } from '@ember/service'
 
 export default Route.extend({
   auth: service(),
@@ -11,29 +11,29 @@ export default Route.extend({
         .then(() => this.get('store').unloadAll())
         .then(() => this.transitionTo('sign-in'))
         .then(() => {
-          this.get('flashMessages').warning('You have been signed out.');
+          this.get('flashMessages').warning('You have been signed out.')
         })
         .catch(() => {
           this.get('flashMessages')
-          .danger('There was a problem. Are you sure you\'re signed-in?');
-        });
+          .danger('There was a problem. Are you sure you\'re signed-in?')
+        })
     },
 
     error (reason) {
-      let unauthorized = reason.errors && reason.errors.some((error) =>
+      const unauthorized = reason.errors && reason.errors.some((error) =>
         error.status === '401'
-      );
+      )
 
       if (unauthorized) {
         this.get('flashMessages')
-        .danger('You must be authenticated to access this page.');
-        this.transitionTo('/sign-in');
+        .danger('You must be authenticated to access this page.')
+        this.transitionTo('/sign-in')
       } else {
         this.get('flashMessages')
-        .danger('There was a problem. Please try again.');
+        .danger('There was a problem. Please try again.')
       }
 
-      return false;
-    },
-  },
-});
+      return false
+    }
+  }
+})
