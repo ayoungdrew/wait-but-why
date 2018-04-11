@@ -1,7 +1,7 @@
-/* jshint node: true */
+/* eslint-env node */
 
 module.exports = function (environment) {
-  'use strict';
+  'use strict'
   const ENV = {
     modulePrefix: 'ga-wdi-boston.ember-auth',
     environment: environment,
@@ -14,43 +14,43 @@ module.exports = function (environment) {
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
-        Date: false,
-      },
+        Date: false
+      }
     },
 
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    },
-  };
+    }
+  }
 
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    let port = +('GA'.split('').reduce((p, c) =>
+    // ENV.APP.LOG_RESOLVER = true
+    // ENV.APP.LOG_ACTIVE_GENERATION = true
+    // ENV.APP.LOG_TRANSITIONS = true
+    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true
+    // ENV.APP.LOG_VIEW_LOOKUPS = true
+    const port = +('GA'.split('').reduce((p, c) =>
       p + c.charCodeAt().toString(16), '')
-    );
-    ENV.apiHost = `http://localhost:${port}`;
+    )
+    ENV.apiHost = `http://localhost:${port}`
   }
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.rootUrl = '/';
-    ENV.locationType = 'none';
+    ENV.rootUrl = '/'
+    ENV.locationType = 'none'
 
     // keep test console output quieter
-    ENV.APP.LOG_ACTIVE_GENERATION = false;
-    ENV.APP.LOG_VIEW_LOOKUPS = false;
+    ENV.APP.LOG_ACTIVE_GENERATION = false
+    ENV.APP.LOG_VIEW_LOOKUPS = false
 
-    ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.rootElement = '#ember-testing'
   }
 
   if (environment === 'production') {
-    ENV.locationType = 'hash';
+    ENV.locationType = 'hash'
   }
 
-  return ENV;
-};
+  return ENV
+}
