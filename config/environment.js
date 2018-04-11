@@ -49,7 +49,9 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
+    ENV.rootURL = '/<name-of-git-repo>'
     ENV.locationType = 'hash'
+    ENV.apiHost = '<deployed api url>'
   }
 
   return ENV
