@@ -1,4 +1,4 @@
-import Component from '@ember/component';
+import Component from '@ember/component'
 
 export default Component.extend({
   tagName: 'form',
@@ -8,11 +8,11 @@ export default Component.extend({
 
   actions: {
     submit () {
-      this.sendAction('submit', this.get('passwords'));
+      this.sendAction('submit', this.get('passwords'))
     },
 
     reset () {
-      this.set('passwords', {});
-    },
-  },
-});
+      this.set('passwords', {})
+    }
+  }
+})

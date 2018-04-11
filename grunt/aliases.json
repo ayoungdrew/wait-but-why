@@ -1,6 +1,7 @@
 {
   "default": ["nag"],
-  "nag": ["jshint", "jsonlint:all", "jscs:status"],
+  "make-standard": ["eslint:fix"],
+  "nag": ["eslint:all", "jsonlint:all"],
   "deploy": [
     "shell:git-is-clean",
     "shell:git-checkout-master",
@@ -10,6 +11,5 @@
     "shell:deploy-publish",
     "shell:clean-gh-pages",
     "shell:return-to-master"
-  ],
-  "reformat": ["jscs:write"]
+  ]
 }

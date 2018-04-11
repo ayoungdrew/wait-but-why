@@ -1,6 +1,6 @@
-import { alias } from '@ember/object/computed';
-import Component from '@ember/component';
-import { inject as service } from '@ember/service';
+import { alias } from '@ember/object/computed'
+import Component from '@ember/component'
+import { inject as service } from '@ember/service'
 
 export default Component.extend({
   auth: service(),
@@ -10,7 +10,7 @@ export default Component.extend({
 
   actions: {
     signOut () {
-      this.sendAction('signOut');
-    },
-  },
-});
+      this.sendAction('signOut')
+    }
+  }
+})

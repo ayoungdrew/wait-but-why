@@ -1,4 +1,4 @@
-import Component from '@ember/component';
+import Component from '@ember/component'
 
 export default Component.extend({
   tagName: 'button',
@@ -6,9 +6,9 @@ export default Component.extend({
   attributeBindings: [
     'toggle:data-toggle',
     'target:data-target',
-    'expanded:aria-expanded',
+    'expanded:aria-expanded'
   ],
   toggle: 'collapse',
   target: '#navigation',
-  expanded: false,
-});
+  expanded: false
+})
