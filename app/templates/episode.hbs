@@ -1,1 +1,9 @@
-<h1>{{model.title}}</h1>
+<div class="episode" style="padding: 50px; margin: 50px;">
+  <h1>{{model.title}}</h1>
+  <h4>{{moment-format model.date 'MMMM YYYY'}} | {{model.why}}</h4>
+  <p>{{model.description}}</p>
+  <form {{action 'saveEpisode' model}}>
+    {{input placeholder='model title' value=model.date}}
+    <button type='submit'> Save Episode Title</button>
+  </form>
+</div>

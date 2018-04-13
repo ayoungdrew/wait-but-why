@@ -1,5 +1,12 @@
 <h2>Episodes</h2>
 {{#each model as |episode|}}
+{{#link-to 'episode' episode.id}}
+  <h4>{{episode.title}}</h4>
+  {{!-- {{to-do episode}} --}}
+  {{!-- toDo(list) --}}
+{{/link-to}}
+
+
   <div class="episode" style="padding: 50px; margin: 50px;">
     <h2>{{episode.title}}</h2>
     <h4>{{moment-format episode.date 'MMMM YYYY'}} | {{episode.why}}</h4>
