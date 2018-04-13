@@ -1,0 +1,15 @@
+<div class="episode">
+<h2>Edit Episode: {{model.title}}</h2>
+
+<form {{action 'saveEpisode' model on='submit'}}>
+  <h5>Episode Title</h5>
+  {{input placeholder='episode name' value=model.title}}
+  <h5>Episode Date</h5>
+  {{input placeholder='episode date' value=model.date}}
+  <h5>Episode Why</h5>
+  {{input placeholder='episode why' value=model.why}}
+  <h5>Episode Description</h5>
+  {{input class="form-control" placeholder='episode description' value=model.description}}
+  <button type='submit'> Save Title </button>
+</form>
+</div>
