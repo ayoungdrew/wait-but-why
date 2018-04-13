@@ -1,6 +1,6 @@
 <h2>Episodes</h2>
 {{#each model as |episode|}}
-  <div class="d-inline p-2 bg-primary text-white" style="padding: 50px; margin: 50px;">
+  <div class="episode" style="padding: 50px; margin: 50px;">
     <h2>{{episode.title}}</h2>
     <h4>{{moment-format episode.date 'MMMM YYYY'}} | {{episode.why}}</h4>
     <p>{{episode.description}}</p>

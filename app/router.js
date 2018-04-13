@@ -13,7 +13,7 @@ Router.map(function () {
   this.route('users')
   this.route('episodes')
   this.route('examples')
-  this.route('episode');
+  this.route('episode', { path: '/episodes/:episode_id' })
 })
 
 export default Router
