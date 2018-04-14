@@ -11,7 +11,7 @@ Router.map(function () {
   this.route('sign-in')
   this.route('change-password')
   this.route('users')
-  this.route('episodes')
+  this.route('episodes', function () {})
   this.route('examples')
   this.route('episode', { path: '/episodes/:episode_id' })
   this.route('edit-episode', { path: '/episodes/:episode_id/edit' })

@@ -5,6 +5,6 @@ export default DS.Model.extend({
   date: DS.attr('date'),
   why: DS.attr('string'),
   description: DS.attr('string'),
-  user_id: DS.attr(),
+  user_id: DS.attr('number'),
   user: DS.attr()
 });
