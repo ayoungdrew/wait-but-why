@@ -1,4 +1,8 @@
 <div class="episode" style="padding: 50px; margin: 50px;">
+  {{#link-to 'edit-episode' episode.id}}
+  <button type='submit'>Edit Episode</button>
+  {{/link-to}}
+    <button {{action 'deleteEpisode' episode}}>Delete Episode</button>
 {{#link-to 'episode' episode.id}}
   <h3>{{episode.title}}</h3>
 {{/link-to}}
