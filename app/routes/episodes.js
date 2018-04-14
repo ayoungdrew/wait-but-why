@@ -3,6 +3,9 @@ import Route from '@ember/routing/route';
 export default Route.extend({
   model () {
     return this.get('store').findAll('episode')
+    // .then(results => results.filter((x) => {
+    //   return x.get('user_id') === 1
+    // }))
   },
   actions: {
     addNewEpisode (episodePojo) {

@@ -14,7 +14,8 @@ Router.map(function () {
   this.route('episodes')
   this.route('examples')
   this.route('episode', { path: '/episodes/:episode_id' })
-  this.route('edit-episode', { path: '/episodes/:episode_id/edit' });
+  this.route('edit-episode', { path: '/episodes/:episode_id/edit' })
+  this.route('user', { path: '/users/:user_id' })
 })
 
 export default Router

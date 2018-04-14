@@ -4,6 +4,8 @@
 
   {{!-- {{render-all-users users=model}} --}}
 {{#each model as |user|}}
+ {{#link-to 'user' user.id}}
   <li>{{user.email}}</li>
+  {{/link-to}}
 {{/each}}
 </ul>
