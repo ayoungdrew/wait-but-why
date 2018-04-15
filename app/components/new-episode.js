@@ -2,11 +2,10 @@ import Component from '@ember/component';
 
 export default Component.extend({
   episode: {
-    title: 'test title',
-    date: 20171230,
+    title: '',
+    date: '',
     why: '',
-    description: 'test desc',
-    user_id: 1
+    description: ''
   },
 
   actions: {
