@@ -6,6 +6,8 @@ export default Component.extend({
       console.log(episode)
       console.log('hey')
       episode.destroyRecord()
+      .then(console.log('yay! deleted'))
+      // .catch(console.log('failed to delete'))
     }
   }
 });

@@ -7,5 +7,13 @@ export default Route.extend({
     console.log('params is', params)
     return this.get('store').findRecord('episode', params.episode_id)
   },
-  actions: {}
+  actions: {
+    deleteEpisode (episode) {
+      console.log(episode)
+      console.log('hey')
+      episode.destroyRecord()
+      .then(() => this.transitionTo('episodes'))
+      // .catch(console.log('catch!'))
+    }
+  }
 });

@@ -1,9 +1,22 @@
 <div class="episode" style="padding: 50px; margin: 50px;">
   {{#link-to 'edit-episode' model.id}}
-  <button type='submit'> Edit</button>
+  <button type='submit'>Edit</button>
   {{/link-to}}
+    <button {{action 'deleteEpisode' model}}>Delete</button>
   <h1>{{model.title}}</h1>
   <h4>{{moment-format model.date 'MMMM YYYY'}} | {{model.why}}</h4>
   <p>{{model.description}}</p>
   <p>{{model.user.id}}</p>
 </div>
+
+{{!-- {{#bs-modal-simple
+   title="Please confirm"
+   closeTitle="Cancel"
+   submitTitle="Confirm"
+   size=null
+   fade=false
+   open=songToDelete
+   onSubmit=(action "deleteSong" songToDelete)
+   onHide=(action "cancelDeletingSong")}}
+   You're about to delete {{songToDelete.title}}. Are you sure?
+ {{/bs-modal-simple}} --}}

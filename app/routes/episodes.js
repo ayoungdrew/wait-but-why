@@ -19,6 +19,7 @@ export default Route.extend({
       console.log('kill itttt')
       console.log(episode)
       episode.destroyRecord()
+      .then(console.log('yay!'))
     }
   }
 });
