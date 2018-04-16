@@ -29,6 +29,7 @@ export default Route.extend({
       console.log('kill itttt', episode)
       episode.destroyRecord()
       .then(() => { this.toast.success('Done!')})
+      .then(() => this.refresh())
       .catch((error) => { this.toast.error('Error is', error) })
     }
   }
