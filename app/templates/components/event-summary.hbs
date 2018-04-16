@@ -1,0 +1,14 @@
+<div class="event" style="padding: 50px; margin: 50px;">
+  {{#if event.editable}}
+    {{#link-to 'edit-event' event.id}}
+      <button type='submit'>Edit Event</button>
+    {{/link-to}}
+    <button {{action 'deleteEvent' event}}>Delete Event</button>
+  {{/if}}
+  {{#link-to 'event' event.id}}
+    <h3>{{event.title}}</h3>
+  {{/link-to}}
+  <h4>{{event.user.email}}</h4>
+  <h4>{{event.user_id}}</h4>
+  <h5>{{moment-format event.date 'MMMM YYYY'}} | {{event.reason}}</h5>
+</div>

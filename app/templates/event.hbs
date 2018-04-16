@@ -1,0 +1,12 @@
+<div class="event" style="padding: 50px; margin: 50px;">
+  {{#if model.editable}}
+    {{#link-to 'edit-event' model.id}}
+      <button type='submit'>Edit Event</button>
+    {{/link-to}}
+    <button {{action 'destroyEvent' model}}>Delete Event</button>
+  {{/if}}
+  <h1>{{model.title}}</h1>
+  <h4>{{moment-format model.date 'MMMM YYYY'}} | {{model.reason}}</h4>
+  <p>{{model.description}}</p>
+  <p>{{model.user.id}}</p>
+</div>

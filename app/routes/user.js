@@ -4,16 +4,16 @@ import { inject as service } from '@ember/service';
 export default Route.extend({
   model (params) {
     console.log('params is', params)
-    return this.get('store').findAll('episode')
+    return this.get('store').findAll('event')
     .then(results => results.filter((x) => {
       return x.get('user_id').toString() === params.user_id
     }))
-    .then(episodes => episodes.sortBy('date').reverse())
+    .then(events => events.sortBy('date').reverse())
   },
   actions: {
-    destroyEpisode (episode) {
-      console.log('kill itttt', episode)
-      episode.destroyRecord()
+    destroyEvent (event) {
+      console.log('kill itttt', event)
+      event.destroyRecord()
       .then(() => { this.toast.success('Done!')})
       .then(() => this.refresh())
       .catch((error) => { this.toast.error('Error is', error) })

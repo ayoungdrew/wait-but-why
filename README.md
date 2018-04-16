@@ -1,3 +1,3 @@
-https://ayoungdrew.github.io/wait-but-why-client/
+https://ayoungdrew.github.io/wait-but-reason-client/
 
 # Wait But Why

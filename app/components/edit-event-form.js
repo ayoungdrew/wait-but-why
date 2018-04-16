@@ -6,10 +6,10 @@ export default Component.extend({
       this.set('selectedOption', selected)
       console.log(this.get('selectedOption'))
     },
-    saveSingleEpisode (episode) {
-      console.log('sending data', episode)
+    saveSingleEvent (event) {
+      console.log('sending data', event)
       if (this.get('selectedOption')) {
-        episode.why = this.get('selectedOption')
+        event.reason = this.get('selectedOption')
       }
       this.sendAction('save', this.get('model'))
     }

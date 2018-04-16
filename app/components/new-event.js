@@ -1,10 +1,10 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  episode: {
+  event: {
     title: '',
     date: '',
-    why: '',
+    reason: '',
     description: ''
   },
 
@@ -13,9 +13,9 @@ export default Component.extend({
       this.set('selectedOption', selected)
       console.log(this.get('selectedOption'))
     },
-    newEpisode () {
-      this.episode.why = this.get('selectedOption')
-      this.sendAction('create', this.get('episode'))
+    newEvent () {
+      this.event.reason = this.get('selectedOption')
+      this.sendAction('create', this.get('event'))
     }
   }
 })

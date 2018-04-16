@@ -4,30 +4,30 @@ import Ember from 'ember';
 
 export default Route.extend({
   tagName: 'ul',
-  sortedEpisodes: Ember.computed.sort('episode', 'sortDefinition'),
+  sortedEvents: Ember.computed.sort('event', 'sortDefinition'),
   sortDefinition: ['date'],
   auth: service(),
   model () {
     console.log('hmm', this.get('auth.credentials.id'))
     const currentUserId = this.get('auth.credentials.id')
-    return this.get('store').findAll('episode')
+    return this.get('store').findAll('event')
     .then(results => results.filter((x) => {
       return x.get('user_id') === currentUserId
     }))
-     .then(episodes => episodes.sortBy('date').reverse())
+     .then(events => events.sortBy('date').reverse())
   },
   actions: {
-    createEpisode (episode) {
-      console.log('let us create', episode)
-      this.get('store').createRecord('episode', episode)
+    createEvent (event) {
+      console.log('let us create', event)
+      this.get('store').createRecord('event', event)
         .save()
         .then(() => { this.toast.success('Done!')})
         .then(() => this.refresh())
         .catch((error) => { this.toast.error('Error is', error) })
     },
-    destroyEpisode (episode) {
-      console.log('kill itttt', episode)
-      episode.destroyRecord()
+    destroyEvent (event) {
+      console.log('kill itttt', event)
+      event.destroyRecord()
       .then(() => { this.toast.success('Done!')})
       .then(() => this.refresh())
       .catch((error) => { this.toast.error('Error is', error) })

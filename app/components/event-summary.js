@@ -9,10 +9,10 @@ export default Component.extend({
   isAuthenticated: alias('auth.isAuthenticated'),
 
   actions: {
-    deleteEpisode (episode) {
-      console.log(episode)
+    deleteEvent (event) {
+      console.log(event)
       console.log('hey')
-      this.sendAction('deleteSingleEpisode', this.get('episode'))
+      this.sendAction('deleteSingleEvent', this.get('event'))
     }
   }
 });

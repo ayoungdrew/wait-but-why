@@ -3,7 +3,7 @@
 module.exports = function (environment) {
   'use strict'
   const ENV = {
-    modulePrefix: 'wait-but-why-client',
+    modulePrefix: 'wait-but-reason-client',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
@@ -50,9 +50,9 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.rootURL = '/wait-but-why-client'
+    ENV.rootURL = '/wait-but-reason-client'
     ENV.locationType = 'hash'
-    ENV.apiHost = 'https://wait-but-why-api.herokuapp.com'
+    ENV.apiHost = 'https://wait-but-reason-api.herokuapp.com'
   }
 
   return ENV

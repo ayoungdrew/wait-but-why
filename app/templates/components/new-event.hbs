@@ -1,8 +1,8 @@
-<form {{action 'newEpisode' on='submit'}}>
+<form {{action 'newEvent' on='submit'}}>
   <h5>What did you do?</h5>
-  {{input placeholder='I moved to Chicago.' value=episode.title}}
+  {{input placeholder='I moved to Chicago.' value=event.title}}
   <h5>When?</h5>
-  {{input placeholder='e.g. 20171230' value=episode.date}}
+  {{input placeholder='e.g. 20171230' value=event.date}}
   <h5>Why?</h5>
   {{!-- <select onchange={{action 'setSelection' value="target.value"}}>
    <option disabled selected> -- Pick a reason -- </option>
@@ -17,6 +17,6 @@
     {{#xs.option value="I had no control over it"}}I had no control over it{{/xs.option}}
   {{/x-select}}
   <h5>Do tell.</h5>
-  {{input placeholder='Tell us more.' value=episode.description}}
+  {{input placeholder='Tell us more.' value=event.description}}
   <button type='submit'>Create</button>
 </form>
