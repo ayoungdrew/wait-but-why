@@ -8,6 +8,7 @@ export default Route.extend({
     .then(results => results.filter((x) => {
       return x.get('user_id').toString() === params.user_id
     }))
+    .then(episodes => episodes.sortBy('date').reverse())
   },
   actions: {
     destroyEpisode (episode) {
