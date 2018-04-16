@@ -3,7 +3,7 @@ import { inject as service } from '@ember/service';
 
 export default Route.extend({
   model () {
-    // console.log(this.get('store').queryRecord('user', { me: true }))
+    console.log(this.get('store').findAll('user'))
     return this.get('store').findAll('episode')
   },
   actions: {

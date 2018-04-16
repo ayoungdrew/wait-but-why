@@ -1,5 +1,6 @@
 import Component from '@ember/component';
-
+// import { select } from "yourappname/tests/helpers/x-select";
+ // import { select } from "wait-but-why-client/tests/helpers/x-select";
 export default Component.extend({
   episode: {
     title: '',

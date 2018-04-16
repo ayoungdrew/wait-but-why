@@ -4,15 +4,16 @@
   <h5>When?</h5>
   {{input placeholder='e.g. 20171230' value=episode.date}}
   <h5>Why?</h5>
-  {{!-- {{input placeholder='e.g. It was something I wanted to do.' value=episode.why}} --}}
-  {{!-- {{input}} --}}
   <select onchange={{action 'setSelection' value="target.value"}}>
    <option disabled selected> -- Pick a reason -- </option>
       <option value="It was something I wanted to do">It was something I wanted to do</option>
       <option value="I felt like I had to">I felt like I had to</option>
       <option value="I had no control over it">I had no control over it</option>
   </select>
-  {{!-- {{/input}} --}}
+  {{#x-select value=model.status as |xs|}}
+    {{#xs.option value=1}}Active{{/xs.option}}
+    {{#xs.option value=2}}Inactive{{/xs.option}}
+  {{/x-select}}
   <h5>Do tell.</h5>
   {{input placeholder='Tell us more.' value=episode.description}}
   <button type='submit'>Create</button>
