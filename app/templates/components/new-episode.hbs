@@ -3,16 +3,18 @@
   {{input placeholder='I moved to Chicago.' value=episode.title}}
   <h5>When?</h5>
   {{input placeholder='e.g. 20171230' value=episode.date}}
-  <h5>Why?</h5>
+  {{!-- <h5>Why?</h5>
   <select onchange={{action 'setSelection' value="target.value"}}>
    <option disabled selected> -- Pick a reason -- </option>
       <option value="It was something I wanted to do">It was something I wanted to do</option>
       <option value="I felt like I had to">I felt like I had to</option>
       <option value="I had no control over it">I had no control over it</option>
-  </select>
-  {{#x-select value=model.status as |xs|}}
-    {{#xs.option value=1}}Active{{/xs.option}}
-    {{#xs.option value=2}}Inactive{{/xs.option}}
+  </select> --}}
+  {{#x-select on-change=(action "setSelection") as |xs|}}
+    {{#xs.option}}Pick a reason{{/xs.option}}
+    {{#xs.option value="It was something I wanted to do"}}It was something I wanted to do{{/xs.option}}
+    {{#xs.option value="I felt like I had to"}}I felt like I had to{{/xs.option}}
+    {{#xs.option value="I had no control over it"}}I had no control over it{{/xs.option}}
   {{/x-select}}
   <h5>Do tell.</h5>
   {{input placeholder='Tell us more.' value=episode.description}}

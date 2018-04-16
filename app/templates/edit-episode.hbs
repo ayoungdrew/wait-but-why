@@ -1,21 +1,5 @@
-<div class="episode">
-<h2>Edit Episode: {{model.title}}</h2>
-
-<form {{action 'saveEpisode' model on='submit'}}>
-  <h5>Episode Title</h5>
-  {{input placeholder='episode name' value=model.title}}
-  <h5>Episode Date</h5>
-  {{input placeholder='episode date' value=model.date}}
-  <h5>Why?</h5>
-  <select onchange={{action 'setSelection'}} value=mode.why>
-   <option disabled selected> -- Pick a reason -- </option>
-      <option value="It was something I wanted to do">It was something I wanted to do</option>
-      <option value="I felt like I had to">I felt like I had to</option>
-      <option value="I had no control over it">I had no control over it</option>
-  </select>
-  {{input placeholder='episode why' value=model.why}}
-  <h5>Episode Description</h5>
-  {{input class="form-control" placeholder='episode description' value=model.description}}
-  <button type='submit'> Save Title </button>
-</form>
-</div>
+<h2>hi{{model.title}}</h2>
+{{edit-episode-form
+  model=model
+  save='saveEpisode'
+}}

@@ -1,0 +1,20 @@
+<div class="episode">
+<h2>Edit Episode: {{model.title}}</h2>
+
+<form {{action 'saveSingleEpisode' model on='submit'}}>
+  <h5>Episode Title</h5>
+  {{input placeholder='model name' value=model.title}}
+  <h5>Episode Date</h5>
+  {{input placeholder='model date' value=model.date}}
+  <h5>Why?</h5>
+  {{#x-select value=model.why on-change=(action 'setSelection') as |xs|}}
+    {{#xs.option}}Pick a reason{{/xs.option}}
+    {{#xs.option value="It was something I wanted to do"}}It was something I wanted to do{{/xs.option}}
+    {{#xs.option value="I felt like I had to"}}I felt like I had to{{/xs.option}}
+    {{#xs.option value="I had no control over it"}}I had no control over it{{/xs.option}}
+  {{/x-select}}
+  <h5>Episode Description</h5>
+  {{input class="form-control" placeholder='model description' value=model.description}}
+  <button type='submit'> Save Title </button>
+</form>
+</div>
