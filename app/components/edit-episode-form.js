@@ -8,7 +8,9 @@ export default Component.extend({
     },
     saveSingleEpisode (episode) {
       console.log('sending data', episode)
-      episode.why = this.get('selectedOption')
+      if (this.get('selectedOption')) {
+        episode.why = this.get('selectedOption')
+      }
       this.sendAction('save', this.get('model'))
     }
   }
