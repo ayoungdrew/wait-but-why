@@ -2,9 +2,14 @@ import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
 export default Route.extend({
+  auth: service(),
   model () {
-    console.log(this.get('store').findAll('user'))
+    console.log('hmm', this.get('auth.credentials.id'))
+    let currentUserId = this.get('auth.credentials.id')
     return this.get('store').findAll('episode')
+    .then(results => results.filter((x) => {
+      return x.get('user_id') === currentUserId
+    }))
   },
   actions: {
     createEpisode (episode) {
