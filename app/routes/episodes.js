@@ -1,25 +1,24 @@
 import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
 export default Route.extend({
   model () {
+    // console.log(this.get('store').queryRecord('user', { me: true }))
     return this.get('store').findAll('episode')
   },
   actions: {
     createEpisode (episode) {
-      console.log('hi! let us create', episode)
+      console.log('let us create', episode)
       this.get('store').createRecord('episode', episode)
         .save()
-    },
-    saveEpisode (episode) {
-      console.log('id is', episode.id)
-      console.log(episode)
-      episode.save()
+        .then(() => { this.toast.success('Done!')})
+        .catch((error) => { this.toast.error('Error is', error) })
     },
     destroyEpisode (episode) {
-      console.log('kill itttt')
-      console.log(episode)
+      console.log('kill itttt', episode)
       episode.destroyRecord()
-      .then(console.log('yay!'))
+      .then(() => { this.toast.success('Done!')})
+      .catch((error) => { this.toast.error('Error is', error) })
     }
   }
-});
+})

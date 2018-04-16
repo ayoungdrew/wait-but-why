@@ -5,6 +5,7 @@ import { inject as service } from '@ember/service'
 export default Component.extend({
   auth: service(),
 
+  // currentUser: alias()
   user: alias('auth.credentials.email'),
   userId: alias('auth.credentials.id'),
   isAuthenticated: alias('auth.isAuthenticated'),

@@ -2,6 +2,6 @@
 {{new-episode create='createEpisode'}}
 {{#each model as |episode|}}
   {{episode-summary episode=episode
-                    deleteEpisode='destroyEpisode'
+                    deleteSingleEpisode='destroyEpisode'
 }}
 {{/each}}

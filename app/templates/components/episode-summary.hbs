@@ -1,12 +1,15 @@
 <div class="episode" style="padding: 50px; margin: 50px;">
-  {{#link-to 'edit-episode' episode.id}}
-  <button type='submit'>Edit Episode</button>
-  {{/link-to}}
+  {{#if episode.editable}}
+    {{#link-to 'edit-episode' episode.id}}
+      <button type='submit'>Edit Episode</button>
+    {{/link-to}}
     <button {{action 'deleteEpisode' episode}}>Delete Episode</button>
-{{#link-to 'episode' episode.id}}
-  <h3>{{episode.title}}</h3>
-{{/link-to}}
-<h4>{{episode.user.email}}</h4>
-<h4>{{episode.user_id}}</h4>
+  {{/if}}
+  <h5>{{user}}</h5>
+  {{#link-to 'episode' episode.id}}
+    <h3>{{episode.title}}</h3>
+  {{/link-to}}
+  <h4>{{episode.user.email}}</h4>
+  <h4>{{episode.user_id}}</h4>
   <h5>{{moment-format episode.date 'MMMM YYYY'}} | {{episode.why}}</h5>
 </div>

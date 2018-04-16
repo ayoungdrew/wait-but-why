@@ -8,7 +8,7 @@ export default Route.extend({
     return this.get('store').findRecord('episode', params.episode_id)
   },
   actions: {
-    deleteEpisode (episode) {
+    destroyEpisode (episode) {
       console.log(episode)
       console.log('hey')
       episode.destroyRecord()
