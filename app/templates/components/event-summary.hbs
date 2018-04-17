@@ -8,21 +8,14 @@
   {{#link-to 'event' event.id}}
     <h3>{{event.title}}</h3>
   {{/link-to}}
-  <h4>{{event.user.email}}</h4>{{!-- <h4>{{event.user_id}}</h4> --}}
+  <h4>{{event.user.email}}</h4>
   <h5>{{moment-format event.date 'MMMM YYYY'}} | {{event.reason}}</h5>
 </div>
 {{#each event.comments as |comment|}}
-  <div class="comment row">
-    <div class="col-sm-8">
-      <p>{{comment.user.id}} {{comment.user.email}} on {{moment-format comment.created_at 'MMMM DD, YYYY'}}</p>
-      <p>{{comment.body}}</p>
-    </div>
-    <div class="col-sm-4">
-      {{#if event.editable}}
-        <button style="float: right;" {{action 'deleteComment' event}}>Delete Comment</button>
-      {{/if}}
-    </div>
-  </div>
+{{single-comment comment=comment
+                deleteComment='deleteSingleComment'
+
+}}
 {{/each}}
 {{new-comment event=event
               addComment='addSingleComment'

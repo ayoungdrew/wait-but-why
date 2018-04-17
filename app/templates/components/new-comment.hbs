@@ -1,13 +1,12 @@
 <div class="comment-new row">
-  <h5>{{event.title}}: new comment!!!</h5>
-  <h5>{{event.id}}</h5>
-  <form {{action 'newComment' event.id on='submit'}}>
+  <h5>(event: {{event.id}}) {{event.title}}: new comment!!!</h5>
+  <form {{action 'newComment' event on='submit'}}>
     <div class="col-sm-12">
       <h5>Leave a comment</h5>
     </div>
     <div class="col-sm-10">
       {{input type='hidden'}}
-      {{input placeholder='Add a comment...' value=commentPojo.body}}
+      {{input placeholder='Add a comment...' value=newCommentObj.body}}
     </div>
     <div class="col-sm-2">
       <button style="float: right; margin: 10px 0;" type='submit'>Comment</button>

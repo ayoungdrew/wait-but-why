@@ -1,16 +1,17 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  commentPojo: {
-      body: 'hi'
+  didInsertElement () {
+    this.set('newCommentObj', {
+      body: 'hello'
+    })
   },
 
   actions: {
-    newComment (args) {
-      console.log('logging1', args)
-      this.set('commentPojo.event_id', args)
-      console.log('logging', this.get('commentPojo'))
-      this.sendAction('addComment', this.get('commentPojo'))
+    newComment (event) {
+      console.log('logging', event)
+      this.set('newCommentObj.event', event)
+      this.sendAction('addComment', this.get('newCommentObj'))
     }
   }
 })

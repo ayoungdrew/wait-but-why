@@ -18,6 +18,13 @@ export default Route.extend({
       .then(() => this.refresh())
       .catch((error) => { this.toast.error('Error is', error) })
     },
+    destroyComment (comment) {
+      console.log('kill da cmnt', comment)
+      comment.destroyRecord()
+      .then(() => { this.toast.success('Done!')})
+      .then(() => this.refresh())
+      .catch((error) => { this.toast.error('Error is', error) })
+    },
     createComment (commentPojo) {
       console.log('made it to eventsjs')
       console.log('pojo is', commentPojo)

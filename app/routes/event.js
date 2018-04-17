@@ -15,9 +15,9 @@ export default Route.extend({
       .then(() => this.transitionTo('events'))
       // .catch(console.log('catch!'))
     },
-    createComment (commentPojo) {
+    createComment (commentObj) {
       console.log('made it to event js')
-      console.log('pojo is', commentPojo)
+      console.log('obj is', commentObj)
       const comment = this.get('store').createRecord('comment', commentPojo)
       return comment.save()
       .then(() => this.refresh())

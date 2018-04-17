@@ -10,14 +10,12 @@ export default Component.extend({
 
   actions: {
     deleteEvent (event) {
-      console.log(event)
-      console.log('hey')
+      console.log('made it do event-sum', event)
       this.sendAction('deleteSingleEvent', this.get('event'))
     },
-    deleteComment (comment) {
-      console.log(comment)
-      console.log('comment destroy!!!')
-      this.sendAction('deleteSingleComment', this.get('comment'))
+    deleteSingleComment (comment) {
+      console.log('get rid of', comment)
+      this.sendAction('deleteSingleComment', comment)
     },
     addSingleComment (commentPojo) {
       console.log('made it to event-sum js')

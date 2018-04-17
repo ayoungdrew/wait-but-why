@@ -1,0 +1,11 @@
+<div class="comment row">
+  <div class="col-sm-8">
+    <p>{{comment.user_id}} {{comment.commenter}} onn {{comment.created_at}}</p>
+    <p>{{comment.body}}</p>
+  </div>
+  <div class="col-sm-4">
+    {{#if comment.editable}}
+      <button style="float: right;" {{action 'deleteComment'}}>Delete Comment</button>
+    {{/if}}
+  </div>
+</div>

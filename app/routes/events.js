@@ -3,9 +3,6 @@ import { inject as service } from '@ember/service';
 import Ember from 'ember';
 
 export default Route.extend({
-  tagName: 'ul',
-  sortedEvents: Ember.computed.sort('event', 'sortDefinition'),
-  sortDefinition: ['date'],
   auth: service(),
   model () {
     console.log('hmm', this.get('auth.credentials.id'))
@@ -32,9 +29,18 @@ export default Route.extend({
       .then(() => this.refresh())
       .catch((error) => { this.toast.error('Error is', error) })
     },
+    destroyComment (commentObj) {
+      console.log(commentObj)
+      console.log('hi', commentObj.id)
+      commentObj.destroyRecord()
+      this.get('store').findRecord('comment', commentObj.get('id'))
+      .then(comment => comment.destroyRecord())
+      .then(() => { this.toast.success('Done!')})
+      .then(() => this.refresh())
+      .catch((error) => { this.toast.error('Error is', error) })
+    },
     createComment (commentPojo) {
-      console.log('made it to eventsjs')
-      console.log('pojo is', commentPojo)
+      console.log('new obj is', commentPojo)
       const comment = this.get('store').createRecord('comment', commentPojo)
       return comment.save()
       .then(() => this.refresh())

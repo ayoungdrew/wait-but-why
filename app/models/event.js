@@ -6,7 +6,7 @@ export default DS.Model.extend({
   reason: DS.attr('string'),
   description: DS.attr('string'),
   user_id: DS.attr('number'),
-  user: DS.attr(),
+  user: DS.hasMany('user'),
   editable: DS.attr(),
-  comments: DS.attr()
+  comments: DS.hasMany('comment')
 });
