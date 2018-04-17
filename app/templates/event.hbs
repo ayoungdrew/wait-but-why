@@ -12,7 +12,10 @@
   <p>{{model.user.id}}</p>
 </div>
 {{#each model.comments as |comment|}}
-{{single-comment comment=comment}}
+{{single-comment comment=comment
+                  deleteComment='destroyComment'
+
+}}
   {{!-- <div class="comment row">
     <div class="col-sm-8">
       <p>{{comment.user.id}} {{comment.user.email}} onn {{moment-format comment.created_at 'MMMM DD, YYYY'}}</p>

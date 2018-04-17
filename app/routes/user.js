@@ -18,9 +18,12 @@ export default Route.extend({
       .then(() => this.refresh())
       .catch((error) => { this.toast.error('Error is', error) })
     },
-    destroyComment (comment) {
-      console.log('kill da cmnt', comment)
-      comment.destroyRecord()
+    destroyComment (commentObj) {
+      console.log(commentObj)
+      console.log('hi', commentObj.id)
+      commentObj.destroyRecord()
+      this.get('store').findRecord('comment', commentObj.get('id'))
+      .then(comment => comment.destroyRecord())
       .then(() => { this.toast.success('Done!')})
       .then(() => this.refresh())
       .catch((error) => { this.toast.error('Error is', error) })

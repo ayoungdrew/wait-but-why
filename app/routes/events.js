@@ -1,9 +1,11 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 import Ember from 'ember';
+import { alias } from '@ember/object/computed'
 
 export default Route.extend({
   auth: service(),
+  user: alias('auth.credentials.email'),
   model () {
     console.log('hmm', this.get('auth.credentials.id'))
     const currentUserId = this.get('auth.credentials.id')
