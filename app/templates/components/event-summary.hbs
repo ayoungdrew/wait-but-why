@@ -1,4 +1,4 @@
-<div class="event" style="padding: 50px; margin: 50px;">
+<div class="event">
   {{#if event.editable}}
     {{#link-to 'edit-event' event.id}}
       <button type='submit'>Edit Event</button>
@@ -8,7 +8,35 @@
   {{#link-to 'event' event.id}}
     <h3>{{event.title}}</h3>
   {{/link-to}}
-  <h4>{{event.user.email}}</h4>
-  <h4>{{event.user_id}}</h4>
+  <h4>{{event.user.email}}</h4>{{!-- <h4>{{event.user_id}}</h4> --}}
   <h5>{{moment-format event.date 'MMMM YYYY'}} | {{event.reason}}</h5>
+</div>
+{{#each event.comments as |comment|}}
+  <div class="comment row">
+    <div class="col-sm-8">
+      <p>{{comment.commenter}} on {{moment-format comment.created_at 'MMMM DD, YYYY'}}</p>
+      <p>{{comment.body}}</p>
+    </div>
+    <div class="col-sm-4">
+      {{#if event.editable}}
+        <button style="float: right;" {{action 'deleteComment' event}}>Delete Comment</button>
+      {{/if}}
+    </div>
+  </div>
+{{/each}}
+<div class="comment-new row">
+  <form {{action 'newComment' on='submit'}}>
+    <div class="col-md-12">
+      <h5>Leave a comment</h5>
+    </div>
+    <div class="col-sm-3">
+      {{input placeholder='Your name' value=comment.commenter}}
+    </div>
+    <div class="col-sm-7">
+      {{input placeholder='Add a comment...' value=comment.body}}
+    </div>
+    <div class="col-sm-2">
+      <button style="float: right; margin: 10px 0;" type='submit'>Comment</button>
+    </div>
+  </form>
 </div>

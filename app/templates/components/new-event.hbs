@@ -4,12 +4,6 @@
   <h5>When?</h5>
   {{input placeholder='e.g. 20171230' value=event.date}}
   <h5>Why?</h5>
-  {{!-- <select onchange={{action 'setSelection' value="target.value"}}>
-   <option disabled selected> -- Pick a reason -- </option>
-      <option value="It was something I wanted to do">It was something I wanted to do</option>
-      <option value="I felt like I had to">I felt like I had to</option>
-      <option value="I had no control over it">I had no control over it</option>
-  </select> --}}
   {{#x-select on-change=(action "setSelection") as |xs|}}
     {{#xs.option}}Pick a reason{{/xs.option}}
     {{#xs.option value="It was something I wanted to do"}}It was something I wanted to do{{/xs.option}}

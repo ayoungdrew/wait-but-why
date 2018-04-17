@@ -12,6 +12,27 @@ body {
 .event {
   background: white;
   border: 1px solid gray;
-  padding: 50px;
-  margin: 50px;
+  padding: 30px 40px;
+  margin: 10px;
+  margin-bottom: 0;
+}
+
+.comment {
+  background: #efefef;
+  border: 1px solid gray;
+  padding: 20px 20px;
+  margin-bottom: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: -1px;
+}
+
+.comment-new {
+  background: #efefef;
+  border: 1px solid gray;
+  padding: 10px 20px;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: -1px;
 }

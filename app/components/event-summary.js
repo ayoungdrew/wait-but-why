@@ -13,6 +13,11 @@ export default Component.extend({
       console.log(event)
       console.log('hey')
       this.sendAction('deleteSingleEvent', this.get('event'))
+    },
+    deleteComment (comment) {
+      console.log(comment)
+      console.log('comment destroy!!!')
+      this.sendAction('deleteSingleComment', this.get('comment'))
     }
   }
 });
