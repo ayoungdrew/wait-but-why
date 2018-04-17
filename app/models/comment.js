@@ -6,5 +6,7 @@ export default DS.Model.extend({
   event: DS.belongsTo('event'),
   user_id: DS.attr(),
   user: DS.belongsTo('user'),
-  editable: DS.attr()
+  editable: DS.attr(),
+  commenter: DS.attr(),
+  created_at: DS.attr()
 });

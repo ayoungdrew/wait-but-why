@@ -8,5 +8,6 @@ export default DS.Model.extend({
   user_id: DS.attr('number'),
   user: DS.hasMany('user'),
   editable: DS.attr(),
-  comments: DS.hasMany('comment')
+  comments: DS.hasMany('comment'),
+  author: DS.attr('string')
 });
