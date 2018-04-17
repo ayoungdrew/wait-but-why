@@ -32,12 +32,12 @@ export default Route.extend({
       .then(() => this.refresh())
       .catch((error) => { this.toast.error('Error is', error) })
     },
-    createComment (event) {
-      console.log('comment?', event)
-      event.destroyRecord()
-      .then(() => { this.toast.success('Done!')})
+    createComment (commentPojo) {
+      console.log('made it to eventsjs')
+      console.log('pojo is', commentPojo)
+      const comment = this.get('store').createRecord('comment', commentPojo)
+      return comment.save()
       .then(() => this.refresh())
-      .catch((error) => { this.toast.error('Error is', error) })
     }
   }
 })

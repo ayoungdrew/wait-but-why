@@ -2,8 +2,7 @@ import Component from '@ember/component';
 
 export default Component.extend({
   commentPojo: {
-      body: 'wheee'
-      // event_id: 19
+      body: 'hi'
   },
 
   actions: {

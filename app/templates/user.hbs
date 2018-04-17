@@ -1,6 +1,8 @@
 <h2>This User's Events</h2>
 {{#each model as |event|}}
   {{event-summary event=event
-                    deleteSingleEvent='destroyEvent'
+                  comment=event.comment
+                  deleteSingleEvent='destroyEvent'
+                  addSingleComment='createComment'
   }}
 {{/each}}

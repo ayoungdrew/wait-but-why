@@ -17,6 +17,13 @@ export default Route.extend({
       .then(() => { this.toast.success('Done!')})
       .then(() => this.refresh())
       .catch((error) => { this.toast.error('Error is', error) })
+    },
+    createComment (commentPojo) {
+      console.log('made it to eventsjs')
+      console.log('pojo is', commentPojo)
+      const comment = this.get('store').createRecord('comment', commentPojo)
+      return comment.save()
+      .then(() => this.refresh())
     }
   }
 });

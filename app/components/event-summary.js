@@ -18,6 +18,11 @@ export default Component.extend({
       console.log(comment)
       console.log('comment destroy!!!')
       this.sendAction('deleteSingleComment', this.get('comment'))
-    }
+    },
+    addSingleComment (commentPojo) {
+      console.log('made it to event-sum js')
+      console.log('pojo is', commentPojo)
+      this.sendAction('addSingleComment', commentPojo)
   }
+}
 });

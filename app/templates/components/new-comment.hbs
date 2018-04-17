@@ -1,7 +1,7 @@
 <div class="comment-new row">
   <h5>{{event.title}}: new comment!!!</h5>
   <h5>{{event.id}}</h5>
-  <form {{action 'newComment' event.id}}>
+  <form {{action 'newComment' event.id on='submit'}}>
     <div class="col-sm-12">
       <h5>Leave a comment</h5>
     </div>
