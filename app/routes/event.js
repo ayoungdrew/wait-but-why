@@ -17,9 +17,10 @@ export default Route.extend({
     },
     createComment (commentPojo) {
       console.log('made it to event js')
-      console.log(commentPojo)
+      console.log('pojo is', commentPojo)
       const comment = this.get('store').createRecord('comment', commentPojo)
       return comment.save()
+      .then(() => this.refresh())
   }
   }
 });

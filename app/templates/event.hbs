@@ -13,7 +13,7 @@
 {{#each model.comments as |comment|}}
   <div class="comment row">
     <div class="col-sm-8">
-      <p>{{comment.event_id}} {{comment.commenter}} on {{moment-format comment.created_at 'MMMM DD, YYYY'}}</p>
+      <p>{{comment.event_id}} {{comment.user.id}} {{comment.user.email}} onn {{moment-format comment.created_at 'MMMM DD, YYYY'}}</p>
       <p>{{comment.body}}</p>
     </div>
     <div class="col-sm-4">
@@ -24,5 +24,5 @@
   </div>
 {{/each}}
 {{new-comment event=model
-              newComment='createComment'
+              addComment='createComment'
 }}
