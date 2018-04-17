@@ -1,4 +1,4 @@
-<div class="event" style="padding: 50px; margin: 50px;">
+<div class="event">
   {{#if model.editable}}
     {{#link-to 'edit-event' model.id}}
       <button type='submit'>Edit Event</button>
@@ -10,3 +10,19 @@
   <p>{{model.description}}</p>
   <p>{{model.user.id}}</p>
 </div>
+{{#each model.comments as |comment|}}
+  <div class="comment row">
+    <div class="col-sm-8">
+      <p>{{comment.event_id}} {{comment.commenter}} on {{moment-format comment.created_at 'MMMM DD, YYYY'}}</p>
+      <p>{{comment.body}}</p>
+    </div>
+    <div class="col-sm-4">
+      {{#if event.editable}}
+        <button style="float: right;" {{action 'deleteComment' event}}>Delete Comment</button>
+      {{/if}}
+    </div>
+  </div>
+{{/each}}
+{{new-comment event=model
+              newComment='createComment'
+}}

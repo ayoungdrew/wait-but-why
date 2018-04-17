@@ -14,6 +14,12 @@ export default Route.extend({
       event.destroyRecord()
       .then(() => this.transitionTo('events'))
       // .catch(console.log('catch!'))
-    }
+    },
+    createComment (commentPojo) {
+      console.log('made it to event js')
+      console.log(commentPojo)
+      const comment = this.get('store').createRecord('comment', commentPojo)
+      return comment.save()
+  }
   }
 });

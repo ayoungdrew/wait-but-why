@@ -1,0 +1,18 @@
+<div class="comment-new row">
+  <h5>{{event.title}}: new comment!!!</h5>
+  <h5>{{event.id}}</h5>
+  <form {{action 'newComment' comment}}>
+    <div class="col-md-12">
+      <h5>Leave a comment</h5>
+    </div>
+    <div class="col-sm-3">
+      {{input placeholder='Your name' value=comment.commenter}}
+    </div>
+    <div class="col-sm-7">
+      {{input placeholder='Add a comment...' value=comment.body}}
+    </div>
+    <div class="col-sm-2">
+      <button style="float: right; margin: 10px 0;" type='submit'>Comment</button>
+    </div>
+  </form>
+</div>
