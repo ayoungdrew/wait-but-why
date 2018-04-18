@@ -1,15 +1,30 @@
 <div class="event">
-  {{#if event.editable}}
-    {{#link-to 'edit-event' event.id}}
-      <button type='submit'>Edit Event</button>
-    {{/link-to}}
-    <button {{action 'deleteEvent' event}}>Delete Event</button>
-  {{/if}}
+<div class="row">
+
+<div class="col-sm-8">
   {{#link-to 'event' event.id}}
-    <h3>{{event.title}}</h3>
+  <h3 class="event-summary-title">{{event.title}}</h3>
   {{/link-to}}
+</div>
+<div class="col-sm-4 text-right">
+{{#if event.editable}}
+  {{#link-to 'edit-event' event.id}}
+    <button class="btn btn-primary" type='submit'>Edit</button>
+  {{/link-to}}
+  <button class="btn btn-primary" {{action 'deleteEvent' event}}>Delete</button>
+{{/if}}
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
   <h4>{{event.author}}</h4>
   <h5>{{moment-format event.date 'MMMM YYYY'}} | {{event.reason}}</h5>
+</div>
+</div>
+
+
+  <p>{{event.description}}</p>
+
 </div>
 {{#each event.comments as |comment|}}
 {{single-comment comment=comment
