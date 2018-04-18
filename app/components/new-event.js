@@ -7,16 +7,29 @@ export default Component.extend({
     reason: '',
     description: ''
   },
+  eventYear: '',
 
   actions: {
-    setSelection (selected) {
-      this.set('selectedOption', selected)
-      console.log(this.get('selectedOption'))
+    setMonthSelection (selected) {
+      this.set('eventMonth', selected)
+      console.log(this.get('eventMonth'))
+    },
+    setYearSelection (selected) {
+      this.set('eventYear', selected)
+      console.log(this.get('eventYear'))
+    },
+    setReasonSelection (selected) {
+      this.set('selectedReason', selected)
+      console.log(this.get('selectedReason'))
     },
     newEvent () {
-      this.event.reason = this.get('selectedOption')
+      const compiledDate = `${this.get('eventYear')}${this.get('eventMonth')}01`
+      console.log('test', compiledDate)
+      this.event.date = compiledDate
+      this.event.reason = this.get('selectedReason')
       this.sendAction('create', this.get('event'))
       this.set('event', {})
+      this.set('eventYear', null)
       console.log('hm', this.get('event'))
     }
   }

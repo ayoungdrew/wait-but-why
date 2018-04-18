@@ -1,26 +1,51 @@
 <form {{action 'newEvent' on='submit'}}>
   <h5>What did you do?</h5>
   {{input placeholder='I moved to Chicago.' value=event.title}}
-  <h5>When?</h5>
-  {{input placeholder='e.g. 20171230' value=event.date}}
+  {{!-- <h5>When?</h5>
+  {{input placeholder='e.g. 20171230' value=event.date}} --}}
 
-{{!-- <h5>When</h5>
+<h5>When?</h5>
 <div class="row">
   <div class="col-sm-6">
-    {{#x-select on-change=(action "setSelection") as |xs|}}
-      {{#xs.option}}Pick a reason{{/xs.option}}
-      {{#xs.option value="It was something I wanted to do"}}It was something I wanted to do{{/xs.option}}
-      {{#xs.option value="I felt like I had to"}}I felt like I had to{{/xs.option}}
-      {{#xs.option value="I had no control over it"}}I had no control over it{{/xs.option}}
+    {{#x-select class="form-control" on-change=(action "setMonthSelection") as |xs|}}
+      {{#xs.option}}Pick a month{{/xs.option}}
+      {{#xs.option value="01"}}January{{/xs.option}}
+      {{#xs.option value="02"}}February{{/xs.option}}
+      {{#xs.option value="03"}}March{{/xs.option}}
+      {{#xs.option value="04"}}April{{/xs.option}}
+      {{#xs.option value="05"}}May{{/xs.option}}
+      {{#xs.option value="06"}}June{{/xs.option}}
+      {{#xs.option value="07"}}July{{/xs.option}}
+      {{#xs.option value="08"}}August{{/xs.option}}
+      {{#xs.option value="09"}}September{{/xs.option}}
+      {{#xs.option value="10"}}October{{/xs.option}}
+      {{#xs.option value="11"}}November{{/xs.option}}
+      {{#xs.option value="12"}}March{{/xs.option}}
     {{/x-select}}
   </div>
-</div> --}}
-
-
-
+  <div class="col-sm-6">
+    {{!-- {{input placeholder='e.g. 2011' value=eventYear}} --}}
+    {{#x-select class="form-control" on-change=(action "setYearSelection") as |xs|}}
+      {{#xs.option value=null}}Pick a year{{/xs.option}}
+      {{#xs.option value="2018"}}2018{{/xs.option}}
+      {{#xs.option value="2017"}}2017{{/xs.option}}
+      {{#xs.option value="2016"}}2016{{/xs.option}}
+      {{#xs.option value="2015"}}2015{{/xs.option}}
+      {{#xs.option value="2014"}}2014{{/xs.option}}
+      {{#xs.option value="2013"}}2013{{/xs.option}}
+      {{#xs.option value="2012"}}2012{{/xs.option}}
+      {{#xs.option value="2011"}}2011{{/xs.option}}
+      {{#xs.option value="2010"}}2010{{/xs.option}}
+      {{#xs.option value="2009"}}2009{{/xs.option}}
+      {{#xs.option value="2008"}}2008{{/xs.option}}
+      {{#xs.option value="2007"}}2009{{/xs.option}}
+      {{#xs.option}}How old are you bro :({{/xs.option}}
+    {{/x-select}}
+  </div>
+</div>
 
   <h5>Why?</h5>
-  {{#x-select on-change=(action "setSelection") as |xs|}}
+  {{#x-select class="form-control" on-change=(action "setReasonSelection") as |xs|}}
     {{#xs.option}}Pick a reason{{/xs.option}}
     {{#xs.option value="It was something I wanted to do"}}It was something I wanted to do{{/xs.option}}
     {{#xs.option value="I felt like I had to"}}I felt like I had to{{/xs.option}}
