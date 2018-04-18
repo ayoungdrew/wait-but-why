@@ -27,6 +27,7 @@ export default Component.extend({
       console.log('logging', event)
       this.set('newCommentObj.event', event)
       this.sendAction('addComment', this.get('newCommentObj'))
+      this.set('newCommentObj', {})
     }
   }
 })

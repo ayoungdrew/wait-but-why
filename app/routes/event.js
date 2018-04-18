@@ -13,7 +13,6 @@ export default Route.extend({
       console.log('hey')
       event.destroyRecord()
       .then(() => this.transitionTo('events'))
-      // .catch(console.log('catch!'))
     },
     destroyComment (commentObj) {
       console.log(commentObj)
@@ -31,6 +30,12 @@ export default Route.extend({
       const comment = this.get('store').createRecord('comment', commentObj)
       return comment.save()
       .then(() => this.refresh())
-  }
+  },
+  updateComment (args) {
+    console.log('last stop', args)
+    const comment = args
+    comment.save()
+    .then(() => { this.toast.success('Done!')})
+  },
   }
 });

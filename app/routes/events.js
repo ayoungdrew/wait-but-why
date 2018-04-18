@@ -22,7 +22,7 @@ export default Route.extend({
         .save()
         .then(() => { this.toast.success('Done!')})
         .then(() => this.refresh())
-        .catch((error) => { this.toast.error('Error is', error) })
+        .catch((error) => { this.toast.error('Something went wrong! :(') })
     },
     destroyEvent (event) {
       console.log('kill itttt', event)
@@ -47,12 +47,11 @@ export default Route.extend({
       return comment.save()
       .then(() => this.refresh())
     },
-    updateComment (args) {
-      console.log('last stop', args)
-      // var comment = this.get('comment');
-      // comment.save();
-      const comment = args
-      return comment.save()
+    updateComment (editedComment) {
+      console.log('last stop', editedComment)
+      const comment = editedComment
+      comment.save()
+      .then(() => { this.toast.success('Done!')})
     },
     refresh () {
       console.log('made it!')

@@ -11,6 +11,16 @@ export default Route.extend({
       .then(() => { this.toast.success('Edits saved!') })
       .then(() => this.transitionTo('event', event.id))
       .catch((error) => { this.toast.error('Error is', error) })
+    },
+    cancelCommentChanges () {
+      console.log('nahh')
+      const thisComment = this.get('event')
+      thisComment.rollbackAttributes()
+      this.toggleProperty('isEditing')
+    },
+    backToEventsHome (event) {
+      console.log('kkk', event)
+      this.transitionTo('event', event.id)
     }
   }
 })

@@ -1,14 +1,14 @@
 <div class="comment-new row">
-  <h5>(event: {{event.id}}) {{event.title}}: new comment!!!</h5>
+  {{!-- <p style="font-size: 11px;">(event: {{event.id}}) {{event.title}}: new comment!!!</p> --}}
   <form {{action 'newComment' event on='submit'}}>
     <div class="col-sm-12">
       <h5>Leave a comment, {{user}}</h5>
     </div>
-    <div class="col-sm-10">
-      {{input placeholder='Add a comment...' value=newCommentObj.body}}
-    </div>
-    <div class="col-sm-2">
-      <button style="float: right; margin: 10px 0;" type='submit'>Comment</button>
-    </div>
+      <div class="col-sm-10">
+        {{input placeholder='Add a comment...' value=newCommentObj.body}}
+      </div>
+      <div class="col-sm-2">
+        <button class="btn btn-primary" style="float: right;" type='submit'>Comment</button>
+      </div>
   </form>
 </div>

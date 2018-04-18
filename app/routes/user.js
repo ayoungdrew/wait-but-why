@@ -19,14 +19,11 @@ export default Route.extend({
       .catch((error) => { this.toast.error('Error is', error) })
     },
     destroyComment (commentObj) {
-      console.log(commentObj)
-      console.log('hi', commentObj.id)
-      commentObj.destroyRecord()
+      console.log('destroy!', commentObj)
       this.get('store').findRecord('comment', commentObj.get('id'))
-      .then(comment => comment.destroyRecord())
+      .then((comment) => comment.destroyRecord())
       .then(() => { this.toast.success('Done!')})
-      .then(() => this.refresh())
-      .catch((error) => { this.toast.error('Error is', error) })
+      .catch((error) => { this.toast.error('Err or is', error) })
     },
     createComment (commentPojo) {
       console.log('made it to eventsjs')
@@ -34,6 +31,12 @@ export default Route.extend({
       const comment = this.get('store').createRecord('comment', commentPojo)
       return comment.save()
       .then(() => this.refresh())
+    },
+    updateComment (editedComment) {
+      console.log('last stop', editedComment)
+      const comment = editedComment
+      comment.save()
+      .then(() => { this.toast.success('Done!')})
     }
   }
 });

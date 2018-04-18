@@ -3,6 +3,22 @@
   {{input placeholder='I moved to Chicago.' value=event.title}}
   <h5>When?</h5>
   {{input placeholder='e.g. 20171230' value=event.date}}
+
+{{!-- <h5>When</h5>
+<div class="row">
+  <div class="col-sm-6">
+    {{#x-select on-change=(action "setSelection") as |xs|}}
+      {{#xs.option}}Pick a reason{{/xs.option}}
+      {{#xs.option value="It was something I wanted to do"}}It was something I wanted to do{{/xs.option}}
+      {{#xs.option value="I felt like I had to"}}I felt like I had to{{/xs.option}}
+      {{#xs.option value="I had no control over it"}}I had no control over it{{/xs.option}}
+    {{/x-select}}
+  </div>
+</div> --}}
+
+
+
+
   <h5>Why?</h5>
   {{#x-select on-change=(action "setSelection") as |xs|}}
     {{#xs.option}}Pick a reason{{/xs.option}}
