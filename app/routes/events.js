@@ -5,7 +5,7 @@ import { alias } from '@ember/object/computed'
 
 export default Route.extend({
   auth: service(),
-  user: alias('auth.credentials.email'),
+
   model () {
     console.log('hmm', this.get('auth.credentials.id'))
     const currentUserId = this.get('auth.credentials.id')
@@ -46,6 +46,17 @@ export default Route.extend({
       const comment = this.get('store').createRecord('comment', commentPojo)
       return comment.save()
       .then(() => this.refresh())
+    },
+    updateComment (args) {
+      console.log('last stop', args)
+      // var comment = this.get('comment');
+      // comment.save();
+      const comment = args
+      return comment.save()
+    },
+    refresh () {
+      console.log('made it!')
+      this.refresh()
     }
   }
 })

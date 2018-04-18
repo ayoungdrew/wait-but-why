@@ -1,11 +1,35 @@
 <div class="comment row">
-  <div class="col-sm-8">
-    <p>{{comment.user_id}} {{comment.commenter}} onn {{moment-format comment.created_at 'MMMM DD, YYYY'}}</p>
-    <p>{{comment.body}}</p>
-  </div>
-  <div class="col-sm-4">
-    {{#if comment.editable}}
-      <button style="float: right;" {{action 'deleteComment'}}>Delete Comment</button>
-    {{/if}}
-  </div>
+
+
+  {{!-- User Editing View --}}
+  {{#if isEditing}}
+  <p>{{comment.user_id}} {{comment.commenter}} onn {{moment-format comment.created_at 'MMMM DD, YYYY'}}</p>
+  <form {{action 'saveComment' comment on='submit'}}>
+    <div class="col-sm-8">
+      {{input value=comment.body}}
+      {{!-- <input class="form-control" type="text" value={{comment.body}} oninput={{action "setCommentBody" newValue}} /> --}}
+
+    </div>
+    <div class="col-sm-4">
+      {{#if comment.editable}}
+        <button style="float: right;" {{action 'refresh'}}>Cancel Edit</button>
+        <button style="float: right;" type='submit' {{action 'updateComment'}}>Save Edit</button>
+      {{/if}}
+    </div>
+  </form>
+  {{else}}
+
+
+    {{!-- Default View --}}
+    <div class="col-sm-7">
+      <p>{{comment.user_id}} {{comment.commenter}} onn {{moment-format comment.created_at 'MMMM DD, YYYY'}}</p>
+      <p>{{comment.body}}</p>
+    </div>
+    <div class="col-sm-5">
+      {{#if comment.editable}}
+        <button style="float: right;" {{action 'deleteComment'}}>Delete Comment</button>
+        <button style="float: right;" {{action 'toggleEditMode'}}>Edit Comment</button>
+      {{/if}}
+    </div>
+  {{/if}}
 </div>

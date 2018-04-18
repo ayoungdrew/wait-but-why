@@ -8,7 +8,7 @@ export default Component.extend({
 
   didInsertElement () {
     this.set('newCommentObj', {
-      body: 'hello'
+      body: ''
     })
   },
 

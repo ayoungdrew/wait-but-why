@@ -21,6 +21,15 @@ export default Component.extend({
       console.log('made it to event-sum js')
       console.log('pojo is', commentPojo)
       this.sendAction('addSingleComment', commentPojo)
+  },
+    updateComment (commentPojo) {
+      console.log('made it to event-sum js')
+      console.log('pojo is', commentPojo)
+      this.sendAction('updateComment', commentPojo)
+    },
+    refresh () {
+      console.log('gogo!')
+      this.sendAction('refresh')
   }
-}
+  }
 });

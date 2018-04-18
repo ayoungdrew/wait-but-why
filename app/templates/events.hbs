@@ -2,9 +2,11 @@
 {{new-event create='createEvent'}}
 {{#each model as |event|}}
   {{event-summary event=event
-                  comment=event.comment
                   deleteSingleEvent='destroyEvent'
                   deleteSingleComment='destroyComment'
                   addSingleComment='createComment'
+                  updateComment='updateComment'
+                  refresh='refresh'
 }}
 {{/each}}
+{{outlet}}

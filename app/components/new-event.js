@@ -16,6 +16,8 @@ export default Component.extend({
     newEvent () {
       this.event.reason = this.get('selectedOption')
       this.sendAction('create', this.get('event'))
+      this.set('event', {})
+      console.log('hm', this.get('event'))
     }
   }
 })

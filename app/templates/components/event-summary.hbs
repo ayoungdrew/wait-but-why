@@ -13,7 +13,9 @@
 </div>
 {{#each event.comments as |comment|}}
 {{single-comment comment=comment
-                deleteComment='deleteSingleComment'
+                  deleteComment='deleteSingleComment'
+                  updateComment='updateComment'
+                  refresh='refresh'
 
 }}
 {{/each}}

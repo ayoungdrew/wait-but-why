@@ -3,9 +3,9 @@
 
 <form {{action 'saveSingleEvent' model on='submit'}}>
   <h5>Event Title</h5>
-  {{input placeholder='model name' value=model.title}}
+  {{input value=model.title}}
   <h5>Event Date</h5>
-  {{input placeholder='model date' value=model.date}}
+  {{input value=model.date}}
   <h5>Why?</h5>
   {{#x-select value=model.reason on-change=(action 'setSelection') as |xs|}}
     {{#xs.option}}Pick a reason{{/xs.option}}
@@ -14,7 +14,7 @@
     {{#xs.option value="I had no control over it"}}I had no control over it{{/xs.option}}
   {{/x-select}}
   <h5>Event Description</h5>
-  {{input class="form-control" placeholder='model description' value=model.description}}
+  {{input class="form-control" value=model.description}}
   <button type='submit'> Save Title </button>
 </form>
 </div>
