@@ -21,10 +21,11 @@ export default Component.extend({
       this.sendAction('updateComment', this.get('comment'))
       this.toggleProperty('isEditing')
     },
-    refresh () {
-      console.log('go!')
+    cancelCommentChanges () {
+      console.log('nahh')
+      const thisComment = this.get('comment')
+      thisComment.rollbackAttributes()
       this.toggleProperty('isEditing')
-      this.sendAction('refresh')
     }
   }
 });
