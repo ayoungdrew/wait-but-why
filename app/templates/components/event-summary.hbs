@@ -1,33 +1,36 @@
 <div class="event">
-<div class="row">
-
-<div class="col-sm-8">
-  {{#link-to 'event' event.id}}
-  <h3 class="event-summary-title">{{event.title}}</h3>
-  {{/link-to}}
+  <div class="row">
+    <div class="col-sm-12">
+      {{#if event.editable}}
+        <div style="float: right;">
+          {{#link-to 'edit-event' event.id}}
+            <button class="btn btn-default" type='submit'>Edit</button>
+          {{/link-to}}
+          <button class="btn btn-default" {{action 'deleteEvent' event}}>Delete</button>
+        </div>
+      {{/if}}
+    {{#link-to 'event' event.id}}
+    <h3 style="margin-top: 0;">
+    <span class="event-summary-title">{{event.title}}</span>
+  </h3>
+    {{/link-to}}
+<h5>{{event.author}} {{moment-format event.date 'MMMM YYYY'}}</h5>
+    {{#if (eq event.reason "It was something I wanted to do")}}
+    <span class="reason blue-hot">{{event.reason}}</span>
+    {{/if}}
+    {{#if (eq event.reason "I felt like I had to")}}
+    <span class="reason red-hot">{{event.reason}}</span>
+    {{/if}}
+    {{#if (eq event.reason "I had no control over it")}}
+    <span class="reason purple-hot">{{event.reason}}</span>
+    {{/if}}
+  <div class="event-description">{{event.description}}</div>
 </div>
-<div class="col-sm-4 text-right">
-{{#if event.editable}}
-  {{#link-to 'edit-event' event.id}}
-    <button class="btn btn-default" type='submit'>Edit</button>
-  {{/link-to}}
-  <button class="btn btn-default" {{action 'deleteEvent' event}}>Delete</button>
-{{/if}}
 </div>
-</div>
-<div class="row">
-<div class="col-md-12">
-  <h4>{{event.author}}</h4>
-  <h5>{{moment-format event.date 'MMMM YYYY'}} | {{event.reason}}</h5>
-</div>
-</div>
-
-
-  <p>{{event.description}}</p>
 
 </div>
 {{#each event.comments as |comment|}}
-{{single-comment comment=comment
+  {{single-comment comment=comment
                   deleteComment='deleteSingleComment'
                   updateComment='updateComment'
                   refresh='refresh'

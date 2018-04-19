@@ -21,6 +21,27 @@ a {
   color: $medium-blue;
 }
 
+
+.grid-item { width: 200px; }
+.grid-item--width2 { width: 400px; }
+
+.reason {
+  font-size: 18px;
+  color: white;
+  padding: 4px 8px;
+}
+
+.red-hot {
+  background: #b51335;
+}
+
+.blue-hot {
+  background: #237d94;
+}
+
+.purple-hot {
+  background: #a24e9e;
+}
 // .month-select {
 //   height: 50px;
 //   width: 100%;
@@ -64,6 +85,9 @@ a {
   margin: 5px 0;
 }
 
+.event-description {
+margin-top: 20px;
+}
 .comment {
   background: $very-light-gray;
   border: 1px solid $light-gray;
