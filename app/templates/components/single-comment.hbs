@@ -22,7 +22,7 @@
 
     {{!-- Default View --}}
     <div class="col-sm-7">
-      <p>{{comment.user_id}} {{comment.commenter}} onn {{moment-format comment.created_at "MMMM DD, YYYY LT"}}</p>
+      <p class="comment-details"><span class="comment-strong">{{#link-to 'user' comment.user_id}}{{comment.commenter}}{{/link-to}}</span> {{moment-format comment.created_at "MMMM DD, YYYY LT"}}</p>
       <p>{{comment.body}}</p>
     </div>
     <div class="col-sm-5 text-right">

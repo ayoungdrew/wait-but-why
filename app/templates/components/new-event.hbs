@@ -1,5 +1,5 @@
 <form {{action 'newEvent' on='submit'}}>
-  <h5>What did you do?</h5>
+  <h5>Something you did:</h5>
   {{input placeholder='I moved to Chicago.' value=event.title}}
   {{!-- <h5>When?</h5>
   {{input placeholder='e.g. 20171230' value=event.date}} --}}
@@ -72,7 +72,7 @@
     {{#xs.option value="I felt like I had to"}}I felt like I had to{{/xs.option}}
     {{#xs.option value="I had no control over it"}}I had no control over it{{/xs.option}}
   {{/x-select}}
-  <h5>Do tell.</h5>
+  <h5>Oh? Go on...</h5>
   {{textarea class="form-control" placeholder='Tell us more.' value=event.description}}
   <button class="btn btn-primary" style="margin-top: 5px;" type='submit'>Create</button>
 </form>

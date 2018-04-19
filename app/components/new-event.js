@@ -1,11 +1,13 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  event: {
-    title: '',
-    date: '',
-    reason: '',
-    description: ''
+  didInsertElement () {
+      this.set('event', {
+      title: '',
+      date: '',
+      reason: '',
+      description: ''
+    })
   },
   eventYear: '',
 

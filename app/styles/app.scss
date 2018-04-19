@@ -6,10 +6,19 @@ $very-light-gray: #f5f1ec;
 $light-gray: #ccc;
 $dark-gray: #80746d;
 
+$medium-blue: #76899c;
+$dark-blue: #405a73;
 
 body {
+  color: $dark-blue;
+//   background: url('https://files.allaboutbirds.net/wp-content/uploads/2018/03/Tern-lenz-FI-240x135.jpg');
+//   background-size: 200vh;
   background: $background-gray;
   padding: 0px;
+}
+
+a {
+  color: $medium-blue;
 }
 
 // .month-select {
@@ -30,6 +39,16 @@ body {
 .btn-default {
   border: 1px solid $light-gray;
   background: none;
+}
+
+.comment-details {
+  color: $dark-gray;
+  font-size: 12px;
+}
+
+.comment-strong {
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .event {

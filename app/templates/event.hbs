@@ -6,7 +6,7 @@
     <button {{action 'destroyEvent' model}}>Delete Event</button>
   {{/if}}
   <h1>{{model.title}}</h1>
-  <h3>{{model.user.email}}</h3>
+  <h3>{{#link-to 'user' model.author}}{{model.author}}{{/link-to}}</h3>
   <h4>{{moment-format model.date 'MMMM YYYY'}} | {{model.reason}}</h4>
   <p>{{model.description}}</p>
   <p>{{model.user.id}}</p>

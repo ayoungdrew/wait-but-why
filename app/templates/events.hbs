@@ -1,5 +1,6 @@
-<h2>Events: {{user}}</h2>
+
 {{new-event create='createEvent'}}
+<h2 class="text-center">Your Events</h2>
 {{#each model as |event|}}
   {{event-summary event=event
                   deleteSingleEvent='destroyEvent'
