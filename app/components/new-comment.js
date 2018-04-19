@@ -14,8 +14,7 @@ export default Component.extend({
 
   actions: {
     destroyComment (commentObj) {
-      console.log(commentObj)
-      console.log('hi', commentObj.id)
+      console.log('hi', commentObj)
       commentObj.destroyRecord()
       this.get('store').findRecord('comment', commentObj.get('id'))
       .then(comment => comment.destroyRecord())

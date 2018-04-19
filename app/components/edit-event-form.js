@@ -1,16 +1,31 @@
 import Component from '@ember/component';
 
 export default Component.extend({
+  didInsertElement () {
+    this.set('eventYear', this.get('model').get('date').substring(0, 4))
+    this.set('eventMonth', this.get('model').get('date').substring(5, 7))
+  },
   actions: {
-    setSelection (selected) {
-      this.set('selectedOption', selected)
-      console.log(this.get('selectedOption'))
+    setMonthSelection (selected) {
+      this.set('eventMonth', selected)
+      console.log(this.get('eventMonth'))
+    },
+    setYearSelection (selected) {
+      this.set('eventYear', selected)
+      console.log(this.get('eventYear'))
+    },
+    setReasonSelection (selected) {
+      this.set('selectedReason', selected)
+      console.log(this.get('selectedReason'))
     },
     saveSingleEvent (event) {
-      console.log('sending data', event)
-      if (this.get('selectedOption')) {
-        event.reason = this.get('selectedOption')
+      console.log('data received', event)
+      const compiledDate = `${this.get('eventYear')}${this.get('eventMonth')}01`
+      event.set('date', compiledDate)
+      if (this.get('selectedReason')) {
+        event.reason = this.get('selectedReason')
       }
+      console.log('sending data', event)
       this.sendAction('save', this.get('model'))
     },
     cancelChanges () {

@@ -10,4 +10,4 @@ export default DS.Model.extend({
   editable: DS.attr(),
   comments: DS.hasMany('comment'),
   author: DS.attr('string')
-});
+})

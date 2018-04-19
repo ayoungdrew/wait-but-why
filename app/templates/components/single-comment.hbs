@@ -27,8 +27,8 @@
     </div>
     <div class="col-sm-5 text-right">
       {{#if comment.editable}}
-        <button class="btn btn-default" {{action 'deleteComment'}}>Delete</button>
         <button class="btn btn-default" {{action 'toggleEditMode'}}>Edit</button>
+        <button class="btn btn-default" {{action 'deleteComment'}}>Delete</button>
       {{/if}}
     </div>
   {{/if}}
