@@ -1,4 +1,4 @@
-<div class="event">
+<div class="event-edit">
 <h2>Edit Event: {{model.title}}</h2>
 
 <form {{action 'saveSingleEvent' model on='submit'}}>
@@ -75,6 +75,6 @@
   {{/x-select}}
   <h5>Event Description</h5>
   {{textarea class="form-control" value=model.description}}
-  <button type='submit'> Save Title </button><button {{action 'cancelChanges'}}>Cancel</button>
+  <button class="btn btn-primary" type='submit'> Save Title </button><button class="btn btn-default" {{action 'cancelChanges'}}>Cancel</button>
 </form>
 </div>

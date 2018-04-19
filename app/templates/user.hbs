@@ -1,11 +1,37 @@
 <h2 class="text-center">{{model.fellowUser}}'s Events</h2>
 {{#each model.posts as |event|}}
-  {{event-summary event=event
-                  comment=event.comment
-                  deleteSingleEvent='destroyEvent'
-                  deleteSingleComment='destroyComment'
-                  addSingleComment='createComment'
-                  updateComment='updateComment'
 
-  }}
+{{#if (eq event.reason "I felt like I had to")}}
+<div class="event-red">
+      {{event-summary event=event
+                      deleteSingleEvent='destroyEvent'
+                      deleteSingleComment='destroyComment'
+                      addSingleComment='createComment'
+                      updateComment='updateComment'
+                      refresh='refresh'
+    }}
+</div>
+{{/if}}
+{{#if (eq event.reason "It was something I wanted to do")}}
+<div class="event-blue">
+      {{event-summary event=event
+                      deleteSingleEvent='destroyEvent'
+                      deleteSingleComment='destroyComment'
+                      addSingleComment='createComment'
+                      updateComment='updateComment'
+                      refresh='refresh'
+    }}
+</div>
+{{/if}}
+{{#if (eq event.reason "I had no control over it")}}
+<div class="event-purple" style="background: linear-gradient(to bottom right, #653161, #a24e9e, #a24e9e);">
+      {{event-summary event=event
+                      deleteSingleEvent='destroyEvent'
+                      deleteSingleComment='destroyComment'
+                      addSingleComment='createComment'
+                      updateComment='updateComment'
+                      refresh='refresh'
+    }}
+</div>
+{{/if}}
 {{/each}}

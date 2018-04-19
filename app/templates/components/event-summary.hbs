@@ -1,42 +1,41 @@
 <div class="event">
+<div class="container">
   <div class="row">
     <div class="col-sm-12">
-      {{#if event.editable}}
-        <div style="float: right;">
-          {{#link-to 'edit-event' event.id}}
-            <button class="btn btn-default" type='submit'>Edit</button>
-          {{/link-to}}
-          <button class="btn btn-default" {{action 'deleteEvent' event}}>Delete</button>
-        </div>
-      {{/if}}
+      <div class="col-sm-6 col-md-5">
     {{#link-to 'event' event.id}}
-    <h3 style="margin-top: 0;">
+    <h3>
     <span class="event-summary-title">{{event.title}}</span>
-  </h3>
+    </h3>
     {{/link-to}}
-<h5>{{event.author}} {{moment-format event.date 'MMMM YYYY'}}</h5>
-    {{#if (eq event.reason "It was something I wanted to do")}}
-    <span class="reason blue-hot">{{event.reason}}</span>
+    <span class="reason">{{event.reason}}</span>
+    <h5>{{event.author}} {{moment-format event.date 'MMMM YYYY'}}</h5>
+    {{#if event.editable}}
+      <div class="text-left">
+        {{#link-to 'edit-event' event.id}}
+          <button class="btn btn-default" type='submit'>Edit</button>
+        {{/link-to}}
+        <button class="btn btn-default" {{action 'deleteEvent' event}}>Delete</button>
+      </div>
     {{/if}}
-    {{#if (eq event.reason "I felt like I had to")}}
-    <span class="reason red-hot">{{event.reason}}</span>
-    {{/if}}
-    {{#if (eq event.reason "I had no control over it")}}
-    <span class="reason purple-hot">{{event.reason}}</span>
-    {{/if}}
-  <div class="event-description">{{event.description}}</div>
 </div>
+<div class="flexbox-container">
+      <div class="event-description">{{event.description}}</div>
+    </div>
+  </div>
+  </div>
 </div>
-
 </div>
 {{#each event.comments as |comment|}}
   {{single-comment comment=comment
-                  deleteComment='deleteSingleComment'
-                  updateComment='updateComment'
-                  refresh='refresh'
-
+                   deleteComment='deleteSingleComment'
+                   updateComment='updateComment'
+                   refresh='refresh'
 }}
 {{/each}}
+<div class="comment-new">
 {{new-comment event=event
               addComment='addSingleComment'
 }}
+</div>
+{{!-- <hr style="padding: 0; margin: .5px;"> --}}

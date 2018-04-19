@@ -1,4 +1,6 @@
+import { alias } from '@ember/object/computed'
 import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service'
 
 export default Route.extend({
   model (params) {
@@ -8,9 +10,9 @@ export default Route.extend({
     saveEvent (event) {
       console.log('hi! trying to save', event)
       event.save()
-      .then(() => { this.toast.success('Edits saved!') })
+      .then(() => this.toast.success('Edits saved!', '', { positionClass: 'toast-bottom-right' }) )
       .then(() => this.transitionTo('event', event.id))
-      .catch((error) => { this.toast.error('Error is', error) })
+      .catch((error) => { this.toast.error('Error is', error, this.toastSuccessBottom) })
     },
     cancelCommentChanges () {
       console.log('nahh')

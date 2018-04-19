@@ -4,7 +4,7 @@ export default DS.Model.extend({
   title: DS.attr('string'),
   date: DS.attr(''),
   reason: DS.attr('string'),
-  description: DS.attr('string'),
+  description: DS.attr(''),
   user_id: DS.attr('number'),
   user: DS.hasMany('user'),
   editable: DS.attr(),
