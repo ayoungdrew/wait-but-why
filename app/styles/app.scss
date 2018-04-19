@@ -4,9 +4,9 @@
 $background-gray: #e6e3da;
 $very-light-gray: #f5f1ec;
 $light-gray: #ccc;
-$dark-gray: #80746d;
+$dark-gray: #7d7d7d;
 
-$medium-blue: #76899c;
+// $medium-blue: #76899c;
 $dark-blue: #405a73;
 
 $medium-red: #b51335;
@@ -14,12 +14,12 @@ $medium-blue: #237d94;
 $medium-purple: #a24e9e;
 
 body {
-  color: $dark-blue;
+  color: $dark-gray;
   background: url('https://files.allaboutbirds.net/wp-content/uploads/2018/03/Tern-lenz-FI-240x135.jpg');
 //   background-size: 200vh;
   background: white;
   font-family: 'Montserrat', sans-serif;
-  padding-top: 50px;
+  padding-top: 70px;
 }
 
 a {
@@ -74,13 +74,19 @@ select {
   border: none;
   border-radius: 1px;
   padding: 6px 9px;
-  margin-top: 20px;
+  // margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .btn-primary {
   background-color: $dark-gray;
 }
+
+.btn-primary:hover {
+  color: $dark-gray;
+  background-color: $light-gray;
+}
+
 
 .btn-default {
   border: 1px solid $light-gray;
@@ -125,6 +131,7 @@ select {
   padding: 10px 20px 40px 20px;
   // margin-bottom: 50px;
   margin-top: -1px;
+  margin-bottom: 0;
   .btn {
    color: white;
   }
@@ -152,6 +159,7 @@ select {
   // margin: 10px 0;
   margin-bottom: 0;
   .btn {
+  margin-top: 10px;
    color: white;
   }
 }
