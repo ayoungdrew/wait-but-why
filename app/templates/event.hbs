@@ -1,34 +1,114 @@
-<div class="event">
-  {{#if model.editable}}
-    {{#link-to 'edit-event' model.id}}
-      <button type='submit'>Edit Event</button>
-    {{/link-to}}
-    <button {{action 'destroyEvent' model}}>Delete Event</button>
-  {{/if}}
-  <h1>{{model.title}}</h1>
-  <h3>{{#link-to 'user' model.user_id}}{{model.author}}{{/link-to}}</h3>
-  <h4>{{moment-format model.date 'MMMM YYYY'}} | {{model.reason}}</h4>
-  <p>{{model.description}}</p>
-  <p>{{model.user.id}}</p>
+
+{{#if (eq model.reason "I felt like I had to")}}
+<div class="event-red">
+  <div class="event">
+    <div class="container">
+      {{#if model.editable}}
+        {{#link-to 'edit-event' model.id}}
+          <button class="btn btn-default" type='submit'>Edit Event</button>
+        {{/link-to}}
+        <button class="btn btn-default" {{action 'destroyEvent' model}}>Delete Event</button>
+      {{/if}}
+      <h1>{{model.title}}</h1>
+      <h3>{{#link-to 'user' model.user_id}}{{model.author}}{{/link-to}}</h3>
+      <h4>{{moment-format model.date 'MMMM YYYY'}} | {{model.reason}}</h4>
+      <p>{{model.description}}</p>
+      <p>{{model.user.id}}</p>
+    </div>
+  </div>
 </div>
+{{/if}}
+
+
+{{#if (eq model.reason "It was something I wanted to do")}}
+<div class="event-blue">
+  <div class="event">
+    <div class="container">
+      {{#if model.editable}}
+        {{#link-to 'edit-event' model.id}}
+          <button class="btn btn-default" type='submit'>Edit Event</button>
+        {{/link-to}}
+        <button class="btn btn-default" {{action 'destroyEvent' model}}>Delete Event</button>
+      {{/if}}
+      <h1>{{model.title}}</h1>
+      <h3>{{#link-to 'user' model.user_id}}{{model.author}}{{/link-to}}</h3>
+      <h4>{{moment-format model.date 'MMMM YYYY'}} | {{model.reason}}</h4>
+      <p>{{model.description}}</p>
+      <p>{{model.user.id}}</p>
+    </div>
+  </div>
+</div>
+{{/if}}
+
+{{#if (eq model.reason "I had no control over it")}}
+<div class="event-purple">
+  <div class="event">
+    <div class="container">
+      {{#if model.editable}}
+        {{#link-to 'edit-event' model.id}}
+          <button class="btn btn-default" type='submit'>Edit Event</button>
+        {{/link-to}}
+        <button class="btn btn-default" {{action 'destroyEvent' model}}>Delete Event</button>
+      {{/if}}
+      <h1>{{model.title}}</h1>
+      <h3>{{#link-to 'user' model.user_id}}{{model.author}}{{/link-to}}</h3>
+      <h4>{{moment-format model.date 'MMMM YYYY'}} | {{model.reason}}</h4>
+      <p>{{model.description}}</p>
+      <p>{{model.user.id}}</p>
+    </div>
+  </div>
+</div>
+{{/if}}
+
+
+
+{{#if (eq model.reason "I felt like I had to")}}
+<div class="event-red">
 {{#each model.comments as |comment|}}
 {{single-comment comment=comment
                   deleteComment='destroyComment'
                   updateComment='updateComment'
 
 }}
-  {{!-- <div class="comment row">
-    <div class="col-sm-8">
-      <p>{{comment.user.id}} {{comment.user.email}} onn {{moment-format comment.created_at 'MMMM DD, YYYY'}}</p>
-      <p>{{comment.body}}</p>
-    </div>
-    <div class="col-sm-4">
-      {{#if event.editable}}
-        <button style="float: right;" {{action 'deleteComment' event}}>Delete Comment</button>
-      {{/if}}
-    </div>
-  </div> --}}
 {{/each}}
+<div class="comment-new">
 {{new-comment event=model
               addComment='createComment'
 }}
+</div>
+</div>
+{{/if}}
+
+{{#if (eq model.reason "It was something I wanted to do")}}
+<div class="event-blue">
+{{#each model.comments as |comment|}}
+{{single-comment comment=comment
+                  deleteComment='destroyComment'
+                  updateComment='updateComment'
+
+}}
+{{/each}}
+<div class="comment-new">
+{{new-comment event=model
+              addComment='createComment'
+}}
+</div>
+</div>
+{{/if}}
+
+{{#if (eq model.reason "I had no control over it")}}
+<div class="event-purple">
+{{#each model.comments as |comment|}}
+{{single-comment comment=comment
+                  deleteComment='destroyComment'
+                  updateComment='updateComment'
+
+}}
+{{/each}}
+<div class="comment-new">
+{{new-comment event=model
+              addComment='createComment'
+}}
+</div>
+</div>
+{{/if}}

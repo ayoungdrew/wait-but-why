@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     {{navbar-header}}
 
@@ -23,13 +23,22 @@
   </div>
 </nav>
 
-<h1 class="text-center" >Wait. What have you done...?</h1>
-
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}
 {{/each}}
-<dive class="container-fluid">
+{{!-- <div class="container-fluid"> --}}
 {{!-- <div class="col-sm-8 col-sm-offset-2"> --}}
   {{outlet}}
+  <nav id="footer" class="navbar navbar-default navbar-bottom footer" style="margin-bottom: 0;" role="navigation">
+  <div class="container">
+    <div class="col-md-4">
+      <h3 style="margin: 10px 10px 0 0;"><small>Wait But Why</small></h3>
+      <p><small>Copyright © 2018 Andrew Young, LLC</small></p>
+    </div>
+    <div class="col-md-8 text-right" style="margin-top: 20px;">
+      <p>Made with love at General Assembly.</p>
+    </div>
+  </div>
+</nav>
 {{!-- </div> --}}
-</dive>
+{{!-- </div> --}}

@@ -8,8 +8,8 @@
     <span class="event-summary-title">{{event.title}}</span>
     </h3>
     {{/link-to}}
-    <span class="reason">{{event.reason}}</span>
-    <h5>{{event.author}} {{moment-format event.date 'MMMM YYYY'}}</h5>
+    <span class="detail-reason">{{event.reason}}</span><span class="detail-date">{{moment-format event.date 'MMMM YYYY'}}</span>
+    <h3>{{event.author}}</h3>
     {{#if event.editable}}
       <div class="text-left">
         {{#link-to 'edit-event' event.id}}

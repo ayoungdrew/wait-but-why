@@ -19,7 +19,7 @@ body {
 //   background-size: 200vh;
   background: white;
   font-family: 'Montserrat', sans-serif;
-  padding: 0px;
+  padding-top: 50px;
 }
 
 a {
@@ -40,6 +40,15 @@ hr {
   margin: 10px 10px;
   // max-width: 200px;
 }
+
+.form-control {
+  border-radius: 0px;
+}
+
+select {
+  border-radius: 0px;
+  color: black;
+}
 .mask {
         position: absolute;
         top:-1px;
@@ -49,33 +58,24 @@ hr {
         background-color:#fff;
 }
 
-.reason {
-  font-size: 18px;
-  color: white;
-  padding: 4px 8px;
-}
-
 .red-hot {
   background: $medium-red;
 }
 
 .blue-hot {
-  background: white;
   color: $medium-red;
 }
 
 .purple-hot {
   background: $medium-purple;
 }
-// .month-select {
-//   height: 50px;
-//   width: 100%;
-// }
 
 .btn {
   border: none;
   border-radius: 1px;
   padding: 6px 9px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .btn-primary {
@@ -125,8 +125,24 @@ hr {
   padding: 10px 20px 40px 20px;
   // margin-bottom: 50px;
   margin-top: -1px;
+  .btn {
+   color: white;
+  }
 }
 
+.detail-reason {
+  font-size: 18px;
+  color: white;
+  padding: 4px 8px;
+}
+
+.detail-date {
+  font-size: 17px;
+  color: white;
+  padding: 4px 8px 4px 9px;
+  border: 1px solid white;
+  box-shadow: 0 1px 0 -3px white;
+}
 
 .event {
   // background: $light-gray;
@@ -144,17 +160,21 @@ hr {
   background: $light-gray;
   // border: 1px solid $light-gray;
   color: white;
-  padding: 60px 40px 0 40px;
+  padding: 60px 40px 60px 40px;
   // margin: 10px 0;
   margin-bottom: 0;
   .btn {
    color: white;
   }
+  .btn-primary {
+    background: white;
+  }
 }
 
 .event-summary-title {
-  font-size: 38px;
+  font-size: 40px;
   margin: 5px 0;
+  line-height: 1.2;
 }
 
 .event-description {
@@ -172,10 +192,17 @@ hr {
   a {
     color: white;
   }
+  .btn:hover {
+   color: $medium-red;
+  }
+  .btn-primary {
+   color: $medium-red;
+   background: white;
+  }
   .event {
     background: $medium-red
   }
-  .reason {
+  .detail-reason {
     color: $medium-red;
     background: white;
   }
@@ -198,10 +225,17 @@ hr {
   a {
     color: white;
   }
+  .btn:hover {
+   color: $medium-blue;
+  }
+  .btn-primary {
+   color: $medium-blue;
+   background: white;
+  }
   .event {
     background: $medium-blue
   }
-  .reason {
+  .detail-reason {
     color: $medium-blue;
     background: white;
   }
@@ -224,16 +258,23 @@ hr {
   a {
     color: white;
   }
+  .btn:hover {
+   color: $medium-purple;
+  }
+  .btn-primary {
+   color: $medium-purple;
+   background: white;
+  }
   .event {
-    // background: $medium-purple
+    background: $medium-purple
     // background: linear-gradient(to bottom right, red, $medium-purple);
   }
-  .reason {
+  .detail-reason {
     color: $medium-purple;
     background: white;
   }
   .comment {
-    // background: $medium-purple;
+    background: $medium-purple;
   }
   .comment-details {
     color: white;
@@ -242,7 +283,7 @@ hr {
     color: $medium-purple;
   }
   .comment-new {
-    // background: $medium-purple;
+    background: $medium-purple;
   }
 }
 
@@ -258,44 +299,36 @@ hr {
 #toast-container {
 }
 
-@-webkit-keyframes blackWhite {
-  0% { background-color: white; }
-  50% { background-color: white; }
-  51% { background-color: black; }
-  100% { background-color: black; }
+@media (max-width: 767px) {
+
+.event-summary-title {
+  font-size: 30px;
 }
 
-@keyframes blackWhite {
-  0% { background-color: white; }
-  50% { background-color: white; }
-  51% { background-color: black; }
-  100% { background-color: black; }
+.detail-date {
+  display: block;
+  text-align: center;
+}
+.detail-reason {
+  display: block;
+  text-align: center;
+}
 }
 
-.blinkdiv {
-    height: 100px;
-    background-color: gray;
-    -webkit-animation-name: blackWhite;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 2s;
+@media (max-width: 1199px) {
 
-
+.event-summary-title {
+  font-size: 30px;
 }
 
-@-o-keyframes fadeIt {
-  0%   { background-color: #FFFFFF; }
-  50%  { background-color: #AD301B; }
-  100% { background-color: #FFFFFF; }
+.detail-date {
+    font-size: 14px;
+  display: block;
+  text-align: center;
 }
-@keyframes fadeIt {
-  0%   { background-color: $very-light-gray; }
-  50%  { background-color: $light-gray; }
-  100% { background-color: $very-light-gray; }
+.detail-reason {
+    font-size: 14px;
+  display: block;
+  text-align: center;
 }
-
-.backgroundAnimated{
-    background-image:none !important;
-         -o-animation: fadeIt 25s ease-in-out;
-            animation: fadeIt 25s ease-in-out;
-                -webkit-animation-iteration-count: infinite;
 }

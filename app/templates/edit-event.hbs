@@ -1,6 +1,33 @@
+
+{{#if (eq model.reason "I felt like I had to")}}
+<div class="event-red">
 {{edit-event-form
   model=model
   save='saveEvent'
   cancelChanges='cancelEventChanges'
   backToEvents='backToEventsHome'
 }}
+</div>
+{{/if}}
+
+{{#if (eq model.reason "It was something I wanted to do")}}
+<div class="event-blue">
+{{edit-event-form
+  model=model
+  save='saveEvent'
+  cancelChanges='cancelEventChanges'
+  backToEvents='backToEventsHome'
+}}
+</div>
+{{/if}}
+
+{{#if (eq model.reason "I had no control over it")}}
+<div class="event-purple">
+{{edit-event-form
+  model=model
+  save='saveEvent'
+  cancelChanges='cancelEventChanges'
+  backToEvents='backToEventsHome'
+}}
+</div>
+{{/if}}
