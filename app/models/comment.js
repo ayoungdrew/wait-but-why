@@ -8,5 +8,5 @@ export default DS.Model.extend({
   user: DS.belongsTo('user'),
   editable: DS.attr(),
   commenter: DS.attr(),
-  created_at: DS.attr()
+  created_at: DS.attr('date')
 });

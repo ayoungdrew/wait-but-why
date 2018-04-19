@@ -1,15 +1,20 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import RSVP from 'rsvp'
 
 export default Route.extend({
   model (params) {
-    console.log('params is', params)
-    return this.get('store').findAll('event')
-    .then(results => results.filter((x) => {
-      return x.get('user_id').toString() === params.user_id
-    }))
-    .then(events => events.sortBy('date').reverse())
+    return RSVP.hash({
+      posts: this.get('store').findAll('event')
+      .then(results => results.filter((x) => {
+        return x.get('user_id').toString() === params.user_id
+      }))
+      .then(events => events.sortBy('date').reverse()),
+      fellowUser: this.get('store').findRecord('user', params.user_id)
+      .then((data) => data.get('email'))
+    })
   },
+
   actions: {
     destroyEvent (event) {
       console.log('kill itttt', event)

@@ -68,6 +68,7 @@
     "toastr": "^2.1.4"
   },
   "dependencies": {
+    "animate.css": "^3.6.1",
     "ember-qunit": "^3.3.0"
   }
 }

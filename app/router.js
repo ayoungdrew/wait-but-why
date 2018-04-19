@@ -13,8 +13,8 @@ Router.map(function () {
   this.route('users')
   this.route('events', function () {})
   this.route('examples')
-  this.route('event', { path: '/events/:event_id' }, function() {
-    this.route('edit-comment');
+  this.route('event', { path: '/events/:event_id' }, function () {
+    this.route('edit-comment')
   })
   this.route('edit-event', { path: '/events/:event_id/edit' })
   this.route('user', { path: '/users/:user_id' })

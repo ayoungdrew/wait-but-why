@@ -1,7 +1,14 @@
 @import "ember-bootstrap/bootstrap";
+@import "./animate.scss";
+
+$background-gray: #e6e3da;
+$very-light-gray: #f5f1ec;
+$light-gray: #ccc;
+$dark-gray: #80746d;
+
 
 body {
-  background: #efe9da;
+  background: $background-gray;
   padding: 0px;
 }
 
@@ -10,9 +17,24 @@ body {
 //   width: 100%;
 // }
 
+.btn {
+  border: none;
+  border-radius: 1px;
+  padding: 6px 9px;
+}
+
+.btn-primary {
+  background-color: $dark-gray;
+}
+
+.btn-default {
+  border: 1px solid $light-gray;
+  background: none;
+}
+
 .event {
   background: white;
-  border: 1px solid gray;
+  border: 1px solid $light-gray;
   padding: 30px 40px;
   margin: 10px;
   margin-bottom: 0;
@@ -24,8 +46,8 @@ body {
 }
 
 .comment {
-  background: #efefef;
-  border: 1px solid gray;
+  background: $very-light-gray;
+  border: 1px solid $light-gray;
   padding: 20px 20px;
   margin-bottom: 0;
   margin-left: 10px;
@@ -34,11 +56,53 @@ body {
 }
 
 .comment-new {
-  background: #efefef;
-  border: 1px solid gray;
+  background: $very-light-gray;
+  border: 1px solid $light-gray;
   padding: 2px 20px 12px 20px;
   margin-bottom: 50px;
   margin-left: 10px;
   margin-right: 10px;
   margin-top: -1px;
+}
+
+@-webkit-keyframes blackWhite {
+  0% { background-color: white; }
+  50% { background-color: white; }
+  51% { background-color: black; }
+  100% { background-color: black; }
+}
+
+@keyframes blackWhite {
+  0% { background-color: white; }
+  50% { background-color: white; }
+  51% { background-color: black; }
+  100% { background-color: black; }
+}
+
+.blinkdiv {
+    height: 100px;
+    background-color: gray;
+    -webkit-animation-name: blackWhite;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 2s;
+
+
+}
+
+@-o-keyframes fadeIt {
+  0%   { background-color: #FFFFFF; }
+  50%  { background-color: #AD301B; }
+  100% { background-color: #FFFFFF; }
+}
+@keyframes fadeIt {
+  0%   { background-color: $very-light-gray; }
+  50%  { background-color: $light-gray; }
+  100% { background-color: $very-light-gray; }
+}
+
+.backgroundAnimated{
+    background-image:none !important;
+         -o-animation: fadeIt 25s ease-in-out;
+            animation: fadeIt 25s ease-in-out;
+                -webkit-animation-iteration-count: infinite;
 }

@@ -9,9 +9,9 @@
 <div class="col-sm-4 text-right">
 {{#if event.editable}}
   {{#link-to 'edit-event' event.id}}
-    <button class="btn btn-primary" type='submit'>Edit</button>
+    <button class="btn btn-default" type='submit'>Edit</button>
   {{/link-to}}
-  <button class="btn btn-primary" {{action 'deleteEvent' event}}>Delete</button>
+  <button class="btn btn-default" {{action 'deleteEvent' event}}>Delete</button>
 {{/if}}
 </div>
 </div>
