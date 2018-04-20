@@ -1,0 +1,20 @@
+<div class="text-center">
+
+{{#if isAuthenticated}}
+
+{{#link-to 'events'}}
+  <button class="btn btn-default" type='submit'>Start Posting!</button>
+{{/link-to}}
+{{#link-to 'users'}}
+  <button class="btn btn-default" type='submit'>Check out what friends are up to</button>
+{{/link-to}}
+
+{{else}}
+{{#link-to 'sign-up'}}
+  <button class="btn btn-default" type='submit'>Sign Up</button>
+{{/link-to}}
+{{#link-to 'sign-in'}}
+  <button class="btn btn-default" type='submit'>Sign In</button>
+{{/link-to}}
+{{/if}}
+</div>

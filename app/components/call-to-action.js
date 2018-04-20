@@ -1,9 +1,8 @@
 import { alias } from '@ember/object/computed'
-import Route from '@ember/routing/route';
 import Component from '@ember/component'
 import { inject as service } from '@ember/service'
 
-export default Route.extend({
+export default Component.extend({
   auth: service(),
 
   // currentUser: alias()
@@ -11,4 +10,9 @@ export default Route.extend({
   userId: alias('auth.credentials.id'),
   isAuthenticated: alias('auth.isAuthenticated'),
 
-});
+  actions: {
+    signOut () {
+      this.sendAction('signOut')
+    }
+  }
+})
