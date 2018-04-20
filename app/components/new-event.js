@@ -29,12 +29,16 @@ export default Component.extend({
       // console.log('test', compiledDate)
       this.event.date = compiledDate
       this.event.reason = this.get('selectedReason')
-      this.sendAction('create', this.get('event'))
-      this.set('event', {})
-      $('#newReasonSelector').get(0).selectedIndex = 0
-      $('#newMonthSelector').get(0).selectedIndex = 0
-      $('#newYearSelector').get(0).selectedIndex = 0
-      // console.log('hm', this.get('event'))
+      // console.log(this.get('event').description.length)
+      if ((this.get('event').title.length > 1) && (this.get('event').description.length > 1)) {
+        this.sendAction('create', this.get('event'))
+        this.set('event', {})
+        $('#newReasonSelector').get(0).selectedIndex = 0
+        $('#newMonthSelector').get(0).selectedIndex = 0
+        $('#newYearSelector').get(0).selectedIndex = 0
+      } else {
+        this.toast.error('Finish filling out the form silly :P', '', { positionClass: 'toast-bottom-right' })
+      }
     }
   }
 })
