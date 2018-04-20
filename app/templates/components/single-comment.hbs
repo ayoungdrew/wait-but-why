@@ -2,7 +2,6 @@
 
 <div class="container">
   <hr>
-
 <div class="row">
 
   {{!-- User Editing View --}}
@@ -10,9 +9,10 @@
   <div class="col-sm-12">
   <p class="comment-details"><span class="comment-strong">{{#link-to 'user' comment.user_id}}{{comment.commenter}}{{/link-to}}</span> {{moment-format comment.created_at "MMMM DD, YYYY LT"}}</p>
 </div>
-  <form {{action 'saveComment' comment on='submit'}}>
+  <form {{action 'saveComment' comment on='submit' focus-out='updateComment'}}>
     <div class="col-sm-8">
       {{input value=comment.body}}
+      {{!-- <input {{value=comment.body}}{{action 'cancelCommentChanges' on="focusOut"}} {{action 'saveComment' on='submit'}} /> --}}
     </div>
     <div class="col-sm-4 text-right">
       {{#if comment.editable}}

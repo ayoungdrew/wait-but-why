@@ -36,18 +36,14 @@ p {
 }
 
 hr {
-  padding: 10px;
+  padding: 5px;
   margin: 10px 10px;
   // max-width: 200px;
 }
 
-.form-control {
-  border-radius: 0px;
-}
-
 select {
   border-radius: 0px;
-  color: black;
+  color: $dark-gray;
 }
 .mask {
         position: absolute;
@@ -56,18 +52,6 @@ select {
         width:50%;
         height: 1px;
         background-color:#fff;
-}
-
-.red-hot {
-  background: $medium-red;
-}
-
-.blue-hot {
-  color: $medium-red;
-}
-
-.purple-hot {
-  background: $medium-purple;
 }
 
 .btn {
@@ -91,15 +75,18 @@ select {
 .btn-default {
   border: 1px solid $light-gray;
   background: none;
+  color: $dark-gray;
 }
 
 .comment-details {
   color: $dark-gray;
   font-size: 12px;
+  padding-left: 40px;
+  margin-bottom: 5px;
 }
 
 .comment-body {
-  padding-left: 10px;
+  padding-left: 40px;
 }
 
 .comment-highlight {
@@ -116,7 +103,7 @@ select {
 
 
 .comment {
-  padding: 10px 40px 5px 60px;
+  padding: 0 40px 5px 40px;
   margin-bottom: 0;
   margin-top: -1px;
   .btn {
@@ -128,7 +115,7 @@ select {
 .comment-new {
   // background: $very-light-gray;
   // border: 1px solid $light-gray;
-  padding: 10px 20px 40px 20px;
+  padding: 0 20px 40px 20px;
   // margin-bottom: 50px;
   margin-top: -1px;
   margin-bottom: 0;
@@ -193,6 +180,7 @@ select {
     width: 100%;
     height: 100%;
     line-height: 1.9;
+    padding-bottom: 25px;
 }
 
 .event-red {
@@ -277,6 +265,11 @@ select {
     background: $medium-purple
     // background: linear-gradient(to bottom right, red, $medium-purple);
   }
+
+  .form-control {
+    border-radius: 0px;
+  }
+
   .detail-reason {
     color: $medium-purple;
     background: white;
@@ -320,6 +313,10 @@ select {
 .detail-reason {
   display: block;
   text-align: center;
+}
+.btn {
+  margin-top: 10px;
+ color: white;
 }
 }
 

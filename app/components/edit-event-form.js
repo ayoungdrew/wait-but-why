@@ -4,6 +4,8 @@ import { inject as service } from '@ember/service'
 
 export default Component.extend({
   didInsertElement () {
+    const eventItem =  this.get('model')
+    eventItem.rollbackAttributes()
     this.set('eventYear', this.get('model').get('date').substring(0, 4))
     this.set('eventMonth', this.get('model').get('date').substring(5, 7))
   },
@@ -31,7 +33,7 @@ export default Component.extend({
       this.sendAction('save', this.get('model'))
     },
     cancelChanges () {
-      console.log('nahh', this.get('model'))
+      console.log('nah dont change event', this.get('model'))
       const thisComment = this.get('model')
       thisComment.rollbackAttributes()
       this.toggleProperty('isEditing')
