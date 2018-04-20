@@ -14,7 +14,7 @@ export default Component.extend({
 
   actions: {
     destroyComment (commentObj) {
-      console.log('hi', commentObj)
+      // console.log('hi', commentObj)
       commentObj.destroyRecord()
       this.get('store').findRecord('comment', commentObj.get('id'))
       .then(comment => comment.destroyRecord())
@@ -23,7 +23,7 @@ export default Component.extend({
       .catch((error) => { this.toast.error('Error is', error) })
     },
     newComment (event) {
-      console.log('logging', event)
+      // console.log('logging', event)
       this.set('newCommentObj.event', event)
       this.sendAction('addComment', this.get('newCommentObj'))
       this.set('newCommentObj', {})

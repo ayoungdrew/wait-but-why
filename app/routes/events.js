@@ -7,7 +7,7 @@ export default Route.extend({
   auth: service(),
 
   model () {
-    console.log('hmm', this.get('auth.credentials.id'))
+    // console.log('hmm', this.get('auth.credentials.id'))
     const currentUserId = this.get('auth.credentials.id')
     return this.get('store').findAll('event')
     .then(results => results.filter((x) => {
@@ -17,7 +17,7 @@ export default Route.extend({
   },
   actions: {
     createEvent (event) {
-      console.log('let us create', event)
+      // console.log('let us create', event)
       this.get('store').createRecord('event', event)
         .save()
         .then(() => { this.toast.success('Done!')})
@@ -25,15 +25,15 @@ export default Route.extend({
         .catch((error) => { this.toast.error('Something went wrong! :(') })
     },
     destroyEvent (event) {
-      console.log('kill itttt', event)
+      // console.log('kill itttt', event)
       event.destroyRecord()
       .then(() => { this.toast.success('Done!')})
       .then(() => this.refresh())
       .catch((error) => { this.toast.error('Error is', error) })
     },
     destroyComment (commentObj) {
-      console.log(commentObj)
-      console.log('hi', commentObj.id)
+      // console.log(commentObj)
+      // console.log('hi', commentObj.id)
       commentObj.destroyRecord()
       this.get('store').findRecord('comment', commentObj.get('id'))
       .then(comment => comment.destroyRecord())
@@ -42,19 +42,19 @@ export default Route.extend({
       .catch((error) => { this.toast.error('Error is', error) })
     },
     createComment (commentPojo) {
-      console.log('new obj is', commentPojo)
+      // console.log('new obj is', commentPojo)
       const comment = this.get('store').createRecord('comment', commentPojo)
       return comment.save()
       .then(() => this.refresh())
     },
     updateComment (editedComment) {
-      console.log('last stop', editedComment)
+      // console.log('last stop', editedComment)
       const comment = editedComment
       comment.save()
       .then(() => { this.toast.success('Done!')})
     },
     refresh () {
-      console.log('made it!')
+      // console.log('made it!')
       this.refresh()
     }
   }

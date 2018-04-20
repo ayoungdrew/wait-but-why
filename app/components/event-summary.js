@@ -10,25 +10,25 @@ export default Component.extend({
 
   actions: {
     deleteEvent (event) {
-      console.log('made it do event-sum', event)
+      // console.log('made it do event-sum', event)
       this.sendAction('deleteSingleEvent', this.get('event'))
     },
     deleteSingleComment (comment) {
-      console.log('get rid of', comment)
+      // console.log('get rid of', comment)
       this.sendAction('deleteSingleComment', comment)
     },
     addSingleComment (commentPojo) {
-      console.log('made it to event-sum js')
-      console.log('pojo is', commentPojo)
+      // console.log('made it to event-sum js')
+      // console.log('pojo is', commentPojo)
       this.sendAction('addSingleComment', commentPojo)
   },
     updateComment (commentPojo) {
-      console.log('made it to event-sum js')
-      console.log('pojo is', commentPojo)
+      // console.log('made it to event-sum js')
+      // console.log('pojo is', commentPojo)
       this.sendAction('updateComment', commentPojo)
     },
     refresh () {
-      console.log('gogo!')
+      // console.log('gogo!')
       this.sendAction('refresh')
   }
   }
