@@ -16,20 +16,11 @@ export default Route.extend({
         this.get('auth').changePassword(passwords)
         .then(() => this.get('auth').signOut())
         .then(() => this.transitionTo('sign-in'))
-        .then(() => {
-          this.get('flashMessages')
-          .success('Successfully changed your password!')
-        })
-        .then(() => {
-          this.get('flashMessages').warning('You have been signed out.')
-        })
-        .catch(() => {
-          this.get('flashMessages')
-          .danger('There was a problem. Please try again.')
-        })
+    .then(() => { this.toast.success('Changed password', '', { positionClass: 'toast-bottom-right' }) })
+    .then(() => { this.toast.success('You\'ve been signed out', '', { positionClass: 'toast-bottom-right' }) })
+    .catch((error) => { this.toast.error('Oh noes!!', error, { positionClass: 'toast-bottom-right' }) })
       } else {
-        this.get('flashMessages')
-        .danger('Your new passwords must match.')
+        this.toast.error('Password must match', '', { positionClass: 'toast-bottom-right' })
       }
     }
   }

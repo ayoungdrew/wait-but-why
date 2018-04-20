@@ -31,7 +31,9 @@ export default Component.extend({
       this.event.reason = this.get('selectedReason')
       this.sendAction('create', this.get('event'))
       this.set('event', {})
-      this.set('eventYear', null)
+      $('#newReasonSelector').get(0).selectedIndex = 0
+      $('#newMonthSelector').get(0).selectedIndex = 0
+      $('#newYearSelector').get(0).selectedIndex = 0
       // console.log('hm', this.get('event'))
     }
   }

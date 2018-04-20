@@ -14,11 +14,8 @@ export default Route.extend({
     signIn (credentials) {
       return this.get('auth').signIn(credentials)
         .then(() => this.transitionTo('application'))
-        .then(() => this.get('flashMessages').success('Thanks for signing in!'))
-        .catch(() => {
-          this.get('flashMessages')
-          .danger('There was a problem. Please try again.')
-        })
+        .then(() => { this.toast.success('Signed in!', '', { positionClass: 'toast-bottom-right' })})
+    .catch((error) => { this.toast.error('Problem signing in...', error, { positionClass: 'toast-bottom-right' }) })
     }
   }
 })

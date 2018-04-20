@@ -6,14 +6,14 @@
   <div class="col-md-6">
 <form {{action 'newEvent' on='submit'}}>
   <h5>Something you did:</h5>
-  {{input placeholder='I moved to Chicago.' value=event.title}}
+  {{input placeholder='e.g. I gave up on my dream of being a hip hop dancer.' value=event.title}}
   {{!-- <h5>When?</h5>
   {{input placeholder='e.g. 20171230' value=event.date}} --}}
 
 <h5>When?</h5>
 <div class="row">
   <div class="col-xs-6">
-    {{#x-select class="form-control" on-change=(action "setMonthSelection") as |xs|}}
+    {{#x-select id="newMonthSelector" class="form-control" on-change=(action "setMonthSelection") as |xs|}}
       {{#xs.option}}Pick a month{{/xs.option}}
       {{#xs.option value="01"}}January{{/xs.option}}
       {{#xs.option value="02"}}February{{/xs.option}}
@@ -31,7 +31,7 @@
   </div>
   <div class="col-xs-6">
     {{!-- {{input placeholder='e.g. 2011' value=eventYear}} --}}
-    {{#x-select class="form-control" on-change=(action "setYearSelection") as |xs|}}
+    {{#x-select id="newYearSelector" class="form-control" on-change=(action "setYearSelection") as |xs|}}
       {{#xs.option value=null}}Pick a year{{/xs.option}}
       {{#xs.option value="2018"}}2018{{/xs.option}}
       {{#xs.option value="2017"}}2017{{/xs.option}}
@@ -72,7 +72,7 @@
 </div>
 
   <h5>Why?</h5>
-  {{#x-select class="form-control" on-change=(action "setReasonSelection") as |xs|}}
+  {{#x-select id="newReasonSelector" class="form-control" on-change=(action "setReasonSelection") as |xs|}}
     {{#xs.option}}Pick a reason{{/xs.option}}
     {{#xs.option value="It was something I wanted to do"}}It was something I wanted to do{{/xs.option}}
     {{#xs.option value="I felt like I had to"}}I felt like I had to{{/xs.option}}

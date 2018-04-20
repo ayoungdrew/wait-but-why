@@ -20,38 +20,41 @@ export default Route.extend({
       // console.log('let us create', event)
       this.get('store').createRecord('event', event)
         .save()
-        .then(() => { this.toast.success('Done!')})
+        .then(() => { this.toast.success('Done!','', { positionClass: 'toast-bottom-right' })})
         .then(() => this.refresh())
-        .catch((error) => { this.toast.error('Something went wrong! :(') })
+        .catch((error) => { this.toast.error('Something went wrong! :(', error, { positionClass: 'toast-bottom-right' }) })
     },
     destroyEvent (event) {
       // console.log('kill itttt', event)
       event.destroyRecord()
-      .then(() => { this.toast.success('Done!')})
+      .then(() => { this.toast.success('Done!', '', { positionClass: 'toast-bottom-right' })})
       .then(() => this.refresh())
-      .catch((error) => { this.toast.error('Error is', error) })
+      .catch((error) => { this.toast.error('Darn it!', error, { positionClass: 'toast-bottom-right' }) })
     },
     destroyComment (commentObj) {
       // console.log(commentObj)
       // console.log('hi', commentObj.id)
-      commentObj.destroyRecord()
+      // commentObj.destroyRecord()
       this.get('store').findRecord('comment', commentObj.get('id'))
       .then(comment => comment.destroyRecord())
-      .then(() => { this.toast.success('Done!')})
+      .then(() => { this.toast.success('Deleted!', '', { positionClass: 'toast-bottom-right' })})
       .then(() => this.refresh())
-      .catch((error) => { this.toast.error('Error is', error) })
+      .catch((error) => { this.toast.error('Something went wrong', error, { positionClass: 'toast-bottom-right' }) })
     },
     createComment (commentPojo) {
       // console.log('new obj is', commentPojo)
       const comment = this.get('store').createRecord('comment', commentPojo)
       return comment.save()
+      .then(() => { this.toast.success('Created comment!', '', { positionClass: 'toast-bottom-right' })})
       .then(() => this.refresh())
+      .catch((error) => { this.toast.error('Something went wrong', error, { positionClass: 'toast-bottom-right' }) })
     },
     updateComment (editedComment) {
       // console.log('last stop', editedComment)
       const comment = editedComment
       comment.save()
-      .then(() => { this.toast.success('Done!')})
+      .then(() => { this.toast.success('Edited comment :)', '', { positionClass: 'toast-bottom-right' })})
+      .catch((error) => { this.toast.error('Something went wrong', error, { positionClass: 'toast-bottom-right' }) })
     },
     refresh () {
       // console.log('made it!')
