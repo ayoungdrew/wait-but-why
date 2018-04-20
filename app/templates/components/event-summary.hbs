@@ -9,7 +9,7 @@
     </h3>
     {{/link-to}}
     <span class="detail-reason">{{event.reason}}</span><span class="detail-date">{{moment-format event.date 'MMMM YYYY'}}</span>
-    <h3>{{event.author}}</h3>
+    <h4>{{event.author}}</h4>
     {{#if event.editable}}
       <div class="text-left">
         {{#link-to 'edit-event' event.id}}
@@ -38,4 +38,7 @@
               addComment='addSingleComment'
 }}
 </div>
-{{!-- <hr style="padding: 0; margin: .5px;"> --}}
+<hr style="width: 90vw; border-width: 1px; margin: 0; padding: 0; position: absolute; margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;">

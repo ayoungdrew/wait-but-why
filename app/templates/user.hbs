@@ -1,4 +1,14 @@
 <h2 class="text-center">{{model.fellowUser}}'s Events</h2>
+
+{{#if (lt model.posts 1)}}
+<div class="container text-center">
+  <div class="col-sm-8 col-sm-offset-2">
+<p style="line-height: 1.6;">{{model.fellowUser}} doesn't have any posts yet.... You can help change this by spamming his or her goddamn email and peer-pressuring them into posting something here so we can scrutinize the flaws of their existence.</p>
+<p style="line-height: 1.2;">Or you can do nothing at all.</p>
+</div>
+</div>
+{{/if}}
+
 {{#each model.posts as |event|}}
 
 {{#if (eq event.reason "I felt like I had to")}}
