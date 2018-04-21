@@ -5,6 +5,7 @@ $background-gray: #e6e3da;
 $very-light-gray: #f5f1ec;
 $light-gray: #ccc;
 $dark-gray: #7d7d7d;
+$very-dark-gray: #555555;
 
 // $medium-blue: #76899c;
 $dark-blue: #405a73;
@@ -43,7 +44,8 @@ hr {
 
 select {
   border-radius: 0px;
-  color: $dark-gray;
+  color: $very-dark-gray;
+  // color: black;
 }
 .mask {
         position: absolute;
@@ -268,6 +270,7 @@ select {
 
   .form-control {
     border-radius: 0px;
+    color: $dark-gray;
   }
 
   .detail-reason {
@@ -297,6 +300,15 @@ select {
   height: 100%;
 }
 
+.form-control {
+  border-radius: 0px;
+  color: $very-dark-gray;
+}
+
+.footer-item {
+
+}
+
 #toast-container {
 }
 
@@ -316,7 +328,10 @@ select {
 }
 .btn {
   margin-top: 10px;
- color: white;
+ // color: white;
+}
+.footer-item {
+  text-align: center;
 }
 }
 
