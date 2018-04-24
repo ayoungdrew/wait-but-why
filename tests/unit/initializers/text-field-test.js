@@ -1,6 +1,6 @@
 import Application from '@ember/application'
 import { run } from '@ember/runloop'
-import TextFieldInitializer from 'wait-but-why-client/initializers/text-field'
+import TextFieldInitializer from 'wait-but-why/initializers/text-field'
 import { module, test } from 'qunit'
 
 let application

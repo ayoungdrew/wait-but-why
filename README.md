@@ -1,4 +1,4 @@
-https://ayoungdrew.github.io/wait-but-why-client/
+https://ayoungdrew.github.io/wait-but-why/
 
 API repo: https://github.com/ayoungdrew/wait-but-why-api
 Heroku App: https://wait-but-why-api.herokuapp.com/

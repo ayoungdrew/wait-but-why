@@ -1,4 +1,4 @@
-import ENV from 'wait-but-why-client/config/environment'
+import ENV from 'wait-but-why/config/environment'
 import ActiveModelAdapter from 'active-model-adapter'
 import { inject as service } from '@ember/service'
 import { computed } from '@ember/object'
