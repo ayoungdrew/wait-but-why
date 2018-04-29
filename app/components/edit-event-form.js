@@ -4,7 +4,7 @@ import { inject as service } from '@ember/service'
 
 export default Component.extend({
   didInsertElement () {
-    const eventItem =  this.get('model')
+    const eventItem = this.get('model')
     eventItem.rollbackAttributes()
     this.set('eventYear', this.get('model').get('date').substring(0, 4))
     this.set('eventMonth', this.get('model').get('date').substring(5, 7))
@@ -40,4 +40,4 @@ export default Component.extend({
       this.sendAction('backToEvents', this.get('model'))
     }
   }
-});
+})

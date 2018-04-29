@@ -23,13 +23,9 @@
   </div>
 </nav>
 
-
-
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}
 {{/each}}
-{{!-- <div class="container-fluid"> --}}
-{{!-- <div class="col-sm-8 col-sm-offset-2"> --}}
   {{outlet}}
   <nav id="footer" class="navbar navbar-default navbar-bottom footer" style="margin-bottom: 0;" role="navigation">
   <div class="container">
@@ -42,5 +38,3 @@
     </div>
   </div>
 </nav>
-{{!-- </div> --}}
-{{!-- </div> --}}
