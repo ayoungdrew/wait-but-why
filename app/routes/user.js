@@ -7,6 +7,7 @@ export default Route.extend({
   ajax: service(),
 
   model (params) {
+    const currentUserEmail = this.get('auth.credentials.email')
     return RSVP.hash({
       posts: this.get('store').findAll('event')
       .then(results => results.filter((x) => {
@@ -20,7 +21,17 @@ export default Route.extend({
       following: this.get('store').findRecord('user', params.user_id)
         .then((data) => data.get('following')),
       followers: this.get('store').findRecord('user', params.user_id)
-        .then((data) => data.get('followers'))
+        .then((data) => data.get('followers')),
+      activeRelationships: this.get('store').findRecord('user', params.user_id)
+        .then((data) => data.get('active_relationships')),
+      actRelationships: this.get('store').findAll('relationship')
+        .then(results => results.filter((x) => {
+          return x.get('follower_id') === Number(params.user_id)
+        })),
+      passiveRelationships: this.get('store').findAll('relationship')
+        .then(results => results.filter((x) => {
+          return x.get('followed_id') === Number(params.user_id)
+        }))
     })
   },
 
@@ -61,7 +72,17 @@ export default Route.extend({
       const relationship = this.get('store').createRecord('relationship', newRelObj)
       return relationship.save()
         .then(() => this.refresh())
+        .then(() => this.transitionTo('user', friendId))
         .then(() => { this.toast.success('Following!', '', { positionClass: 'toast-bottom-right' }) })
+    },
+    destroyRelationship (relId) {
+      // console.log('made it!', relId)
+      // console.log(this.get('store').findRecord('relationship', relId))
+      this.get('store').findRecord('relationship', relId)
+        .then((data) => data.destroyRecord())
+        // .then(() => this.refresh())
+        // .then(() => this.transitionTo('user', friendId))
+        // .then(() => { this.toast.success('Following!', '', { positionClass: 'toast-bottom-right' }) })
     }
   }
 })

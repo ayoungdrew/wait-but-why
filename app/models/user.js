@@ -5,5 +5,6 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   created_at: DS.attr('date'),
   following: DS.attr(),
-  followers: DS.attr()
+  followers: DS.attr(),
+  active_relationships: DS.attr()
 })

@@ -2,21 +2,33 @@
 <div class="container">
   <div class="col-sm-12">
     {{!-- Sends this user's id as a param to the action --}}
-          <button class="btn btn-default" {{action 'createRelationship' model.fellowUserId}}>Follow</button>
-          <button class="btn btn-default" {{action 'destroyRelationship' model.fellowUserId}}>Unfollow</button>
+          {{!-- <button class="btn btn-default" {{action 'createRelationship' model.fellowUserId}}>Follow</button>
+          <button class="btn btn-default" {{action 'destroyRelationship' model.fellowUserId}}>Unfollow</button> --}}
+          {{follow-buttons model=model
+                           newRelationship='createRelationship'
+                           deleteRelationship='destroyRelationship'
+        }}
     </div>
   <div class="col-sm-6">
     {{!-- Displays all friends this user is following --}}
-    <h3>Following:</h3>
-    {{#each model.following as |following|}}
-      <p>{{following.email}}</p>
+    <h3>{{model.fellowUser}} is Following:</h3>
+    {{#each model.actRelationships as |actRelationship|}}
+      <p>{{actRelationship.followed}} {{actRelationship.id}}
+        {{!-- {{#if actRelationship.editable}} --}}
+        <button class="btn btn-primary" type='submit' {{action 'destroyRelationship' actRelationship.id}}>Unfollow</button>
+        {{!-- {{/if}} --}}
+      </p>
     {{/each}}
+
   </div>
   <div class="col-sm-6">
     {{!-- Displays all the friends that are following this user --}}
-    <h3>Followers:</h3>
-    {{#each model.followers as |follower|}}
-      <p>{{follower.email}}</p>
+    <h3>{{model.fellowUser}}'s Followers:</h3>
+    {{#each model.passiveRelationships as |passiveRelationship|}}
+    {{!-- {{if }} --}}
+      <p>{{passiveRelationship.follower}} {{passiveRelationship.id}}</p>
+
+      {{!-- {{/if}} --}}
     {{/each}}
   </div>
 </div>
