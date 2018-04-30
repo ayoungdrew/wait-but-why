@@ -18,13 +18,11 @@ export default Route.extend({
         .then((data) => data.get('email')),
       fellowUserId: this.get('store').findRecord('user', params.user_id)
         .then((data) => data.get('id')),
-      following: this.get('store').findRecord('user', params.user_id)
-        .then((data) => data.get('following')),
-      followers: this.get('store').findRecord('user', params.user_id)
-        .then((data) => data.get('followers')),
-      activeRelationships: this.get('store').findRecord('user', params.user_id)
-        .then((data) => data.get('active_relationships')),
-      actRelationships: this.get('store').findAll('relationship')
+      // following: this.get('store').findRecord('user', params.user_id)
+      //   .then((data) => data.get('following')),
+      // followers: this.get('store').findRecord('user', params.user_id)
+      //   .then((data) => data.get('followers')),
+      activeRelationships: this.get('store').findAll('relationship')
         .then(results => results.filter((x) => {
           return x.get('follower_id') === Number(params.user_id)
         })),
@@ -49,7 +47,6 @@ export default Route.extend({
         .catch((error) => { this.toast.error('You broke it!', error, { positionClass: 'toast-bottom-right' }) })
     },
     createComment (commentPojo) {
-      console.log('pojo is', commentPojo)
       const comment = this.get('store').createRecord('comment', commentPojo)
       return comment.save()
         .then(() => { this.toast.success('Done!', '', { positionClass: 'toast-bottom-right' }) })
@@ -57,7 +54,6 @@ export default Route.extend({
         .catch((error) => { this.toast.error('Something wrong...', error, { positionClass: 'toast-bottom-right' }) })
     },
     updateComment (editedComment) {
-      // console.log('last stop', editedComment)
       const comment = editedComment
       comment.save()
       .then(() => { this.toast.success('Update great success!', '', { positionClass: 'toast-bottom-right' }) })
@@ -68,21 +64,16 @@ export default Route.extend({
       const newRelObj = {}
       newRelObj.follower_id = this.get('auth.credentials.id')
       newRelObj.followed_id = Number(friendId)
-      console.log('logging', newRelObj)
       const relationship = this.get('store').createRecord('relationship', newRelObj)
       return relationship.save()
         .then(() => this.refresh())
-        .then(() => this.transitionTo('user', friendId))
         .then(() => { this.toast.success('Following!', '', { positionClass: 'toast-bottom-right' }) })
     },
-    destroyRelationship (relId) {
-      // console.log('made it!', relId)
-      // console.log(this.get('store').findRecord('relationship', relId))
-      this.get('store').findRecord('relationship', relId)
+    destroyRelationship (relationshipId) {
+      this.get('store').findRecord('relationship', relationshipId, {reload: true})
         .then((data) => data.destroyRecord())
-        // .then(() => this.refresh())
-        // .then(() => this.transitionTo('user', friendId))
-        // .then(() => { this.toast.success('Following!', '', { positionClass: 'toast-bottom-right' }) })
+        .then(() => this.refresh())
+        .then(() => { this.toast.success('Unfollowed...', '', { positionClass: 'toast-bottom-right' }) })
     }
   }
 })

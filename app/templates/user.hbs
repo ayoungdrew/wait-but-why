@@ -1,22 +1,20 @@
 <h2 class="text-center">{{model.fellowUser}}'s Events</h2>
 <div class="container">
   <div class="col-sm-12">
-    {{!-- Sends this user's id as a param to the action --}}
-          {{!-- <button class="btn btn-default" {{action 'createRelationship' model.fellowUserId}}>Follow</button>
-          <button class="btn btn-default" {{action 'destroyRelationship' model.fellowUserId}}>Unfollow</button> --}}
-          {{follow-buttons model=model
+          {{!-- {{follow-buttons model=model
                            newRelationship='createRelationship'
                            deleteRelationship='destroyRelationship'
-        }}
+          }} --}}
+          <h4>Made it!!</h4>
+          <button class="btn btn-default" {{action 'createRelationship' model.fellowUserId}}>Follow</button>
+          <button class="btn btn-default" {{action 'destroyRelationship' model.fellowUserId}}>Unfollow(not working)</button>
     </div>
   <div class="col-sm-6">
     {{!-- Displays all friends this user is following --}}
     <h3>{{model.fellowUser}} is Following:</h3>
-    {{#each model.actRelationships as |actRelationship|}}
-      <p>{{actRelationship.followed}} {{actRelationship.id}}
-        {{!-- {{#if actRelationship.editable}} --}}
-        <button class="btn btn-primary" type='submit' {{action 'destroyRelationship' actRelationship.id}}>Unfollow</button>
-        {{!-- {{/if}} --}}
+    {{#each model.activeRelationships as |activeRelationship|}}
+      <p>{{activeRelationship.followed}} {{activeRelationship.id}}
+        <button class="btn btn-primary" type='submit' {{action 'destroyRelationship' activeRelationship.id}}>Unfollow</button>
       </p>
     {{/each}}
 
