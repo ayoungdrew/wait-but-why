@@ -1,32 +1,33 @@
 <h2 class="text-center">{{model.fellowUser}}'s Events</h2>
 <div class="container">
   <div class="col-sm-12">
-          {{!-- {{follow-buttons model=model
-                           newRelationship='createRelationship'
-                           deleteRelationship='destroyRelationship'
-          }} --}}
-          <h4>Made it!!</h4>
-          <button class="btn btn-default" {{action 'createRelationship' model.fellowUserId}}>Follow</button>
-          <button class="btn btn-default" {{action 'destroyRelationship' model.fellowUserId}}>Unfollow(not working)</button>
+
+          {{#if (not-eq model.currentUserId model.fellowUserId)}}
+            {{#if model.thisRelationship}}
+            <button class="btn btn-default" {{action 'destroyThisRelationship' model.thisRelationship}}>Unfollow</button>
+            {{else}}
+            <button class="btn btn-default" {{action 'createRelationship' model.fellowUserId}}>Follow</button>
+            {{/if}}
+          {{/if}}
     </div>
   <div class="col-sm-6">
     {{!-- Displays all friends this user is following --}}
-    <h3>{{model.fellowUser}} is Following:</h3>
+    <h4>{{model.fellowUser}} is Following:</h4>
     {{#each model.activeRelationships as |activeRelationship|}}
-      <p>{{activeRelationship.followed}} {{activeRelationship.id}}
+      <p>{{#link-to "user" activeRelationship.followed_id}}{{activeRelationship.followed}} {{activeRelationship.id}}{{/link-to}}
+
+        {{#if (eq activeRelationship.follower_id model.currentUserId)}}
         <button class="btn btn-primary" type='submit' {{action 'destroyRelationship' activeRelationship.id}}>Unfollow</button>
+        {{/if}}
       </p>
     {{/each}}
 
   </div>
   <div class="col-sm-6">
     {{!-- Displays all the friends that are following this user --}}
-    <h3>{{model.fellowUser}}'s Followers:</h3>
+    <h4>{{model.fellowUser}}'s Followers:</h4>
     {{#each model.passiveRelationships as |passiveRelationship|}}
-    {{!-- {{if }} --}}
-      <p>{{passiveRelationship.follower}} {{passiveRelationship.id}}</p>
-
-      {{!-- {{/if}} --}}
+      <p>{{#link-to "user" passiveRelationship.follower_id}}{{passiveRelationship.follower}}{{/link-to}}</p>
     {{/each}}
   </div>
 </div>

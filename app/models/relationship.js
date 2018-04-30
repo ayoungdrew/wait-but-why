@@ -5,5 +5,6 @@ export default DS.Model.extend({
   follower_id: DS.attr('number'),
   followed_id: DS.attr('number'),
   follower: DS.attr('string'),
-  followed: DS.attr('string')
+  followed: DS.attr('string'),
+  editable: DS.attr()
 })
