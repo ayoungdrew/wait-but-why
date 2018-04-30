@@ -23,7 +23,7 @@ export default Component.extend({
       .catch((error) => { this.toast.error('Error is', error, { positionClass: 'toast-bottom-right' }) })
     },
     newComment (event) {
-      // console.log('logging', event)
+      console.log('logging', event)
       this.set('newCommentObj.event', event)
       // console.log('logging', this.get('newCommentObj.body').length)
       if (this.get('newCommentObj.body').length > 0) {

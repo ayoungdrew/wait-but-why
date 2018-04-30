@@ -1,4 +1,26 @@
 <h2 class="text-center">{{model.fellowUser}}'s Events</h2>
+<div class="container">
+  <div class="col-sm-12">
+    {{!-- Sends this user's id as a param to the action --}}
+          <button class="btn btn-default" {{action 'createRelationship' model.fellowUserId}}>Follow</button>
+          <button class="btn btn-default" {{action 'destroyRelationship' model.fellowUserId}}>Unfollow</button>
+    </div>
+  <div class="col-sm-6">
+    {{!-- Displays all friends this user is following --}}
+    <h3>Following:</h3>
+    {{#each model.following as |following|}}
+      <p>{{following.email}}</p>
+    {{/each}}
+  </div>
+  <div class="col-sm-6">
+    {{!-- Displays all the friends that are following this user --}}
+    <h3>Followers:</h3>
+    {{#each model.followers as |follower|}}
+      <p>{{follower.email}}</p>
+    {{/each}}
+  </div>
+</div>
+
 
 {{#if (lt model.posts 1)}}
 <div class="container text-center">
