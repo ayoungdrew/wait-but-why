@@ -2,7 +2,7 @@
   <div class="col-sm-6">
   <h3>Following:</h3>
 {{#each model.activeRelationships as |activeRelationship|}}
-  <h4>{{#link-to "user" activeRelationship.followed_id}}{{activeRelationship.followed}} {{activeRelationship.id}}{{/link-to}}
+  <h4>{{#link-to "user" activeRelationship.followed_id}}{{activeRelationship.followed}}{{/link-to}}
 
     {{#if (eq activeRelationship.follower_id model.currentUserId)}}
     <button class="btn btn-default" type='submit' {{action 'destroyRelationship' activeRelationship.id}}>Unfollow</button>

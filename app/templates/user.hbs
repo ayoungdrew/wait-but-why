@@ -14,12 +14,18 @@
     {{!-- Displays all friends this user is following --}}
     <h4>{{model.fellowUser}} is Following:</h4>
     {{#each model.activeRelationships as |activeRelationship|}}
-      <p>{{#link-to "user" activeRelationship.followed_id}}{{activeRelationship.followed}} {{activeRelationship.id}}{{/link-to}}
+    <div class="row">
+      <div class="col-sm-7">
+      <p>{{#link-to "user" activeRelationship.followed_id}}{{activeRelationship.followed}}{{/link-to}}
+      </p>
+      </div>
 
         {{#if (eq activeRelationship.follower_id model.currentUserId)}}
+        <div class=" col-sm-5">
         <button class="btn btn-default" type='submit' {{action 'destroyRelationship' activeRelationship.id}}>Unfollow</button>
+        </div>
         {{/if}}
-      </p>
+      </div>
     {{/each}}
 
   </div>
@@ -27,7 +33,11 @@
     {{!-- Displays all the friends that are following this user --}}
     <h4>{{model.fellowUser}}'s Followers:</h4>
     {{#each model.passiveRelationships as |passiveRelationship|}}
+    <div class="row">
+      <div class=" col-sm-7">
       <p>{{#link-to "user" passiveRelationship.follower_id}}{{passiveRelationship.follower}}{{/link-to}}</p>
+    </div>
+    </div>
     {{/each}}
   </div>
 </div>
