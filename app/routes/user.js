@@ -42,6 +42,14 @@ export default Route.extend({
   },
 
   actions: {
+    createEvent (event) {
+      // console.log('let us create', event)
+      this.get('store').createRecord('event', event)
+        .save()
+        .then(() => { this.toast.success('Done!','', { positionClass: 'toast-bottom-right' }) })
+        .then(() => this.refresh())
+        .catch((error) => { this.toast.error('Something went wrong! :(', error, { positionClass: 'toast-bottom-right' }) })
+    },
     destroyEvent (event) {
       event.destroyRecord()
         .then(() => { this.toast.success('Killed that event!', '', { positionClass: 'toast-bottom-right' }) })

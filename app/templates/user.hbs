@@ -1,17 +1,16 @@
 <div class="container">
   <div class="col-sm-4">
   <div class="profile-pic-fill">
-  <div class="profile-pic-fill" style="background: url({{model.fellowUser.image}}); background-size: cover; background-position: center;">
-</div>
-</div>
+    <div class="profile-pic-fill" style="background: url({{model.fellowUser.image}}); background-size: cover; background-position: center;">
+    </div>
+  </div>
 <h2>{{model.fellowUser.email}}</h2>
 <div class="col-sm-12">
-
   {{#if (not-eq model.currentUserId model.fellowUserId)}}
   {{#if model.thisRelationship}}
-  <button class="btn btn-default" {{action 'destroyThisRelationship' model.thisRelationship}}>Unfollow</button>
+    <button class="btn btn-default" {{action 'destroyThisRelationship' model.thisRelationship}}>Unfollow</button>
   {{else}}
-  <button class="btn btn-default" {{action 'createRelationship' model.fellowUserId}}>Follow</button>
+    <button class="btn btn-default" {{action 'createRelationship' model.fellowUserId}}>Follow</button>
   {{/if}}
   {{/if}}
 </div>
@@ -48,12 +47,16 @@
   </div>
 </div>
 
+{{!-- Create event component. Only viewable if you are the user that you're viewing. --}}
+{{#if (eq model.currentUserId model.fellowUserId)}}
+  {{new-event create='createEvent'}}
+{{/if}}
+
 
 {{#if (lt model.posts 1)}}
 <div class="container text-center">
   <div class="col-sm-8 col-sm-offset-2">
-<p style="line-height: 1.6;">{{model.fellowUser}} doesn't have any posts yet.... You can help change this by spamming his or her goddamn email and peer-pressuring them into posting something here so we can scrutinize the flaws of their existence.</p>
-<p style="line-height: 1.2;">Or you can do nothing at all.</p>
+<p style="line-height: 1.6;">{{model.fellowUser.email}} doesn't have any posts yet....</p>
 </div>
 </div>
 {{/if}}
