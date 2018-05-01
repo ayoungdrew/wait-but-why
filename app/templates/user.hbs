@@ -17,7 +17,7 @@
       <p>{{#link-to "user" activeRelationship.followed_id}}{{activeRelationship.followed}} {{activeRelationship.id}}{{/link-to}}
 
         {{#if (eq activeRelationship.follower_id model.currentUserId)}}
-        <button class="btn btn-primary" type='submit' {{action 'destroyRelationship' activeRelationship.id}}>Unfollow</button>
+        <button class="btn btn-default" type='submit' {{action 'destroyRelationship' activeRelationship.id}}>Unfollow</button>
         {{/if}}
       </p>
     {{/each}}

@@ -33,6 +33,8 @@ h1, h2, h3 {
 }
 
 p {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
   line-height: 1.9;
 }
 
@@ -54,6 +56,10 @@ select {
         width:50%;
         height: 1px;
         background-color:#fff;
+}
+
+.body-content {
+  min-height: 86vh;
 }
 
 .btn {
@@ -176,7 +182,8 @@ select {
 
 .event-description {
   display: flex;
-  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
     justify-content: center;
     align-items: center;
     width: 100%;
