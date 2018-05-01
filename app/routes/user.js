@@ -20,8 +20,8 @@ export default Route.extend({
       }))
         .then(events => events.sortBy('date').reverse()),
       currentUserId: this.get('auth.credentials.id'),
-      fellowUser: this.get('store').findRecord('user', params.user_id)
-        .then((data) => data.get('email')),
+      fellowUser: this.get('store').findRecord('user', params.user_id),
+        // .then((data) => data.get('email')),
       fellowUserId: this.get('store').findRecord('user', params.user_id)
         .then((data) => Number(data.get('id'))),
       activeRelationships: this.get('store').findAll('relationship')

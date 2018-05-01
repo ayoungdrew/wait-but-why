@@ -7,5 +7,6 @@ export default DS.Model.extend({
   user: DS.belongsTo('user'),
   editable: DS.attr(),
   commenter: DS.attr(),
+  commenter_image: DS.attr('string'),
   created_at: DS.attr('date')
 })

@@ -86,6 +86,15 @@ select {
   color: $dark-gray;
 }
 
+.comment {
+  padding: 0 40px 5px 40px;
+  margin-bottom: 0;
+  margin-top: -1px;
+  .btn {
+    color: white;
+  }
+}
+
 .comment-details {
   color: $dark-gray;
   font-size: 12px;
@@ -94,7 +103,11 @@ select {
 }
 
 .comment-body {
-  padding-left: 40px;
+  padding-left: 10px;
+}
+
+.comment-buttons {
+  text-align: right;
 }
 
 .comment-highlight {
@@ -105,18 +118,13 @@ select {
 }
 
 .comment-strong {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 
-
-.comment {
-  padding: 0 40px 5px 40px;
-  margin-bottom: 0;
-  margin-top: -1px;
-  .btn {
-    color: white;
-  }
+.comment-time {
+  font-size: 13px;
+  font-weight: 300;
 }
 
 
@@ -316,10 +324,40 @@ select {
 
 }
 
+.profile-pic-comment {
+  width: 80px;
+  height: 80px;
+  background: url('http://i0.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-pic-fill {
+  width: 200px;
+  height: 200px;
+  background: url('http://i0.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
 #toast-container {
 }
 
+@media (max-width: 575.98px) {
+  .profile-pic-comment {
+    width: 50px;
+    height: 50px;
+  }
+  .comment-buttons {
+    text-align: center;
+  }
+}
+
 @media (max-width: 767px) {
+
+.comment-details {
+    padding-left: 5px;
+  }
 
 .event-summary-title {
   font-size: 30px;
