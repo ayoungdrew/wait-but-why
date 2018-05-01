@@ -37,12 +37,12 @@
             <p class="comment-body"><span>{{comment.body}}</span></p>
           </div>
         </div>
-          {{!-- {{#if comment.editable}} --}}
+          {{#if comment.editable}}
           <div class="col-xs-12 col-sm-4 comment-buttons">
             <button class="btn btn-default" {{action 'toggleEditMode'}}>Edit</button>
             <button class="btn btn-default" {{action 'deleteComment'}}>Delete</button>
           </div>
-          {{!-- {{/if}} --}}
+          {{/if}}
       </div>
       {{/if}}
     </div>
