@@ -9,8 +9,6 @@ export default Route.extend({
 
   actions: {
     destroyEvent (event) {
-      // console.log(event)
-      // console.log('hey')
       event.destroyRecord()
       .then(() => this.toast.success('Deleted event!', '', { positionClass: 'toast-bottom-right' }) )
       .then(() => this.transitionTo('events'))

@@ -70,6 +70,14 @@ select {
   margin-bottom: 20px;
 }
 
+.btn-follow {
+  border: none;
+  border-radius: 1px;
+  font-size: 11px;
+  padding: 4px 6px;
+  margin: 1px 0;
+}
+
 .btn-primary {
   background-color: $dark-gray;
 }
@@ -98,7 +106,8 @@ select {
 .comment-details {
   color: $dark-gray;
   font-size: 12px;
-  padding-left: 40px;
+  padding-left: 30px;
+  // margin-right: -30px;
   margin-bottom: 5px;
 }
 
@@ -127,7 +136,6 @@ select {
   font-weight: 300;
 }
 
-
 .comment-new {
   // background: $very-light-gray;
   // border: 1px solid $light-gray;
@@ -141,13 +149,13 @@ select {
 }
 
 .detail-reason {
-  font-size: 18px;
+  font-size: 17px;
   color: white;
   padding: 4px 8px;
 }
 
 .detail-date {
-  font-size: 17px;
+  font-size: 16px;
   color: white;
   padding: 4px 8px 4px 9px;
   border: 1px solid white;
@@ -315,6 +323,11 @@ select {
   height: 100%;
 }
 
+.follow-listing {
+  font-size: 14px;
+  margin-bottom: 1px;
+}
+
 .form-control {
   border-radius: 0px;
   color: $very-dark-gray;
@@ -325,16 +338,20 @@ select {
 }
 
 .profile-pic-comment {
-  width: 80px;
-  height: 80px;
+  width: 5vw;
+  height: 5vw;
+  max-height: 70px;
+  max-width: 70px;
   background: url('http://i0.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .profile-pic-fill {
-  width: 200px;
-  height: 200px;
+  width: 10vw;
+  height: 10vw;
+  max-height: 160px;
+  max-width: 160px;
   background: url('http://i0.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg');
   background-size: cover;
   background-position: center;
@@ -351,49 +368,56 @@ select {
   .comment-buttons {
     text-align: center;
   }
+  .comment-details {
+      padding-left: 5px;
+    }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 576px) {
 
-.comment-details {
-    padding-left: 5px;
+  .event-summary-title {
+    font-size: 30px;
   }
 
-.event-summary-title {
-  font-size: 30px;
+  .detail-date {
+    display: block;
+    text-align: center;
+  }
+  .detail-reason {
+    display: block;
+    text-align: center;
+  }
+  .btn {
+    margin-top: 10px;
+   // color: white;
+  }
+  .footer-item {
+    text-align: center;
+  }
+  .profile-pic-comment {
+    width: 9vw;
+    height: 9vw;
+  }
 }
 
-.detail-date {
-  display: block;
-  text-align: center;
-}
-.detail-reason {
-  display: block;
-  text-align: center;
-}
-.btn {
-  margin-top: 10px;
- // color: white;
-}
-.footer-item {
-  text-align: center;
-}
-}
+@media (min-width: 768px) {
 
-@media (max-width: 1199px) {
+  .event-summary-title {
+    font-size: 30px;
+  }
 
-.event-summary-title {
-  font-size: 30px;
-}
-
-.detail-date {
+  .detail-date {
+      font-size: 14px;
+    display: block;
+    text-align: center;
+  }
+  .detail-reason {
     font-size: 14px;
-  display: block;
-  text-align: center;
+    display: block;
+    text-align: center;
+  }
 }
-.detail-reason {
-    font-size: 14px;
-  display: block;
-  text-align: center;
-}
+
+@media (min-width: 768px) {
+
 }

@@ -6,6 +6,9 @@ export default Route.extend({
   },
   actions: {
     saveEvent (event) {
+      console.log(event)
+      console.log(event.reason)
+      console.log(event.id)
       event.save()
       .then(() => this.toast.success('Edits saved!', '', { positionClass: 'toast-bottom-right' }))
       .then(() => this.transitionTo('event', event.id))
