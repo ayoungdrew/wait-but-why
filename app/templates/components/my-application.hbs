@@ -7,6 +7,7 @@
         {{#if isAuthenticated}}
         <li>{{#link-to "events"}}Events{{/link-to}}</li>
         <li>{{#link-to "users"}}Users{{/link-to}}</li>
+        <li>{{#link-to "friends"}}Friends{{/link-to}}</li>
         {{/if}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -23,10 +24,17 @@
   </div>
 </nav>
 
+<<<<<<< HEAD
+=======
+<div class="body-content">
+
+>>>>>>> add-follows
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}
 {{/each}}
   {{outlet}}
+
+</div>
   <nav id="footer" class="navbar navbar-default navbar-bottom footer" style="margin-bottom: 0;" role="navigation">
   <div class="container">
     <div class="col-sm-5 footer-item">
