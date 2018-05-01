@@ -1,0 +1,15 @@
+<div class="form-group">
+  <label for="next">New Profile Picture</label>
+  {{input class="form-control"
+          id="image"
+          placeholder="New image URL"
+          value=image}}
+</div>
+
+<button type="submit" class="btn btn-primary" {{action "submit"}}>
+  Change Image
+</button>
+
+<button class="btn btn-default" {{action "reset"}}>
+  Cancel
+</button>

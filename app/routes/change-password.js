@@ -7,10 +7,31 @@ export default Route.extend({
   flashMessages: service(),
 
   model () {
-    return RSVP.Promise.resolve({})
+    return RSVP.Promise.resolve({
+      user: this.get('auth.credentials'),
+      passwords: {}
+    })
   },
 
   actions: {
+    changeImage (newImage) {
+      console.log('made it', newImage)
+      const data = {
+        image: newImage,
+        userId: this.get('auth.credentials.id')
+      }
+      this.get('auth').changeImage(data)
+      .then((result) => {
+        this.get('auth.credentials').set('image', result.user.image)
+      })
+      .then(() => {
+        this.toast.success('Image saved', 'Success')
+      })
+      .catch(() => {
+        this.toast.error('There was a problem. Please try again.', 'Error')
+        this.get('model').rollbackAttributes()
+      })
+    },
     changePassword (passwords) {
       if (passwords.next === passwords.confirmNext) {
         this.get('auth').changePassword(passwords)

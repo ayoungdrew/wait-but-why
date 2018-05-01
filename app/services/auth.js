@@ -13,7 +13,8 @@ export default Service.extend({
         credentials: {
           email: credentials.email,
           password: credentials.password,
-          password_confirmation: credentials.passwordConfirmation
+          password_confirmation: credentials.passwordConfirmation,
+          image: credentials.image
         }
       }
     })
@@ -41,6 +42,16 @@ export default Service.extend({
         passwords: {
           old: passwords.previous,
           new: passwords.next
+        }
+      }
+    })
+  },
+
+  changeImage (data) {
+    return this.get('ajax').patch(`/users/${data.userId}`, {
+      data: {
+        user: {
+          image: data.image
         }
       }
     })

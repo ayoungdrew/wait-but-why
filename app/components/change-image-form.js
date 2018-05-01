@@ -6,12 +6,12 @@ export default Component.extend({
 
   actions: {
     submit () {
-      // console.log(this.get('credentials'))
-      this.sendAction('submit', this.get('credentials'))
+      console.log(this.get('image'))
+      this.sendAction('submit', this.get('image'))
     },
 
     reset () {
-      this.set('credentials', {})
+      this.sendAction('reset')
     }
   }
 })
