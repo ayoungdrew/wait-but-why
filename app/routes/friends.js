@@ -15,7 +15,7 @@ export default Route.extend({
         })),
       passiveRelationships: this.get('store').findAll('relationship')
         .then(results => results.filter((x) => {
-          return x.get('followed_id') === Number(2)
+          return x.get('followed_id') === this.get('auth.credentials.id')
         }))
     })
   },
