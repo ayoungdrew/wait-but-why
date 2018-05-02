@@ -1,13 +1,9 @@
 <div class="container text-center ">
 <h2>All Users</h2>
-
-<ul>
-
   {{!-- {{render-all-users users=model}} --}}
 {{#each model as |user|}}
  {{#link-to 'user' user.id}}
   <h2 style="font-size: 20px; margin-bottom: 5px;">{{user.email}}</h2>
   {{/link-to}}
 {{/each}}
-</ul>
 </div>
