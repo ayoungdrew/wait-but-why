@@ -337,6 +337,38 @@ select {
 
 }
 
+header {
+  background: url('https://res.cloudinary.com/duqjlnkij/image/upload/v1525225095/header_a-2.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  position: relative;
+  color: #fff;
+  height: 95vh;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  h1 {
+    font-size: 60px;
+  }
+
+.btn-default {
+  font-size: 18px;
+color: white;
+}
+
+  .header-text {
+    width: 800px;
+    margin: 0 0 5vh 8vw;
+    padding: 0 0 50px 20px;
+  }
+
+  p {
+    padding-left: 8px;
+    margin-bottom: 20px;
+  }
+
+}
+
 .profile-pic-comment {
   width: 5vw;
   height: 5vw;
