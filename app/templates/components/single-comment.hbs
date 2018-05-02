@@ -3,58 +3,47 @@
     <hr>
 
   {{!-- User Editing View --}}
-  {{#if isEditing}}
-  <div class="row">
-      <div class="col-sm-8 comment-details">
-        <div class="col-xs-3 col-sm-2">
-          <div class="profile-pic-comment">
-            <div class="profile-pic-comment" style="background: url({{comment.commenter_image}}); background-size: cover; background-position: center;">
+    {{#if isEditing}}
+      <div class="row">
+        <div class="col-xs-2 col-md-2 col-lg-1 comment-details">
+          <div class="profile-pic-comment" style="background: url({{comment.commenter_image}}); background-size: cover; background-position: center;">
             </div>
           </div>
-        </div>
-
-
-        <div class="col-xs-9 col-sm-10">
+        <div class="col-xs-9 col-sm-10 col-md-11">
+          <div class="col-md-12">
           <p><span class="comment-strong">{{#link-to 'user' comment.user_id}}{{comment.commenter}}{{/link-to}}</span><span class="comment-time"> {{moment-format comment.created_at "MMMM DD, YYYY LT"}}</span></p>
-        </div>
-      </div>
-
-
-      <form {{action 'saveComment' comment on='submit' focus-out='updateComment'}}>
-        <div class="col-sm-8">
+        <form class="col-md-12" {{action 'saveComment' comment on='submit' focus-out='updateComment'}}>
           {{input value=comment.body}}
+          <div class="comment-buttons">
+          <button class="btn btn-primary" type='submit' {{action 'updateComment'}}>Save</button>
+          <button class="btn btn-default" {{action 'cancelCommentChanges'}}>Cancel</button>
         </div>
-        <div class="col-sm-4 text-right">
-          {{#if comment.editable}}
-            <button class="btn btn-primary" type='submit' {{action 'updateComment'}}>Save</button>
-            <button class="btn btn-default" {{action 'cancelCommentChanges'}}>Cancel</button>
-          {{/if}}
-        </div>
-      </form>
+        </form>
+      </div>
+      </div>
     </div>
+
       {{else}}
 
 
         {{!-- Default View --}}
       <div class="row">
-        <div class="col-sm-7 comment-details">
-          <div class="col-xs-2">
-            <div class="profile-pic-comment">
+          <div class="col-xs-3 col-sm-2 col-md-1 comment-details">
               <div class="profile-pic-comment" style="background: url({{comment.commenter_image}}); background-size: cover; background-position: center;">
               </div>
+          </div>
+          <div class="col-xs-9 col-sm-10 col-md-11">
+              <div class="col-md-8">
+                <p><span class="comment-strong">{{#link-to 'user' comment.user_id}}{{comment.commenter}}{{/link-to}}</span><span class="comment-time"> {{moment-format comment.created_at "MMMM DD, YYYY LT"}}</span></p>
+                <p class="comment-body"><span>{{comment.body}}</span></p>
+              </div>
+              {{#if comment.editable}}
+              <div class="col-md-4 comment-buttons">
+                <button class="btn btn-default" {{action 'toggleEditMode'}}>Edit</button>
+                <button class="btn btn-default" {{action 'deleteComment'}}>Delete</button>
+              </div>
+              {{/if}}
             </div>
-          </div>
-          <div class="col-xs-9 col-sm-10">
-              <p><span class="comment-strong">{{#link-to 'user' comment.user_id}}{{comment.commenter}}{{/link-to}}</span><span class="comment-time"> {{moment-format comment.created_at "MMMM DD, YYYY LT"}}</span></p>
-              <p class="comment-body"><span>{{comment.body}}</span></p>
-            </div>
-          </div>
-          {{#if comment.editable}}
-          <div class="col-sm-5 comment-buttons">
-              <button class="btn btn-default" {{action 'toggleEditMode'}}>Edit</button>
-              <button class="btn btn-default" {{action 'deleteComment'}}>Delete</button>
-          </div>
-          {{/if}}
         </div>
       {{/if}}
     </div>

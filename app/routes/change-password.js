@@ -25,10 +25,10 @@ export default Route.extend({
         this.get('auth.credentials').set('image', result.user.image)
       })
       .then(() => {
-        this.toast.success('Image saved', 'Success')
+        this.toast.success('Image saved', '', { positionClass: 'toast-bottom-right' })
       })
-      .catch(() => {
-        this.toast.error('There was a problem. Please try again.', 'Error')
+      .catch((error) => {
+        this.toast.error('There was a problem. Please try again.', error, { positionClass: 'toast-bottom-right' })
         this.get('model').rollbackAttributes()
       })
     },
