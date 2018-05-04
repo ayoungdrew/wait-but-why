@@ -7,7 +7,6 @@ $light-gray: #ccc;
 $dark-gray: #7d7d7d;
 $very-dark-gray: #555555;
 
-// $medium-blue: #76899c;
 $dark-blue: #405a73;
 
 $medium-red: #b51335;
@@ -17,7 +16,6 @@ $medium-purple: #a24e9e;
 body {
   color: $dark-gray;
   background: url('https://files.allaboutbirds.net/wp-content/uploads/2018/03/Tern-lenz-FI-240x135.jpg');
-//   background-size: 200vh;
   background: white;
   font-family: 'Montserrat', sans-serif;
   padding-top: 70px;
@@ -48,14 +46,6 @@ select {
   border-radius: 0px;
   color: $very-dark-gray;
   // color: black;
-}
-.mask {
-        position: absolute;
-        top:-1px;
-        right:-1px;
-        width:50%;
-        height: 1px;
-        background-color:#fff;
 }
 
 .body-content {
@@ -137,10 +127,7 @@ select {
 }
 
 .comment-new {
-  // background: $very-light-gray;
-  // border: 1px solid $light-gray;
   padding: 0 20px 40px 20px;
-  // margin-bottom: 50px;
   margin-top: -1px;
   margin-bottom: 0;
   .btn {
@@ -163,11 +150,8 @@ select {
 }
 
 .event {
-  // background: $light-gray;
-  // border: 1px solid $light-gray;
   color: white;
   padding: 60px 40px 0 40px;
-  // margin: 10px 0;
   margin-bottom: 0;
   .btn {
   margin-top: 10px;
@@ -177,10 +161,8 @@ select {
 
 .event-edit {
   background: $light-gray;
-  // border: 1px solid $light-gray;
   color: white;
   padding: 60px 40px 60px 40px;
-  // margin: 10px 0;
   margin-bottom: 0;
   .btn {
    color: white;
@@ -341,35 +323,37 @@ header {
   background-size: 1800px 1200px;
   background-position: left bottom;
   color: #fff;
-  height: 1200px;
+  height: 95vh;
+  min-height: 800px;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  h1 {
-    font-size: 28px;
-  }
-
-  hr {
-    border-width: 5px;
-    width: 20px;
-  }
 
   .btn-default {
   font-size: 18px;
   color: white;
   }
 
-  p {
-    padding-left: 8px;
-    margin-bottom: 20px;
-  }
-
 }
 
 .header-text {
   width: 90vw;
-  margin: 0 0 2vh 8vw;
-  padding: 0 0 1px 10px;
+  margin: 0 0 20px 8vw;
+  padding-right: 10px;
+
+  h1 {
+    font-size: 28px;
+  }
+  hr {
+    border-width: 5px;
+    width: 20px;
+    margin-left: 0;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+
 }
 
 .profile-pic-comment {
@@ -377,7 +361,6 @@ header {
   height: 5vw;
   max-height: 70px;
   max-width: 70px;
-  // background: url('http://i0.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -387,7 +370,6 @@ header {
   height: 10vw;
   max-height: 160px;
   max-width: 160px;
-  // background: url('http://i0.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -399,6 +381,7 @@ header {
   .footer-item {
     text-align: center;
   }
+
   .profile-pic-comment {
     width: 60px;
     height: 60px;
@@ -406,17 +389,16 @@ header {
   .comment-buttons {
     // text-align: center;
   }
-  // header {
-  // background-size: 200% 200%;
-  // }
+
   .ils {
       padding-left: 5px;
   }
 }
 
 @media (min-width: 576px) {
-
-
+  .btn {
+    margin-top: 10px;
+  }
   .detail-date {
     display: block;
     text-align: center;
@@ -425,19 +407,19 @@ header {
     display: block;
     text-align: center;
   }
-  .btn {
-    margin-top: 10px;
-  }
   .event-summary-title {
     font-size: 30px;
-  }
-  .header-text {
-    width: 50vw;
   }
 
   .profile-pic-comment {
     width: 9vw;
     height: 9vw;
+  }
+  .header-text {
+    margin-bottom: 10vh;
+    h1 {
+      font-size: 38px;
+    }
   }
 }
 
@@ -463,51 +445,50 @@ header {
     box-shadow: 0 1px 0 -1px white;
     padding-bottom: 3px;
   }
-
+  header {
+    background-position: center left;
+    height: 95vh;
+    min-height: 820px;
+  }
   .header-text {
+    margin-bottom: 4vh;
+    min-width: 600px;
     width: 50vw;
   }
+
 }
 
 @media (min-width: 992px) {
   header {
-    background: url('https://res.cloudinary.com/duqjlnkij/image/upload/v1525366298/header_a-3.jpg');
     background-size: 1800px 1200px;
     background-position: center left;
-    color: #fff;
     height: 95vh;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-
+    min-height: 800px;
+  }
+  .header-text {
+    min-width: 780px;
+    width: 40vw;
     h1 {
       font-size: 40px;
     }
-  }
-  .header-text {
-    width: 70vw;
-    margin: 0 0 2vh 8vw;
-    padding: 0 0 3vw  10px;
   }
 }
 
 
 @media (min-width: 1200px) {
   header {
-    background: url('https://res.cloudinary.com/duqjlnkij/image/upload/v1525366298/header_a-3.jpg');
     background-size: cover;
-    background-position: center bottom;
-    color: #fff;
+    background-position: center;
     height: 95vh;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
+    min-height: 850px;
 
     h1 {
       font-size: 50px;
     }
   }
   .header-text {
-    width: 50vw;
+    h1 {
+      font-size: 50px;
+    }
   }
 }
