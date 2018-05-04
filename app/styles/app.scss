@@ -60,6 +60,11 @@ select {
   margin-bottom: 20px;
 }
 
+.btn-comment {
+  float: right;
+  margin-top: 10px;
+}
+
 .btn-follow {
   border: none;
   border-radius: 1px;
@@ -136,13 +141,17 @@ select {
 }
 
 .detail-reason {
-  font-size: 17px;
+  display: block;
+  text-align: center;
+  font-size: 15px;
   color: white;
   padding: 4px 8px;
 }
 
 .detail-date {
-  font-size: 16px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
   color: white;
   padding: 4px 8px 4px 9px;
   border: 1px solid white;
@@ -151,7 +160,7 @@ select {
 
 .event {
   color: white;
-  padding: 60px 40px 0 40px;
+  // padding: 60px 40px 0 40px;
   margin-bottom: 0;
   .btn {
   margin-top: 10px;
@@ -366,15 +375,12 @@ header {
 }
 
 .profile-pic-fill {
-  width: 10vw;
-  height: 10vw;
+  width: 300px;
+  height: 300px;
   max-height: 160px;
   max-width: 160px;
   background-size: cover;
   background-position: center;
-}
-
-#toast-container {
 }
 
 @media (max-width: 575.98px) {
@@ -398,14 +404,9 @@ header {
 @media (min-width: 576px) {
   .btn {
     margin-top: 10px;
-  }
-  .detail-date {
-    display: block;
-    text-align: center;
-  }
-  .detail-reason {
-    display: block;
-    text-align: center;
+}
+  .event {
+  padding: 60px 40px 0 40px;
   }
   .event-summary-title {
     font-size: 30px;
@@ -415,6 +416,7 @@ header {
     width: 9vw;
     height: 9vw;
   }
+
   .header-text {
     margin-bottom: 10vh;
     h1 {
@@ -424,45 +426,63 @@ header {
 }
 
 @media (min-width: 768px) {
+  .btn-comment {
+    margin-top: 0;
+  }
 
   .detail-reason {
     display: inline;
-    font-size: 17px;
+    font-size: 14px;
     color: white;
     padding: 4px 8px;
+  }
+
+  .detail-date {
+    display: inline;
+    font-size: 13px;
+    color: white;
+    padding: 3px 8px 4px 9px;
+    border: 1px solid white;
+    box-shadow: 0 1px 0 -1px white;
+    padding-bottom: 3px;
   }
 
   .event-summary-title {
     font-size: 30px;
   }
 
-  .detail-date {
-    display: inline;
-    font-size: 16px;
-    color: white;
-    padding: 4px 8px 4px 9px;
-    border: 1px solid white;
-    box-shadow: 0 1px 0 -1px white;
-    padding-bottom: 3px;
-  }
   header {
     background-position: center left;
     height: 95vh;
     min-height: 820px;
   }
+
   .header-text {
     margin-bottom: 4vh;
     min-width: 600px;
     width: 50vw;
   }
+  .profile-pic-fill {
+    width: 10vw;
+    height: 10vw;
+    max-height: 160px;
+    max-width: 160px;
+    background-size: cover;
+    background-position: center;
+  }
 
 }
 
 @media (min-width: 992px) {
+  .detail-reason {
+    font-size: 16px;
+  }
+
+  .detail-date {
+    font-size: 15px;
+  }
   header {
     background-size: 1800px 1200px;
-    background-position: center left;
-    height: 95vh;
     min-height: 800px;
   }
   .header-text {
@@ -474,12 +494,10 @@ header {
   }
 }
 
-
 @media (min-width: 1200px) {
   header {
     background-size: cover;
     background-position: center;
-    height: 95vh;
     min-height: 850px;
 
     h1 {
