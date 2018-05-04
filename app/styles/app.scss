@@ -288,7 +288,6 @@ select {
   }
   .event {
     background: $medium-purple
-    // background: linear-gradient(to bottom right, red, $medium-purple);
   }
 
   .form-control {
@@ -338,28 +337,26 @@ select {
 }
 
 header {
-  background: url('https://res.cloudinary.com/duqjlnkij/image/upload/v1525225095/header_a-2.jpg');
-  background-size: cover;
-  background-position: center bottom;
-  position: relative;
+  background: url('https://res.cloudinary.com/duqjlnkij/image/upload/v1525366298/header_a-3.jpg');
+  background-size: 1800px 1200px;
+  background-position: left bottom;
   color: #fff;
-  height: 95vh;
+  height: 1200px;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
   h1 {
-    font-size: 60px;
+    font-size: 28px;
   }
 
-.btn-default {
-  font-size: 18px;
-color: white;
-}
+  hr {
+    border-width: 5px;
+    width: 20px;
+  }
 
-  .header-text {
-    width: 800px;
-    margin: 0 0 5vh 8vw;
-    padding: 0 0 50px 20px;
+  .btn-default {
+  font-size: 18px;
+  color: white;
   }
 
   p {
@@ -367,6 +364,12 @@ color: white;
     margin-bottom: 20px;
   }
 
+}
+
+.header-text {
+  width: 90vw;
+  margin: 0 0 2vh 8vw;
+  padding: 0 0 1px 10px;
 }
 
 .profile-pic-comment {
@@ -393,6 +396,9 @@ color: white;
 }
 
 @media (max-width: 575.98px) {
+  .footer-item {
+    text-align: center;
+  }
   .profile-pic-comment {
     width: 60px;
     height: 60px;
@@ -400,16 +406,16 @@ color: white;
   .comment-buttons {
     // text-align: center;
   }
+  // header {
+  // background-size: 200% 200%;
+  // }
   .ils {
       padding-left: 5px;
-    }
+  }
 }
 
 @media (min-width: 576px) {
 
-  .event-summary-title {
-    font-size: 30px;
-  }
 
   .detail-date {
     display: block;
@@ -421,11 +427,14 @@ color: white;
   }
   .btn {
     margin-top: 10px;
-   // color: white;
   }
-  .footer-item {
-    text-align: center;
+  .event-summary-title {
+    font-size: 30px;
   }
+  .header-text {
+    width: 50vw;
+  }
+
   .profile-pic-comment {
     width: 9vw;
     height: 9vw;
@@ -434,15 +443,15 @@ color: white;
 
 @media (min-width: 768px) {
 
-  .event-summary-title {
-    font-size: 30px;
-  }
-
   .detail-reason {
     display: inline;
     font-size: 17px;
     color: white;
     padding: 4px 8px;
+  }
+
+  .event-summary-title {
+    font-size: 30px;
   }
 
   .detail-date {
@@ -454,8 +463,51 @@ color: white;
     box-shadow: 0 1px 0 -1px white;
     padding-bottom: 3px;
   }
+
+  .header-text {
+    width: 50vw;
+  }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  header {
+    background: url('https://res.cloudinary.com/duqjlnkij/image/upload/v1525366298/header_a-3.jpg');
+    background-size: 1800px 1200px;
+    background-position: center left;
+    color: #fff;
+    height: 95vh;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
 
+    h1 {
+      font-size: 40px;
+    }
+  }
+  .header-text {
+    width: 70vw;
+    margin: 0 0 2vh 8vw;
+    padding: 0 0 3vw  10px;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  header {
+    background: url('https://res.cloudinary.com/duqjlnkij/image/upload/v1525366298/header_a-3.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    color: #fff;
+    height: 95vh;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+
+    h1 {
+      font-size: 50px;
+    }
+  }
+  .header-text {
+    width: 50vw;
+  }
 }
