@@ -4,7 +4,7 @@ Deployed App: https://ayoungdrew.github.io/wait-but-why/
 API repo: https://github.com/ayoungdrew/wait-but-why-api
 Heroku App: https://wait-but-why-api.herokuapp.com/
 
-![A test image](https://res.cloudinary.com/duqjlnkij/image/upload/v1524224049/wait-but-why-screenshot.png)
+![A test image](https://res.cloudinary.com/duqjlnkij/image/upload/v1525723878/wait-but-why-screenshot_a.png)
 
 # Summary
 
