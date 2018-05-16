@@ -17,7 +17,7 @@ Router.map(function () {
   })
   this.route('edit-event', { path: '/events/:event_id/edit' })
   this.route('user', { path: '/users/:user_id' })
-  this.route('friends');
+  this.route('friends')
 })
 
 export default Router

@@ -8,9 +8,10 @@ export default Component.extend({
   userId: alias('auth.credentials.id'),
   isAuthenticated: alias('auth.isAuthenticated'),
 
-  tagName: 'div',
   classNameBindings: ['reasonClass'],
 
+  // This assigns the appropriate CSS classes, changing the colors
+  // based on the event record's reason
   reasonClass: function () {
     const modelReason = this.get('event.reason')
     if (modelReason === 'It was something I wanted to do') {
