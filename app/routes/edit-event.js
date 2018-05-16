@@ -7,7 +7,6 @@ export default Route.extend({
   },
   actions: {
     saveEvent (event) {
-      console.log('hi', this.get('auth.credentials.id'))
       event.save()
       .then(() => this.toast.success('Edits saved!', '', { positionClass: 'toast-bottom-right' }))
       .then(() => this.transitionTo('event', event.id))

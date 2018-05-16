@@ -8,6 +8,19 @@ export default Component.extend({
   userId: alias('auth.credentials.id'),
   isAuthenticated: alias('auth.isAuthenticated'),
 
+  // // Invokes when component is removed from the DOM.
+  // willDestroyElement () {
+  //     // If data-bound elements have been changed but not persisted, the dirty
+  //     // attributes will be rolled back.
+  //     this._super(...arguments)
+  //     const model = this.get('model')
+  //     if (model.get('hasDirtyAttributes')) {
+  //       this.get('model').rollbackAttributes()
+  //       this.toast.info('Changes discarded', 'Status')
+  //     }
+  //   },
+
+  // For assigning the right color styling to events - see below
   classNameBindings: ['reasonClass'],
 
   // This assigns the appropriate CSS classes, changing the colors

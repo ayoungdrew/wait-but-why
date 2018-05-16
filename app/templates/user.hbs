@@ -20,14 +20,14 @@
     <h4>Following:</h4>
     {{#each model.activeRelationships as |activeRelationship|}}
     <div class="row">
-      <div class="col-sm-8">
+      <div class="col-xs-8">
         <p class="follow-listing">
           {{#link-to "user" activeRelationship.followed_id}}{{activeRelationship.followed}}{{/link-to}}
         </p>
       </div>
 
         {{#if (eq activeRelationship.follower_id model.currentUserId)}}
-        <button class="btn-default btn-follow" type='submit' {{action 'destroyRelationship' activeRelationship.id}}>Unfollow</button>
+        <button class="btn-default btn-follow-list" type='submit' {{action 'destroyRelationship' activeRelationship.id}}>Unfollow</button>
         {{/if}}
       </div>
     {{/each}}

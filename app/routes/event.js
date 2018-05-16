@@ -28,11 +28,11 @@ export default Route.extend({
       .then(() => this.refresh())
       .catch((error) => { this.toast.error('Uh oh!', error, { positionClass: 'toast-bottom-right' }) })
     },
-    updateComment (args) {
-      const comment = args
-      comment.save()
-    .then(() => { this.toast.success('Comment edited :D', '', { positionClass: 'toast-bottom-right' }) })
-    .catch((error) => { this.toast.error('Oh noes!!', error, { positionClass: 'toast-bottom-right' }) })
+    updateComment (commentObj) {
+      console.log('hi')
+      commentObj.save()
+      .then(() => { this.toast.success('Comment edited :D', '', { positionClass: 'toast-bottom-right' }) })
+      .catch((error) => { this.toast.error('Oh noes!!', error, { positionClass: 'toast-bottom-right' }) })
     }
   }
 })

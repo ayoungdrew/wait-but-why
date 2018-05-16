@@ -10,32 +10,16 @@ $medium-red: #b51335;
 $medium-blue: #237d94;
 $medium-purple: #a24e9e;
 
+a {
+  color: $medium-blue;
+}
+
 body {
   color: $dark-gray;
   background: url('https://files.allaboutbirds.net/wp-content/uploads/2018/03/Tern-lenz-FI-240x135.jpg');
   background: white;
   font-family: 'Montserrat', sans-serif;
   padding-top: 70px;
-}
-
-a {
-  color: $medium-blue;
-}
-
-h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-}
-
-p {
-  font-family: 'Lato', sans-serif;
-  font-size: 15px;
-  line-height: 1.9;
-}
-
-hr {
-  padding: 5px;
-  margin: 10px 10px;
 }
 
 .body-content {
@@ -55,6 +39,14 @@ hr {
 }
 
 .btn-follow {
+  border: none;
+  border-radius: 1px;
+  font-size: 11px;
+  padding: 4px 6px;
+  margin: 10px 0 14px 0;
+}
+
+.btn-follow-list {
   border: none;
   border-radius: 1px;
   font-size: 11px;
@@ -311,6 +303,11 @@ hr {
 
 }
 
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
 header {
   background: url('https://res.cloudinary.com/duqjlnkij/image/upload/v1525366298/header_a-3.jpg');
   background-size: 1800px 1200px;
@@ -347,6 +344,21 @@ header {
     margin-bottom: 20px;
   }
 
+}
+
+hr {
+  padding: 5px;
+  margin: 10px 10px;
+}
+
+.navbar-default {
+box-shadow: 0 0 10px 1px rgba(0,0,0,.1);
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  line-height: 1.9;
 }
 
 .profile-pic-comment {
