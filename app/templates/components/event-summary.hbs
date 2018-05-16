@@ -5,7 +5,7 @@
         <div class="col-sm-7 col-md-6">
           {{#link-to 'event' event.id}}
           <h3>
-            <span class="event-summary-title">{{event.title}}</span>
+            <span class="event-summary-title">{{event.title}}{{currentUserId}}</span>
           </h3>
           {{/link-to}}
           <span class="detail-reason">{{event.reason}}</span><span class="detail-date">{{moment-format event.date 'MMMM YYYY'}}</span>

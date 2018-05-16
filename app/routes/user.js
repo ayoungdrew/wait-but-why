@@ -1,9 +1,16 @@
 import Route from '@ember/routing/route'
 import { inject as service } from '@ember/service'
 import RSVP from 'rsvp'
+import { select } from 'd3-selection'
+
 
 export default Route.extend({
   auth: service(),
+  isFollowing: true,
+  currentUser: alias('auth.credentials.email'),
+  userId: alias('auth.credentials.id'),
+  d4Graphic: 88,
+
 
   model (params) {
     return RSVP.hash({
@@ -13,8 +20,24 @@ export default Route.extend({
         return x.get('user_id').toString() === params.user_id
       }))
         .then(events => events.sortBy('date').reverse()),
+      wantedPosts: this.get('store').findAll('event')
+      .then(results => results.filter((x) => {
+        return x.get('user_id').toString() === params.user_id && x.get('reason') === 'It was something I wanted to do'
+      })),
+      hadToPosts: this.get('store').findAll('event')
+      .then(results => results.filter((x) => {
+        return x.get('user_id').toString() === params.user_id && x.get('reason') === 'I felt like I had to'
+      })),
+      noControlPosts: this.get('store').findAll('event')
+      .then(results => results.filter((x) => {
+        return x.get('user_id').toString() === params.user_id && x.get('reason') === 'I had no control over it'
+      })),
       currentUserId: this.get('auth.credentials.id'),
       fellowUser: this.get('store').findRecord('user', params.user_id),
+<<<<<<< HEAD
+=======
+      // This is used to test whether or not to show follow button
+>>>>>>> Adds initial d3 graph to user page based on events
       fellowUserId: this.get('store').findRecord('user', params.user_id)
         .then((data) => +data.get('id')),
       activeRelationships: this.get('store').findAll('relationship')
@@ -72,7 +95,7 @@ export default Route.extend({
     },
     createRelationship (friendId) {
       // friendId is the one who current user is trying to follow
-      console.log(this.get('auth.credentials.id').toString())
+      // console.log(this.get('auth.credentials.id').toString())
       const newRelObj = {}
       newRelObj.follower_id = this.get('auth.credentials.id')
       newRelObj.followed_id = +friendId
@@ -90,6 +113,10 @@ export default Route.extend({
         .then(() => { this.toast.success('Unfollowed...', '', { positionClass: 'toast-bottom-right' }) })
     },
     destroyThisRelationship (relationshipObj) {
+<<<<<<< HEAD
+=======
+      // console.log('logging', relationshipObj)
+>>>>>>> Adds initial d3 graph to user page based on events
       const target = relationshipObj
       target.destroyRecord()
         .then(() => this.refresh())
