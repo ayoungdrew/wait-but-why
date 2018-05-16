@@ -1,17 +1,11 @@
 import Route from '@ember/routing/route'
-import { alias } from '@ember/object/computed'
-import Component from '@ember/component'
 import { inject as service } from '@ember/service'
 import RSVP from 'rsvp'
 
 export default Route.extend({
   auth: service(),
-  isFollowing: true,
-  currentUser: alias('auth.credentials.email'),
-  userId: alias('auth.credentials.id'),
 
   model (params) {
-    const currentUserEmail = this.get('auth.credentials.email')
     return RSVP.hash({
       // return FIRST key-value 'posts' to load user's event posts
       posts: this.get('store').findAll('event')
@@ -21,37 +15,35 @@ export default Route.extend({
         .then(events => events.sortBy('date').reverse()),
       currentUserId: this.get('auth.credentials.id'),
       fellowUser: this.get('store').findRecord('user', params.user_id),
-        // .then((data) => data.get('email')),
       fellowUserId: this.get('store').findRecord('user', params.user_id)
-        .then((data) => Number(data.get('id'))),
+        .then((data) => +data.get('id')),
       activeRelationships: this.get('store').findAll('relationship')
         .then(results => results.filter((x) => {
-          return x.get('follower_id') === Number(params.user_id)
+          return x.get('follower_id') === +params.user_id
         })),
       passiveRelationships: this.get('store').findAll('relationship')
         .then(results => results.filter((x) => {
-          return x.get('followed_id') === Number(params.user_id)
+          return x.get('followed_id') === +params.user_id
         })),
         // This finds the relationship object that represents the signed in
         // user following the current viewed user if it exists
       thisRelationship: this.get('store').findAll('relationship')
           .then(results => results.find((x) => {
-            return x.get('followed_id') === Number(params.user_id) && x.get('follower_id') === this.get('auth.credentials.id')
+            return x.get('followed_id') === +params.user_id && x.get('follower_id') === this.get('auth.credentials.id')
           }))
     })
   },
 
   actions: {
-    createEvent (event) {
-      // console.log('let us create', event)
-      this.get('store').createRecord('event', event)
+    createEvent (eventObj) {
+      this.get('store').createRecord('event', eventObj)
         .save()
-        .then(() => { this.toast.success('Done!','', { positionClass: 'toast-bottom-right' }) })
+        .then(() => { this.toast.success('Done!', '', { positionClass: 'toast-bottom-right' }) })
         .then(() => this.refresh())
         .catch((error) => { this.toast.error('Something went wrong! :(', error, { positionClass: 'toast-bottom-right' }) })
     },
-    destroyEvent (event) {
-      event.destroyRecord()
+    destroyEvent (eventObj) {
+      eventObj.destroyRecord()
         .then(() => { this.toast.success('Killed that event!', '', { positionClass: 'toast-bottom-right' }) })
         .then(() => this.refresh())
         .catch((error) => { this.toast.error('Error is', error, { positionClass: 'toast-bottom-right' }) })
@@ -83,7 +75,7 @@ export default Route.extend({
       console.log(this.get('auth.credentials.id').toString())
       const newRelObj = {}
       newRelObj.follower_id = this.get('auth.credentials.id')
-      newRelObj.followed_id = Number(friendId)
+      newRelObj.followed_id = +friendId
       const relationship = this.get('store').createRecord('relationship', newRelObj)
       if (newRelObj.followed_id !== this.get('auth.credentials.id')) {
         return relationship.save()
@@ -98,7 +90,6 @@ export default Route.extend({
         .then(() => { this.toast.success('Unfollowed...', '', { positionClass: 'toast-bottom-right' }) })
     },
     destroyThisRelationship (relationshipObj) {
-      console.log('logging', relationshipObj)
       const target = relationshipObj
       target.destroyRecord()
         .then(() => this.refresh())

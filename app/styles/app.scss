@@ -232,7 +232,73 @@ select {
   }
 }
 
+.event-had-to {
+  color: white;
+  a {
+    color: white;
+  }
+  .btn:hover {
+   color: $medium-red;
+  }
+  .btn-primary {
+   color: $medium-red;
+   background: white;
+  }
+  .event {
+    background: $medium-red
+  }
+  .detail-reason {
+    color: $medium-red;
+    background: white;
+  }
+  .comment {
+    background: $medium-red;
+  }
+  .comment-details {
+    color: white;
+  }
+  .comment-highlight {
+    color: $medium-red;
+  }
+  .comment-new {
+    background: $medium-red;
+  }
+}
+
 .event-blue {
+  color: white;
+  a {
+    color: white;
+  }
+  .btn:hover {
+   color: $medium-blue;
+  }
+  .btn-primary {
+   color: $medium-blue;
+   background: white;
+  }
+  .event {
+    background: $medium-blue
+  }
+  .detail-reason {
+    color: $medium-blue;
+    background: white;
+  }
+  .comment {
+    background: $medium-blue;
+  }
+  .comment-details {
+    color: white;
+  }
+  .comment-highlight {
+    color: $medium-blue;
+  }
+  .comment-new {
+    background: $medium-blue;
+  }
+}
+
+.event-wanted {
   color: white;
   a {
     color: white;
@@ -280,12 +346,39 @@ select {
   .event {
     background: $medium-purple
   }
-
-  .form-control {
-    border-radius: 0px;
-    color: $dark-gray;
+  .detail-reason {
+    color: $medium-purple;
+    background: white;
   }
+  .comment {
+    background: $medium-purple;
+  }
+  .comment-details {
+    color: white;
+  }
+  .comment-highlight {
+    color: $medium-purple;
+  }
+  .comment-new {
+    background: $medium-purple;
+  }
+}
 
+.event-no-control {
+  color: white;
+  a {
+    color: white;
+  }
+  .btn:hover {
+   color: $medium-purple;
+  }
+  .btn-primary {
+   color: $medium-purple;
+   background: white;
+  }
+  .event {
+    background: $medium-purple
+  }
   .detail-reason {
     color: $medium-purple;
     background: white;
@@ -383,6 +476,9 @@ header {
   background-position: center;
 }
 
+.test-class {
+  background: green;
+}
 @media (max-width: 575.98px) {
   .footer-item {
     text-align: center;

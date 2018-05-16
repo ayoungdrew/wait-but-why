@@ -1,11 +1,13 @@
 import Route from '@ember/routing/route'
 
 export default Route.extend({
+
   model (params) {
     return this.get('store').findRecord('event', params.event_id)
   },
   actions: {
     saveEvent (event) {
+      console.log('hi', this.get('auth.credentials.id'))
       event.save()
       .then(() => this.toast.success('Edits saved!', '', { positionClass: 'toast-bottom-right' }))
       .then(() => this.transitionTo('event', event.id))

@@ -9,6 +9,20 @@ export default Component.extend({
     this.set('eventYear', this.get('model').get('date').substring(0, 4))
     this.set('eventMonth', this.get('model').get('date').substring(5, 7))
   },
+
+  classNameBindings: ['reasonClass'],
+
+  reasonClass: function () {
+    const modelReason = this.get('model.reason')
+    if (modelReason === 'It was something I wanted to do') {
+      return 'event-wanted'
+    } else if (modelReason === 'I felt like I had to') {
+      return 'event-had-to'
+    } else if (modelReason === 'I had no control over it') {
+      return 'event-no-control'
+    }
+  }.property('event.reasonClass'),
+
   actions: {
     setMonthSelection (selected) {
       this.set('eventMonth', selected)

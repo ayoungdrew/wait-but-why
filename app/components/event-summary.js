@@ -8,28 +8,35 @@ export default Component.extend({
   userId: alias('auth.credentials.id'),
   isAuthenticated: alias('auth.isAuthenticated'),
 
+  tagName: 'div',
+  classNameBindings: ['reasonClass'],
+
+  reasonClass: function () {
+    const modelReason = this.get('event.reason')
+    if (modelReason === 'It was something I wanted to do') {
+      return 'event-wanted'
+    } else if (modelReason === 'I felt like I had to') {
+      return 'event-had-to'
+    } else if (modelReason === 'I had no control over it') {
+      return 'event-no-control'
+    }
+  }.property('event.reasonClass'),
+
   actions: {
-    deleteEvent (event) {
-      // console.log('made it do event-sum', event)
+    deleteEvent () {
       this.sendAction('deleteSingleEvent', this.get('event'))
     },
-    deleteSingleComment (comment) {
-      // console.log('get rid of', comment)
-      this.sendAction('deleteSingleComment', comment)
+    deleteSingleComment (commentObj) {
+      this.sendAction('deleteSingleComment', commentObj)
     },
-    addSingleComment (commentPojo) {
-      // console.log('made it to event-sum js')
-      // console.log('pojo is', commentPojo)
-      this.sendAction('addSingleComment', commentPojo)
-  },
-    updateComment (commentPojo) {
-      // console.log('made it to event-sum js')
-      // console.log('pojo is', commentPojo)
-      this.sendAction('updateComment', commentPojo)
+    addSingleComment (commentObj) {
+      this.sendAction('addSingleComment', commentObj)
+    },
+    updateComment (commentObj) {
+      this.sendAction('updateComment', commentObj)
     },
     refresh () {
-      // console.log('gogo!')
       this.sendAction('refresh')
+    }
   }
-  }
-});
+})
