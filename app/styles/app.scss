@@ -1,14 +1,8 @@
 @import "ember-bootstrap/bootstrap";
 @import "./animate.scss";
-
-$background-gray: #e6e3da;
-$very-light-gray: #f5f1ec;
-$light-gray: #ccc;
-$dark-gray: #7d7d7d;
-$very-dark-gray: #555555;
-$medium-red: #b51335;
-$medium-blue: #237d94;
-$medium-purple: #a24e9e;
+@import "./colors.scss";
+@import "./buttons.scss";
+@import "./events.scss";
 
 a {
   color: $medium-blue;
@@ -24,50 +18,6 @@ body {
 
 .body-content {
   min-height: 86vh;
-}
-
-.btn {
-  border: none;
-  border-radius: 1px;
-  padding: 6px 9px;
-  margin-bottom: 20px;
-}
-
-.btn-comment {
-  float: right;
-  margin-top: 10px;
-}
-
-.btn-follow {
-  border: none;
-  border-radius: 1px;
-  font-size: 11px;
-  padding: 4px 6px;
-  margin: 10px 0 14px 0;
-}
-
-.btn-follow-list {
-  border: none;
-  border-radius: 1px;
-  font-size: 11px;
-  padding: 4px 6px;
-  margin: 1px 0;
-}
-
-.btn-primary {
-  background-color: $dark-gray;
-}
-
-.btn-primary:hover {
-  color: $dark-gray;
-  background-color: $light-gray;
-}
-
-
-.btn-default {
-  border: 1px solid $light-gray;
-  background: none;
-  color: $dark-gray;
 }
 
 .comment {

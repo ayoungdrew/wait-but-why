@@ -1,0 +1,42 @@
+.btn {
+  border: none;
+  border-radius: 1px;
+  padding: 6px 9px;
+  margin-bottom: 20px;
+}
+
+.btn-default {
+  border: 1px solid $light-gray;
+  background: none;
+  color: $dark-gray;
+}
+
+.btn-comment {
+  float: right;
+  margin-top: 10px;
+}
+
+.btn-follow {
+  border: none;
+  border-radius: 1px;
+  font-size: 11px;
+  padding: 4px 6px;
+  margin: 10px 0 14px 0;
+}
+
+.btn-follow-list {
+  border: none;
+  border-radius: 1px;
+  font-size: 11px;
+  padding: 4px 6px;
+  margin: 1px 0;
+}
+
+.btn-primary {
+  background-color: $dark-gray;
+}
+
+.btn-primary:hover {
+  color: $dark-gray;
+  background-color: $light-gray;
+}

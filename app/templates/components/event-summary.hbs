@@ -12,9 +12,7 @@
           <h4>{{#link-to 'user' event.user_id}}{{event.author}}{{/link-to}}</h4>
           {{#if event.editable}}
           <div class="text-left">
-            {{#link-to 'edit-event' event.id}}
-            <button class="btn btn-default" type='submit'>Edit</button>
-            {{/link-to}}
+            {{#link-to 'edit-event' event.id tagName='button' class="btn btn-default"}}Edit{{/link-to}}
             <button class="btn btn-default" {{action 'deleteEvent' event}}>Delete</button>
           </div>
           {{/if}}
@@ -30,7 +28,6 @@
   {{single-comment comment=comment
                    deleteComment='deleteSingleComment'
                    updateComment='updateComment'
-                   refresh='refresh'
 }}
 {{/each}}
 <div class="comment-new">

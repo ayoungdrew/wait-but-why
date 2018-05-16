@@ -36,9 +36,6 @@ export default Component.extend({
     },
     updateComment (commentObj) {
       this.sendAction('updateComment', commentObj)
-    },
-    refresh () {
-      this.sendAction('refresh')
     }
   }
 })

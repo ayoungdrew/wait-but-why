@@ -30,9 +30,6 @@ export default Route.extend({
       comment.save()
       .then(() => { this.toast.success('Edited comment :)', '', { positionClass: 'toast-bottom-right' }) })
       .catch((error) => { this.toast.error('Something went wrong', error, { positionClass: 'toast-bottom-right' }) })
-    },
-    refresh () {
-      this.refresh()
     }
   }
 })
