@@ -11,7 +11,6 @@ Router.map(function () {
   this.route('sign-in')
   this.route('change-password')
   this.route('users')
-  this.route('events', function () {})
   this.route('examples')
   this.route('event', { path: '/events/:event_id' }, function () {
     this.route('edit-comment')
