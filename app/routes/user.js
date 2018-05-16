@@ -2,7 +2,7 @@ import Route from '@ember/routing/route'
 import { inject as service } from '@ember/service'
 import RSVP from 'rsvp'
 import { select } from 'd3-selection'
-
+import { alias } from '@ember/object/computed'
 
 export default Route.extend({
   auth: service(),
@@ -10,7 +10,6 @@ export default Route.extend({
   currentUser: alias('auth.credentials.email'),
   userId: alias('auth.credentials.id'),
   d4Graphic: 88,
-
 
   model (params) {
     return RSVP.hash({
@@ -34,10 +33,8 @@ export default Route.extend({
       })),
       currentUserId: this.get('auth.credentials.id'),
       fellowUser: this.get('store').findRecord('user', params.user_id),
-<<<<<<< HEAD
-=======
+
       // This is used to test whether or not to show follow button
->>>>>>> Adds initial d3 graph to user page based on events
       fellowUserId: this.get('store').findRecord('user', params.user_id)
         .then((data) => +data.get('id')),
       activeRelationships: this.get('store').findAll('relationship')
@@ -113,10 +110,6 @@ export default Route.extend({
         .then(() => { this.toast.success('Unfollowed...', '', { positionClass: 'toast-bottom-right' }) })
     },
     destroyThisRelationship (relationshipObj) {
-<<<<<<< HEAD
-=======
-      // console.log('logging', relationshipObj)
->>>>>>> Adds initial d3 graph to user page based on events
       const target = relationshipObj
       target.destroyRecord()
         .then(() => this.refresh())
