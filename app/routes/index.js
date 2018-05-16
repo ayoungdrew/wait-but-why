@@ -1,6 +1,5 @@
 import { alias } from '@ember/object/computed'
-import Route from '@ember/routing/route';
-import Component from '@ember/component'
+import Route from '@ember/routing/route'
 import { inject as service } from '@ember/service'
 
 export default Route.extend({
@@ -9,6 +8,6 @@ export default Route.extend({
   // currentUser: alias()
   user: alias('auth.credentials.email'),
   userId: alias('auth.credentials.id'),
-  isAuthenticated: alias('auth.isAuthenticated'),
+  isAuthenticated: alias('auth.isAuthenticated')
 
-});
+})

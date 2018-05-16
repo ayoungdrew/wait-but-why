@@ -15,8 +15,9 @@
       {{/if}}
     </h2>
   </div>
+
+  {{!-- Displays all friends this user is following --}}
   <div class="col-sm-5 col-md-4" style="margin-bottom: 20px;">
-    {{!-- Displays all friends this user is following --}}
     <h4>Following:</h4>
     {{#each model.activeRelationships as |activeRelationship|}}
     <div class="row">
@@ -33,8 +34,8 @@
     {{/each}}
   </div>
 
+  {{!-- Displays all the friends that are following this user --}}
   <div class="col-sm-4">
-    {{!-- Displays all the friends that are following this user --}}
     <h4>Followers:</h4>
     {{#each model.passiveRelationships as |passiveRelationship|}}
     <div class="row">
